@@ -1,0 +1,175 @@
+/* Kieler Lichtermeer event page — gallery styling matched to Bilder & Material. */
+.event-lichtermeer-gallery .journal-page { --j-paper:#fffaf1; --j-line:#f0dcca; --j-muted:#526778; }
+.event-lichtermeer-gallery .j-article-hero .event-picture-carousel {
+  position:relative; isolation:isolate; overflow:hidden; margin:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-height:545px; padding:35px 24px 25px;
+  border:1px solid #f2dacb; border-radius:28px;
+  background:radial-gradient(circle at 90% 14%,rgba(255,213,79,.18),transparent 38%),
+             radial-gradient(circle at 8% 88%,rgba(112,205,197,.21),transparent 45%),
+             linear-gradient(145deg,#fff2e6,#ffe8de 57%,#fff3e8);
+  box-shadow:0 14px 38px rgba(100,69,59,.07);
+}
+.event-lichtermeer-gallery .event-picture-frame {
+  z-index:2; box-sizing:border-box; display:block; width:min(80%,310px);
+  max-width:310px; max-height:365px; line-height:0; overflow:hidden;
+  padding:7px; background:#fffefa; border:1px solid white;
+  border-radius:17px; box-shadow:0 16px 35px rgba(31,64,74,.19);
+  transform:rotate(-2deg); transform-origin:center;
+  animation:event-picture-float 5.5s ease-in-out infinite;
+  transition:box-shadow .23s ease,transform .23s ease;
+}
+.event-lichtermeer-gallery .event-picture-frame.is-landscape {width:min(90%,350px);max-width:350px}
+.event-lichtermeer-gallery .event-picture-frame img {
+  display:block; width:100%; height:auto; max-width:100%; max-height:350px;
+  aspect-ratio:auto; object-fit:contain; border:0; border-radius:10px; box-shadow:none;
+}
+.event-lichtermeer-gallery .event-picture-frame:hover,
+.event-lichtermeer-gallery .event-picture-frame:focus-visible {
+  animation:none; transform:translateY(-4px) rotate(0deg);
+  box-shadow:0 19px 40px rgba(31,64,74,.24);
+}
+.event-lichtermeer-gallery .event-picture-controls {
+  z-index:3; display:flex; justify-content:center; align-items:center; gap:15px;
+  border:1px solid #f1d6c6; border-radius:100px;
+  background:rgba(255,253,247,.95); padding:6px 8px; margin-top:20px;
+  box-shadow:0 7px 20px rgba(105,73,62,.08);
+}
+.event-lichtermeer-gallery .event-picture-controls button {
+  display:grid;place-items:center; width:42px; height:42px;
+  border:1px solid #f2d8c6; border-radius:50%; color:#145363;
+  background:#fff; font-size:23px; font-weight:700; line-height:1;
+  cursor:pointer; transition:background .2s ease,transform .2s ease;
+}
+.event-lichtermeer-gallery .event-picture-controls button:hover {background:#ffdb73;transform:translateY(-2px)}
+.event-lichtermeer-gallery .event-picture-controls button:focus-visible {outline:3px solid #1a9eaa;outline-offset:3px}
+.event-lichtermeer-gallery .event-picture-counter {min-width:56px; text-align:center; color:#155264; font-weight:800; font-size:12px; font-variant-numeric:tabular-nums}
+.event-lichtermeer-gallery .j-article-hero .event-picture-caption {z-index:2; font-size:11px; margin:13px 0 0; color:#195766; letter-spacing:.2px; font-weight:800; text-transform:none; min-height:15px}
+.event-lichtermeer-gallery .event-picture-heart,
+.event-lichtermeer-gallery .event-picture-star,
+.event-lichtermeer-gallery .event-picture-dot {position:absolute; z-index:1; pointer-events:none}
+.event-lichtermeer-gallery .event-picture-heart {top:12%;right:7%;color:#f35b91;font-size:42px;line-height:1;animation:event-decor-bob 6s ease-in-out infinite}
+.event-lichtermeer-gallery .event-picture-star {left:8%;top:24%;color:#14a9b7;font-size:41px;line-height:1;animation:event-decor-bob 5s ease-in-out .9s infinite}
+.event-lichtermeer-gallery .event-picture-dot {width:12px;height:12px;left:14%;bottom:17%;border-radius:50%;background:#ffbf49;box-shadow:0 0 0 8px #ffbf4930}
+@keyframes event-picture-float {0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(0deg)}}
+@keyframes event-decor-bob {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+/* Material cards retain their original labels and content; only visual treatment changes. */
+.event-lichtermeer-gallery .j-event-material .j-material-grid {gap:24px; align-items:stretch}
+.event-lichtermeer-gallery .j-event-material .j-material {
+  min-width:0; display:flex; flex-direction:column; margin:0;
+  border:1px solid #f2dfd0; border-radius:24px; background:#fffefa; overflow:hidden;
+  box-shadow:0 8px 24px rgba(94,74,58,.06);
+  transition:transform .23s ease, box-shadow .23s ease, border-color .23s ease;
+}
+.event-lichtermeer-gallery .j-event-material .j-material:hover {transform:translateY(-5px);box-shadow:0 17px 35px rgba(94,74,58,.12);border-color:#f2c3a8}
+.event-lichtermeer-gallery .j-event-material .j-material-visual {
+  position:relative; display:flex; justify-content:center; align-items:center;
+  width:100%; min-height:350px; padding:22px;
+  border:0; border-radius:0; overflow:hidden;
+  background:linear-gradient(138deg,#ffefdb,#ffdcd7);
+}
+.event-lichtermeer-gallery .j-event-material .j-material:nth-child(3n+2) .j-material-visual {background:linear-gradient(140deg,#dcf3f2,#bde8e6)}
+.event-lichtermeer-gallery .j-event-material .j-material:nth-child(3n+3) .j-material-visual {background:linear-gradient(140deg,#fff1bf,#ffe4ac)}
+.event-lichtermeer-gallery .j-event-material .j-material-visual::before {
+  content:"";position:absolute;right:-58px;top:-55px;width:180px;height:180px;
+  border:32px solid rgba(255,255,255,.24);border-radius:50%;pointer-events:none;
+}
+.event-lichtermeer-gallery .j-event-material .j-material-visual>img {
+  position:relative;z-index:1;display:block;width:auto;height:auto;
+  max-width:100%;max-height:320px;aspect-ratio:auto;object-fit:contain;
+  border-radius:12px;box-shadow:0 9px 22px rgba(23,56,63,.15);
+  transition:transform .24s ease;
+}
+.event-lichtermeer-gallery .j-event-material .j-material:hover .j-material-visual>img {transform:translateY(-3px) rotate(-1deg)}
+.event-lichtermeer-gallery .j-event-material .j-material figcaption {flex:1;padding:21px 23px 24px}
+.event-lichtermeer-gallery .j-event-material .j-material h3 {font-size:clamp(18px,1.9vw,23px)!important;line-height:1.27;color:#093849}
+.event-lichtermeer-gallery .j-event-material .j-material figcaption .j-eyebrow {font-size:9px!important;letter-spacing:1.3px;color:#d26752}
+.event-lichtermeer-gallery .j-event-material .j-material figcaption>p:not(.j-eyebrow) {color:#5e7180;font-size:13px!important;line-height:1.75!important}
+@media(max-width:850px) {
+  .event-lichtermeer-gallery .j-article-hero .event-picture-carousel {min-height:450px;padding:23px 18px}
+  .event-lichtermeer-gallery .event-picture-frame {width:min(75%,280px);max-width:280px}
+  .event-lichtermeer-gallery .event-picture-frame.is-landscape {width:min(88%,320px);max-width:320px}
+}
+@media(max-width:650px) {
+  .event-lichtermeer-gallery .j-article-hero .event-picture-carousel {min-height:390px;padding:20px 14px 17px;border-radius:24px}
+  .event-lichtermeer-gallery .event-picture-frame {width:min(73%,230px);max-width:230px;max-height:285px}
+  .event-lichtermeer-gallery .event-picture-frame.is-landscape {width:min(85%,290px);max-width:290px}
+  .event-lichtermeer-gallery .event-picture-frame img {max-height:270px}
+  .event-lichtermeer-gallery .event-picture-controls {margin-top:16px;gap:12px}
+  .event-lichtermeer-gallery .event-picture-controls button {width:39px;height:39px}
+  .event-lichtermeer-gallery .j-event-material .j-material-grid {gap:20px}
+  .event-lichtermeer-gallery .j-event-material .j-material-visual {min-height:310px;padding:20px}
+  .event-lichtermeer-gallery .j-event-material .j-material-visual>img {max-height:310px}
+  .event-lichtermeer-gallery .j-event-material .j-material figcaption {padding:19px 20px 22px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .event-lichtermeer-gallery .event-picture-frame,
+  .event-lichtermeer-gallery .event-picture-heart,
+  .event-lichtermeer-gallery .event-picture-star,
+  .event-lichtermeer-gallery .j-event-material .j-material,
+  .event-lichtermeer-gallery .j-event-material .j-material-visual>img {animation:none!important;transition:none!important}
+}
+
+/* Two image cards per row on phones, matching the mobile News & Events
+   gallery. A lone final card fills its row instead of leaving a gap. */
+@media (max-width: 650px) {
+  .event-lichtermeer-gallery .j-event-material .j-material-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material {
+    min-width: 0;
+    border-radius: 16px;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material-visual {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+    height: 205px;
+    padding: 12px 9px;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material-visual > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material figcaption {
+    padding: 12px 11px 15px;
+    min-width: 0;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material h3 {
+    font-size: clamp(14px, 3.7vw, 17px) !important;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material figcaption .j-eyebrow {
+    font-size: 8px !important;
+    letter-spacing: .7px;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material figcaption > p:not(.j-eyebrow) {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material-grid > .j-material:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material-grid > .j-material:last-child:nth-child(odd) .j-material-visual {
+    height: 230px;
+  }
+  .event-lichtermeer-gallery .j-event-material .j-material-grid > .j-material:last-child:nth-child(odd) .j-material-visual > img {
+    max-height: 205px;
+  }
+}
+@media (max-width: 360px) {
+  .event-lichtermeer-gallery .j-event-material .j-material-grid { gap: 9px; }
+  .event-lichtermeer-gallery .j-event-material .j-material-visual { height: 178px; padding: 10px 8px; }
+  .event-lichtermeer-gallery .j-event-material .j-material-visual > img { max-height: 158px; }
+  .event-lichtermeer-gallery .j-event-material .j-material figcaption { padding: 10px 9px 13px; }
+  .event-lichtermeer-gallery .j-event-material .j-material-grid > .j-material:last-child:nth-child(odd) .j-material-visual { height: 210px; }
+  .event-lichtermeer-gallery .j-event-material .j-material-grid > .j-material:last-child:nth-child(odd) .j-material-visual > img { max-height: 190px; }
+}

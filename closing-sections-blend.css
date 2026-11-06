@@ -1,0 +1,109 @@
+/* Gentle transitions for the closing areas of Angebote and Über uns.
+   Only spacing/background blending is changed; typography and container widths remain. */
+
+/* Angebote: one continuous background from the gallery through the original
+   illustrated invitation into the footer, without a white separator. */
+.angebote-page .moments-section {
+  padding-bottom: 34px;
+}
+.angebote-page .angebote-ideen-final.container {
+  position: relative;
+  isolation: isolate;
+  padding-top: 14px;
+  padding-bottom: 20px;
+}
+.angebote-page .angebote-ideen-final.container::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -36px calc(50% - 50vw) 0;
+  background: linear-gradient(180deg,
+    #faf8f1 0%,
+    #f9f9f3 30%,
+    #f3f7ec 66%,
+    #edf5e8 100%);
+  pointer-events: none;
+}
+.angebote-page .angebote-ideen-final.container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 calc(50% - 50vw);
+  background: url("images/ideen-banner-original-site.webp") center / cover no-repeat;
+  opacity: .75;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 24%, #000 62%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent, #000 24%, #000 62%, transparent 100%);
+  pointer-events: none;
+}
+.angebote-page .angebote-ideen-final .all-angebote-footer {
+  position: relative;
+  overflow: visible;
+  border: 0;
+  box-shadow: none;
+}
+.angebote-page .angebote-ideen-final .all-angebote-footer::before {
+  content: none;
+}
+.angebote-page .angebote-ideen-final .all-angebote-footer > * {
+  position: relative;
+  z-index: 1;
+}
+.angebote-page + .site-footer.footer-reimagined {
+  border-top: 0;
+  background: linear-gradient(180deg, #edf5e8 0%, #e5efdf 100%);
+}
+.angebote-page + .site-footer.footer-reimagined::before {
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 96px);
+  mask-image: linear-gradient(180deg, transparent, #000 96px);
+}
+
+/* Über uns: the preceding light-green gallery flows into the motto block.
+   The block remains the same width and the image still fills its column. */
+.about-page .ab-impact {
+  padding-bottom: 45px;
+}
+.about-page .ab-finale-flow {
+  padding: 26px 0 78px;
+  background: linear-gradient(180deg,
+    #f7faf5 0%,
+    #fafbf7 32%,
+    #fff 100%);
+}
+.about-page .ab-finale-flow .ab-finale {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.about-page .ab-finale-picture::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: 32%;
+  background: linear-gradient(90deg,
+    #236045 0%,
+    rgba(35,96,69,.62) 26%,
+    rgba(35,96,69,0) 100%);
+  pointer-events: none;
+}
+.about-page .ab-finale-heart { z-index: 2; }
+
+@media (max-width: 740px) {
+  .angebote-page .moments-section { padding-bottom: 24px; }
+  .angebote-page .angebote-ideen-final.container {
+    padding-top: 10px;
+    padding-bottom: 16px;
+  }
+  .angebote-page .angebote-ideen-final.container::before { top: -25px; }
+
+  .about-page .ab-impact { padding-bottom: 25px; }
+  .about-page .ab-finale-flow { padding: 18px 0 54px; }
+  .about-page .ab-finale-picture::before {
+    inset: 0 0 auto;
+    width: auto;
+    height: 96px;
+    background: linear-gradient(180deg,
+      #236045 0%,
+      rgba(35,96,69,.52) 34%,
+      rgba(35,96,69,0) 100%);
+  }
+}

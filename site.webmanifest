@@ -1,0 +1,23 @@
+{
+  "name": "BuntBewegt – Bewegung, Kreativität, Gemeinschaft",
+  "short_name": "BuntBewegt",
+  "description": "Kreative Aktionen, Bewegung und Gemeinschaft in Kiel",
+  "lang": "de-DE",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#21623f",
+  "icons": [
+    {
+      "src": "images/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

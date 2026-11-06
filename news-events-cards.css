@@ -1,0 +1,617 @@
+/* BuntBewegt — News & Events cards styled to match Bilder & Materialien.
+   Scoped to news-events.html. Keeps the gallery viewer, all images and links intact. */
+.festival-news-page .journal-page {
+  --j-green:#09394b;
+  --j-muted:#526778;
+  --j-line:#f0dcca;
+  background:linear-gradient(180deg,#fffaf1 0%,#fffdfa 38%,#fffaf1 100%);
+  color:#093849;
+}
+.festival-news-page .journal-page h1,
+.festival-news-page .journal-page h2,
+.festival-news-page .journal-page h3 { color:#073849; }
+.festival-news-page .journal-page .j-eyebrow {color:#ca6552}
+.festival-news-page .journal-page .j-page-heading h1 em {color:#f46c5b}
+.festival-news-page .journal-page .j-page-heading>p,
+.festival-news-page .journal-page .j-section-head>p,
+.festival-news-page .journal-page .j-section-head>div>p:not(.j-eyebrow) {color:#607585}
+
+/* Image cards — same three alternating gradients, white captions and hover as gallery. */
+.festival-news-page .j-preview-grid {gap:24px;align-items:stretch}
+.festival-news-page .j-preview-grid .j-material {
+  min-width:0;display:flex;flex-direction:column;margin:0;
+  border:1px solid #f2dfd0;
+  background:#fffefa;
+  border-radius:24px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(94,74,58,.06);
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.festival-news-page .j-preview-grid .j-material:hover {
+  transform:translateY(-6px);
+  box-shadow:0 18px 38px rgba(94,74,58,.12);
+  border-color:#f2c3a8;
+}
+.festival-news-page .j-preview-grid .j-material-visual {
+  position:relative;display:flex;align-items:center;justify-content:center;
+  width:100%;min-height:365px;
+  padding:23px 22px 46px;
+  border:0;border-radius:0;overflow:hidden;
+  background:linear-gradient(135deg,#ffefdb,#ffdcd7);
+}
+.festival-news-page .j-preview-grid .j-material:nth-child(3n+2) .j-material-visual {background:linear-gradient(140deg,#dcf3f2,#bde8e6)}
+.festival-news-page .j-preview-grid .j-material:nth-child(3n+3) .j-material-visual {background:linear-gradient(140deg,#fff1bf,#ffe4ac)}
+.festival-news-page .j-preview-grid .j-material-visual::before {
+  content:"";position:absolute;top:-55px;right:-65px;width:180px;height:180px;
+  border-radius:50%;border:32px solid rgba(255,255,255,.24);pointer-events:none;
+}
+.festival-news-page .j-preview-grid .j-material-visual>img {
+  position:relative;z-index:1;display:block;
+  width:auto;height:auto;max-width:100%;max-height:350px;aspect-ratio:auto;
+  object-fit:contain;border-radius:12px;
+  box-shadow:0 9px 22px rgba(23,56,63,.15);filter:none;
+  transition:transform .28s ease;
+}
+.festival-news-page .j-preview-grid .j-material:hover .j-material-visual>img {transform:translateY(-4px) rotate(-1deg)}
+.festival-news-page .j-preview-grid .j-material figcaption {flex:1;padding:22px 23px 26px}
+.festival-news-page .j-preview-grid .j-material figcaption .j-eyebrow {font-size:9px!important;letter-spacing:1.5px;color:#d26752}
+.festival-news-page .j-preview-grid .j-material h3 {color:#093849;font-size:clamp(19px,1.9vw,23px)!important;line-height:1.26}
+.festival-news-page .j-preview-grid .j-material figcaption>p:not(.j-eyebrow) {color:#5e7180;font-size:13px!important;line-height:1.75!important}
+
+/* Upcoming dates — warm rounded cards with a colorful date badge. */
+.festival-news-page .j-calendar {gap:clamp(35px,5vw,85px);border-color:#f0dcca}
+.festival-news-page .j-calendar-dates {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;align-self:center}
+.festival-news-page .j-calendar-dates>a {
+  min-width:0;display:grid;grid-template-columns:1fr 28px;
+  grid-template-rows:auto 1fr;align-items:start;gap:18px 9px;
+  border:1px solid #f2dfd0;border-radius:22px;
+  background:#fffefa;padding:21px;box-shadow:0 8px 24px rgba(94,74,58,.06);
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.festival-news-page .j-calendar-dates>a:last-child {border-bottom:1px solid #f2dfd0}
+.festival-news-page .j-calendar-dates>a:hover {transform:translateY(-5px);box-shadow:0 16px 32px rgba(94,74,58,.12);border-color:#f2c3a8}
+.festival-news-page .j-calendar-dates>a time {
+  grid-column:1;display:flex;align-items:center;justify-content:center;gap:9px;
+  width:max-content;min-width:112px;padding:11px 13px;
+  background:#ffebe0;border:0;border-radius:16px;
+  color:#bf5447;
+}
+.festival-news-page .j-calendar-dates>a:nth-child(even) time {background:#d8f3ec;color:#087c87}
+.festival-news-page .j-calendar-dates>a time b {font:800 25px/1 'Trebuchet MS',Arial,sans-serif}
+.festival-news-page .j-calendar-dates>a time span {font-size:10px;letter-spacing:.5px;line-height:1.2}
+.festival-news-page .j-calendar-dates>a>div {grid-column:1 / -1;grid-row:2;min-width:0}
+.festival-news-page .j-calendar-dates>a>div h3 {font-size:20px;line-height:1.23;margin-bottom:9px}
+.festival-news-page .j-calendar-dates>a>div p {font-size:12px;color:#647b88}
+.festival-news-page .j-calendar-dates>a>span:last-child {
+  grid-column:2;grid-row:1;display:grid;place-items:center;
+  width:28px;height:28px;border-radius:50%;background:#fff5ec;color:#c36850;
+  align-self:start;justify-self:end;font-size:19px;
+}
+
+/* News stories — the gallery's same white card language instead of divider-only rows. */
+.festival-news-page .j-story-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.festival-news-page .j-story-row,
+.festival-news-page .j-story-row:last-child {
+  position:relative;isolation:isolate;
+  min-width:0;margin:0;display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-rows:auto auto 1fr;
+  gap:0 10px;align-content:start;align-items:start;
+  padding:21px 22px 25px;
+  border:1px solid #f2dfd0;border-radius:24px;
+  background:#fffefa;overflow:hidden;
+  box-shadow:0 8px 24px rgba(94,74,58,.06);
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.festival-news-page .j-story-row:hover {transform:translateY(-6px);box-shadow:0 18px 38px rgba(94,74,58,.12);border-color:#f2c3a8}
+.festival-news-page .j-story-row::before {
+  content:"";position:absolute;z-index:-1;top:0;left:0;right:0;height:98px;
+  background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.55) 0 26px,transparent 27px),
+             linear-gradient(135deg,#ffefdb,#ffdcd7);
+  border-bottom:1px solid rgba(255,255,255,.3);pointer-events:none;
+}
+.festival-news-page .j-story-row:nth-child(3n+2)::before {background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.5) 0 26px,transparent 27px),linear-gradient(140deg,#dcf3f2,#bde8e6)}
+.festival-news-page .j-story-row:nth-child(3n+3)::before {background:radial-gradient(circle at 88% 12%,rgba(255,255,255,.5) 0 26px,transparent 27px),linear-gradient(140deg,#fff1bf,#ffe4ac)}
+.festival-news-page .j-story-number {
+  grid-column:1;grid-row:1;display:grid;place-items:center;
+  width:54px;height:54px;padding:0;border-radius:17px;
+  background:#fffdfa;border:1px solid rgba(255,255,255,.8);
+  color:#d26351;box-shadow:0 5px 15px rgba(65,48,39,.09);
+  font:800 19px/1 'Trebuchet MS',Arial,sans-serif;
+}
+.festival-news-page .j-story-row:nth-child(3n+2) .j-story-number {color:#0f8794}
+.festival-news-page .j-story-row:nth-child(3n+3) .j-story-number {color:#a67b18}
+.festival-news-page .j-story-meta {grid-column:1 / -1;grid-row:2;margin-top:49px}
+.festival-news-page .j-story-meta .j-eyebrow {font-size:9px!important;color:#ca6552;margin-bottom:5px;letter-spacing:1.35px}
+.festival-news-page .j-story-meta>p:last-child {font-size:11px;color:#718391}
+.festival-news-page .j-story-copy {grid-column:1 / -1;grid-row:3;margin-top:15px}
+.festival-news-page .j-story-copy h3 {font-size:clamp(21px,2vw,24px);color:#093849;line-height:1.24;margin-bottom:12px;letter-spacing:-.45px}
+.festival-news-page .j-story-copy>p {font-size:13px;line-height:1.75;color:#5e7180;max-width:none}
+.festival-news-page .j-story-row .j-round-link {
+  grid-column:2;grid-row:1;justify-self:end;
+  width:43px;height:43px;border:1px solid #fff8ec;background:#fffefa;
+  color:#0d6171;box-shadow:0 4px 12px rgba(29,71,78,.08);
+}
+.festival-news-page .j-story-row .j-round-link:hover {background:#0b8793;border-color:#0b8793;color:white}
+.festival-news-page .journal-page a:focus-visible {outline:3px solid #0e8995;outline-offset:4px}
+
+@media(max-width:1050px) {
+  .festival-news-page .j-preview-grid {gap:16px}
+  .festival-news-page .j-preview-grid .j-material-visual {min-height:320px;padding:19px 18px 37px}
+  .festival-news-page .j-preview-grid .j-material-visual>img {max-height:310px}
+  .festival-news-page .j-story-list {gap:16px}
+  .festival-news-page .j-story-row {padding:18px}
+  .festival-news-page .j-calendar {grid-template-columns:1fr;gap:22px}
+}
+@media(max-width:760px) {
+  .festival-news-page .j-preview-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .festival-news-page .j-story-list {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .festival-news-page .j-calendar-dates {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:550px) {
+  .festival-news-page .j-preview-grid {grid-template-columns:1fr;gap:22px}
+  .festival-news-page .j-preview-grid .j-material {border-radius:22px}
+  .festival-news-page .j-preview-grid .j-material-visual {min-height:340px;padding:21px 20px 37px}
+  .festival-news-page .j-preview-grid .j-material-visual>img {max-height:365px;max-width:100%}
+  .festival-news-page .j-preview-grid .j-material figcaption {padding:18px 20px 22px}
+  .festival-news-page .j-preview-grid .j-material h3 {font-size:22px!important}
+  .festival-news-page .j-story-list {grid-template-columns:1fr;gap:18px}
+  .festival-news-page .j-story-row {padding:20px;border-radius:22px;min-height:0}
+  .festival-news-page .j-story-copy h3 {font-size:23px}
+  .festival-news-page .j-calendar-dates {grid-template-columns:1fr;gap:14px}
+  .festival-news-page .j-calendar-dates>a {padding:18px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .festival-news-page .j-preview-grid .j-material,
+  .festival-news-page .j-preview-grid .j-material-visual>img,
+  .festival-news-page .j-story-row,
+  .festival-news-page .j-calendar-dates>a {transition:none!important;transform:none!important}
+}
+
+
+/* Lichtermeer feature: design option 2 – glowing handmade lanterns.
+   Scoped entirely to news-events.html. All text and links remain real HTML. */
+.festival-news-page #ktv-adler {
+  grid-template-columns: minmax(0, 1.17fr) minmax(0, .98fr);
+}
+.festival-news-page #ktv-adler .j-feature-art.news-feature-art {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 36px 20px;
+  border-left: 1px solid rgba(237, 169, 133, .18);
+  background: radial-gradient(circle at 9% 8%,#ffc148 0 5px,transparent 6px),
+              radial-gradient(circle at 16% 47%,#ffae37 0 6px,transparent 7px),
+              radial-gradient(circle at 82% 18%,#ffe0a8 0 7px,transparent 8px),
+              linear-gradient(142deg,#fff0e3 0%,#ffe6d6 55%,#ffd7bd 100%);
+  background-image: radial-gradient(circle at 9% 8%,#ffc148 0 5px,transparent 6px),
+                    radial-gradient(circle at 16% 47%,#ffae37 0 6px,transparent 7px),
+                    radial-gradient(circle at 82% 18%,#ffe0a8 0 7px,transparent 8px),
+                    linear-gradient(142deg,#fff0e3 0%,#ffe6d6 55%,#ffd7bd 100%);
+}
+.festival-news-page #ktv-adler .news-feature-art::before {
+  content:"";
+  display:block;
+  position:absolute;
+  z-index:0;
+  width:125%;height:32%;left:-9%;bottom:-11%;
+  border-radius:52% 58% 0 0 / 55% 60% 0 0;
+  transform:rotate(-4deg);
+  background:#a6e2d2;
+  opacity:.96;
+  pointer-events:none;
+}
+.festival-news-page #ktv-adler .news-feature-art::after {
+  content:"";
+  display:block;
+  position:absolute;
+  z-index:0;
+  width:73%;height:25%;right:-22%;bottom:0;
+  border-radius:72% 36% 0 0;
+  transform:rotate(-17deg);
+  background:#ffdb85;
+  opacity:.8;
+  pointer-events:none;
+}
+.festival-news-page #ktv-adler .news-feature-doodle {
+  position:absolute;
+  display:block;
+  z-index:1;
+  pointer-events:none;
+  width:35px;
+  height:35px;
+}
+.festival-news-page #ktv-adler .news-feature-doodle svg {width:100%;height:100%}
+.festival-news-page #ktv-adler .news-feature-doodle-heart {color:#f54e87;top:18%;left:8%;transform:rotate(-18deg)}
+.festival-news-page #ktv-adler .news-feature-doodle-star {color:#149ca7;top:12%;right:7%;width:26px;height:26px;transform:rotate(14deg)}
+.festival-news-page #ktv-adler .news-feature-doodle-rays {color:#ffc33f;bottom:24%;right:6%;transform:rotate(18deg)}
+.festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {
+  position:relative;
+  z-index:2;
+  display:block;
+  box-sizing:border-box;
+  flex:none;
+  width:min(80%,365px);
+  max-width:365px;
+  margin:0 auto;
+  padding:10px;
+  border:0;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 23px 50px rgba(102,67,47,.20),0 4px 12px rgba(72,48,43,.09);
+  line-height:0;
+  overflow:hidden;
+  transform:none;
+  animation:none;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo:hover,
+.festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo:focus-visible {
+  animation:none;
+  transform:none;
+  box-shadow:0 26px 55px rgba(102,67,47,.25);
+}
+.festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo>img {
+  width:100%; height:auto; display:block;
+  aspect-ratio:auto;
+  object-fit:contain;
+  border-radius:15px;
+  border:0;
+  box-shadow:none;
+  transform:none;
+}
+.festival-news-page #ktv-adler .news-feature-caption {display:none}
+@keyframes news-feature-photo-float {
+  0%,100% {transform:rotate(4deg) translateY(0)}
+  50% {transform:rotate(2.2deg) translateY(-10px)}
+}
+@media(max-width:1050px) {
+  .festival-news-page #ktv-adler {
+    grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);
+  }
+  .festival-news-page #ktv-adler .j-feature-art.news-feature-art {min-height:490px}
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {width:min(79%,325px)}
+}
+@media(max-width:860px) {
+  .festival-news-page #ktv-adler {grid-template-columns:1fr}
+  .festival-news-page #ktv-adler .j-feature-art.news-feature-art {
+    min-height:425px;
+    border:0;
+    border-top:1px solid rgba(237,169,133,.18);
+    padding:36px 20px;
+  }
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {width:min(73%,300px)}
+}
+@media(max-width:550px) {
+  .festival-news-page #ktv-adler .j-feature-art.news-feature-art {
+    min-height:385px;
+    padding:28px 18px;
+  }
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {
+    width:min(78%,235px);
+    padding:7px;
+    border-radius:17px;
+  }
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo>img {border-radius:11px}
+  .festival-news-page #ktv-adler .news-feature-doodle-heart {left:6%}
+}
+@media(prefers-reduced-motion:reduce) {
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {animation:none;transition:none}
+}
+
+
+/* News & Events: gallery link follows the three preview cards. */
+.festival-news-page #material .j-section-head {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+.festival-news-page #material .news-collection-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding-bottom: 4px;
+}
+.festival-news-page #material .news-collection-cta .j-text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  margin: 0;
+  border: 1px solid #efc7b2;
+  border-radius: 999px;
+  background: #fff5e9;
+  color: #0a4654;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(98, 64, 38, .05);
+  transition: transform .22s ease, background .22s ease, border-color .22s ease;
+}
+.festival-news-page #material .news-collection-cta .j-text-link:hover {
+  background: #ffead3;
+  border-color: #f2ae79;
+  transform: translateY(-3px);
+}
+.festival-news-page #material .news-collection-cta .j-text-link:focus-visible {
+  outline: 3px solid #f2c14e;
+  outline-offset: 3px;
+}
+@media (max-width: 650px) {
+  .festival-news-page #material .news-collection-cta {margin-top: 24px;}
+  .festival-news-page #material .news-collection-cta .j-text-link {
+    width: min(100%, 330px);
+    min-height: 48px;
+    padding: 12px 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .festival-news-page #material .news-collection-cta .j-text-link {transition: none;}
+}
+
+
+/* Mobile: the six “Geschichten von unterwegs” articles form a tidy
+   two-column grid (2 side by side, followed by the next 2). */
+@media (max-width: 550px) {
+  .festival-news-page .j-stories .j-story-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+  }
+  .festival-news-page .j-stories .j-story-row,
+  .festival-news-page .j-stories .j-story-row:last-child {
+    min-width: 0;
+    height: 100%;
+    padding: 13px 11px 17px;
+    border-radius: 17px;
+    gap: 0 5px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto 1fr;
+  }
+  .festival-news-page .j-stories .j-story-row::before {
+    height: 73px;
+  }
+  .festival-news-page .j-stories .j-story-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  .festival-news-page .j-stories .j-story-row .j-round-link {
+    grid-column: 2;
+    grid-row: 1;
+    width: 32px;
+    height: 32px;
+    min-width: 0;
+    border-radius: 50%;
+  }
+  .festival-news-page .j-stories .j-story-row .j-round-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  .festival-news-page .j-stories .j-story-meta {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 32px;
+    min-width: 0;
+  }
+  .festival-news-page .j-stories .j-story-meta .j-eyebrow {
+    font-size: 8px !important;
+    line-height: 1.45;
+    letter-spacing: .55px;
+    overflow-wrap: anywhere;
+  }
+  .festival-news-page .j-stories .j-story-meta > p:last-child {
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .festival-news-page .j-stories .j-story-copy {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    min-width: 0;
+    margin-top: 11px;
+  }
+  .festival-news-page .j-stories .j-story-copy h3 {
+    font-size: clamp(14px, 3.8vw, 18px);
+    line-height: 1.29;
+    letter-spacing: -.2px;
+    margin-bottom: 9px;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .festival-news-page .j-stories .j-story-copy > p {
+    font-size: 11px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 360px) {
+  .festival-news-page .j-stories .j-story-list { gap: 9px; }
+  .festival-news-page .j-stories .j-story-row,
+  .festival-news-page .j-stories .j-story-row:last-child { padding: 11px 9px 14px; }
+}
+
+
+/* News & Events #main — same tidy 2-by-2 mobile card layout as
+   the previously updated Geschichten section. Desktop is unchanged. */
+@media (max-width: 550px) {
+  .festival-news-page #main .j-preview-grid,
+  .festival-news-page #main .j-calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+  }
+  .festival-news-page #main .j-preview-grid .j-material {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 17px;
+  }
+  .festival-news-page #main .j-preview-grid .j-material-visual {
+    min-height: 0;
+    height: 190px;
+    padding: 12px 10px;
+  }
+  .festival-news-page #main .j-preview-grid .j-material-visual > img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 164px;
+    object-fit: contain;
+  }
+  .festival-news-page #main .j-preview-grid .j-material figcaption {
+    flex: 1;
+    padding: 12px 11px 16px;
+    min-width: 0;
+  }
+  .festival-news-page #main .j-preview-grid .j-material h3 {
+    font-size: clamp(14px, 3.8vw, 17px) !important;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .festival-news-page #main .j-preview-grid .j-material figcaption > p:not(.j-eyebrow) {
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+    overflow-wrap: anywhere;
+  }
+  /* If a gallery section has an odd number of cards, give the last
+     card the entire row so it never leaves an empty half-column. */
+  .festival-news-page #main .j-preview-grid > .j-material:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .festival-news-page #main .j-preview-grid > .j-material:last-child:nth-child(odd) .j-material-visual {
+    height: 210px;
+  }
+  .festival-news-page #main .j-preview-grid > .j-material:last-child:nth-child(odd) .j-material-visual > img {
+    max-height: 184px;
+  }
+  .festival-news-page #main .j-calendar-dates > a {
+    min-width: 0;
+    border-radius: 17px;
+    padding: 13px 11px;
+    gap: 9px 5px;
+    grid-template-columns: minmax(0, 1fr) 20px;
+  }
+  .festival-news-page #main .j-calendar-dates > a time {
+    min-width: 0;
+    width: max-content;
+    max-width: 100%;
+    gap: 5px;
+    padding: 9px 7px;
+    border-radius: 11px;
+  }
+  .festival-news-page #main .j-calendar-dates > a time b {font-size: 20px;}
+  .festival-news-page #main .j-calendar-dates > a time span {font-size: 9px;}
+  .festival-news-page #main .j-calendar-dates > a > div h3 {
+    font-size: clamp(14px, 3.8vw, 18px);
+    overflow-wrap: anywhere;
+  }
+  .festival-news-page #main .j-calendar-dates > a > div p {
+    font-size: 11px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+  .festival-news-page #main .j-calendar-dates > a > span:last-child {
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .festival-news-page #main .j-preview-grid,
+  .festival-news-page #main .j-calendar-dates { gap: 9px; }
+  .festival-news-page #main .j-preview-grid .j-material-visual {
+    height: 158px;
+    padding: 9px 8px;
+  }
+  .festival-news-page #main .j-preview-grid .j-material-visual > img {max-height: 140px;}
+  .festival-news-page #main .j-preview-grid .j-material figcaption {padding: 11px 9px 14px;}
+  .festival-news-page #main .j-preview-grid > .j-material:last-child:nth-child(odd) .j-material-visual {height: 190px;}
+  .festival-news-page #main .j-preview-grid > .j-material:last-child:nth-child(odd) .j-material-visual > img {max-height: 170px;}
+  .festival-news-page #main .j-calendar-dates > a {padding: 11px 9px;}
+}
+
+/* News & Events: the featured Lichtermeer image leads into the event
+   facts and action links on phones, matching the homepage feature.
+   Desktop and tablet retain the original two-column composition. */
+@media (max-width: 650px) {
+  .festival-news-page #main #ktv-adler {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-copy {
+    display: contents;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-copy::after {
+    display: none;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-copy > .j-eyebrow {
+    order: 1;
+    padding: 27px 23px 0;
+    margin: 0 0 14px;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-copy > h2 {
+    order: 2;
+    padding: 0 23px;
+    margin: 0 0 16px;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-copy > p:not(.j-eyebrow) {
+    order: 3;
+    max-width: none;
+    padding: 0 23px 14px;
+    margin: 0;
+  }
+  .festival-news-page #main #ktv-adler .j-feature-art.news-feature-art {
+    order: 4;
+    min-height: 0;
+    padding: 19px 22px 25px;
+    border-top: 0;
+    border-left: 0;
+  }
+  .festival-news-page #main #ktv-adler .j-event-facts {
+    order: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 23px;
+    padding: 23px 0 0;
+    border-top: 1px solid #efcbbc;
+  }
+  .festival-news-page #main #ktv-adler .j-event-facts > div {min-width: 0;}
+  .festival-news-page #main #ktv-adler .j-event-facts dt {font-size: 10px;}
+  .festival-news-page #main #ktv-adler .j-event-facts dd {
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .festival-news-page #main #ktv-adler .j-event-facts dd span {font-size: 11px;}
+  .festival-news-page #main #ktv-adler .j-actions {
+    order: 6;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin: 18px 0 0;
+    padding: 0 23px 29px;
+  }
+  .festival-news-page #main #ktv-adler .j-actions .button-yellow {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .festival-news-page #main #ktv-adler .j-actions .j-light-link {padding: 6px 0;}
+}
+@media (max-width: 370px) {
+  .festival-news-page #main #ktv-adler .j-event-facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

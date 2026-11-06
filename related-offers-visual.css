@@ -1,0 +1,61 @@
+/* Related Angebote cards: the card fits its actual artwork and text.
+   Avoid large empty bands above/below the image, without changing the artwork. */
+.related-angebote-grid {
+  align-items: start;
+}
+.related-angebote-grid .related-card {
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-self: start;
+  min-height: 0;
+  height: auto;
+  background: #fff;
+}
+.related-angebote-grid .related-card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  background: none;
+  border-right: 1px solid rgba(29, 60, 43, .06);
+}
+.related-angebote-grid .related-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 18px 20px;
+}
+.related-angebote-grid .related-card .eyebrow { margin-bottom: 7px; }
+.related-angebote-grid .related-card h3 { margin-bottom: 9px; }
+.related-angebote-grid .related-card .text-link {
+  align-self: flex-start;
+  margin-top: 11px;
+}
+/* On tablets the layout stacks: show the full 3:2 source image. */
+@media (max-width: 900px) {
+  .related-angebote-grid .related-card {grid-template-columns: minmax(0, 1fr);}
+  .related-angebote-grid .related-card > img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-right: 0;
+    border-bottom: 1px solid rgba(29, 60, 43, .06);
+  }
+  .related-angebote-grid .related-card > div {padding: 18px 18px 20px;}
+}
+@media (max-width: 540px) {
+  .related-angebote-grid .related-card {grid-template-columns: minmax(0, 1fr);}
+  .related-angebote-grid .related-card > img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+  .related-angebote-grid .related-card > div {padding: 17px 19px 19px;}
+}

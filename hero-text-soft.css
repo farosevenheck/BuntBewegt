@@ -1,0 +1,20 @@
+/* Restore crisp, calm heading typography while keeping the previous sizes.
+   No glow or artificial blur on hero and section text. */
+.hero-slider h1,
+.hero-slider .hero-eyebrow,
+.hero-slider .hero-description,
+.page-hero-intro h1,
+.program-hero h1,
+.program-hero .program-lead,
+.kontakt-art-heading,
+.kontakt-art-subtitle,
+.section-intro h2,
+.all-angebote-heading h2,
+.ab-section h2 {
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+/* Allow the normal 4-second slide text transition, without a blurred/halo entrance. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slider .hero-inner { animation: none; }
+}

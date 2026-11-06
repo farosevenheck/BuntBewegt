@@ -1,0 +1,101 @@
+/* Netzwerk: one alphabetical gallery, original logos, no external assets. */
+.network-page { --network-purple:#754497; --network-line:#e7e9e3; --hero-join-rgb:255,255,255; }
+/* The Netzwerk hero shares the panoramic, responsive layout of
+   Angebote and Über uns. The image is behind the copy at all widths. */
+.network-hero {
+  --page-hero-image: url("images/netzwerk-hero.webp");
+  --page-hero-image-rise: 0px;
+}
+.network-hero h1 { color:var(--green-dark); }
+.network-hero h1 span { color:var(--green); }
+.network-hero .network-hero-note { color:#245b3c; }
+.network-kicker { color:var(--green); font-weight:700; text-transform:uppercase; font-size:11px; line-height:1.7; letter-spacing:2px; margin-bottom:20px; }
+.network-story { display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; padding-block:52px 64px; }
+.network-story h2 { font-size:clamp(29px,3.1vw,40px); max-width:380px; color:var(--green-dark); }
+.network-story-copy { color:#536158; line-height:1.8; }
+.network-story-copy p + p { margin-top:16px; }
+.network-gallery-section { padding-block:60px 72px; background:#f8faf6; border-top:1px solid #edf0e8; border-bottom:1px solid #edf0e8; }
+.network-section-head { margin-bottom:34px; }
+.network-section-head h2 { color:var(--green-dark); font-size:clamp(28px,3.1vw,40px); }
+.network-section-head p { margin-top:12px; color:#536158; max-width:640px; }
+.network-grid { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); grid-auto-rows:1fr; gap:22px; align-items:stretch; }
+.network-grid > li { min-width:0; display:flex; }
+.network-card { position:relative; width:100%; min-width:0; height:100%; display:flex; flex-direction:column; background:#fff; border:1px solid var(--network-line); border-radius:20px; padding:22px; box-shadow:0 5px 20px #25402b04; }
+a.network-card { transition:transform .2s,box-shadow .2s,border-color .2s; }
+a.network-card:hover { transform:translateY(-4px); box-shadow:0 12px 25px #25402b0e; border-color:#b8cbb4; }
+a.network-card:focus-visible { outline:3px solid var(--network-purple); outline-offset:4px; }
+.network-logo { display:flex; align-items:center; justify-content:center; min-width:0; height:128px; margin-bottom:22px; border-bottom:1px solid #edf0e9; padding:4px 4px 20px; }
+.network-logo img { width:auto; max-width:100%; max-height:100%; height:auto; object-fit:contain; filter:none; }
+.network-logo-dark { background:#183148; border:0; border-radius:10px; padding:14px; }
+.network-name-tile { width:100%; display:block; text-align:center; font-family:"Trebuchet MS",Arial,sans-serif; font-size:22px; font-weight:700; line-height:1.25; color:#38543f; overflow-wrap:normal; hyphens:manual; }
+.network-card h3 { font-size:18px; line-height:1.3; font-weight:700; letter-spacing:-.3px; color:#243e2c; overflow-wrap:anywhere; hyphens:auto; }
+.network-card-description { color:#5c665f; font-size:14px; line-height:1.65; margin-top:10px; margin-bottom:22px; }
+.network-card-link { margin-top:auto; padding-top:2px; display:flex; align-items:center; gap:8px; color:var(--green); font-size:12px; font-weight:700; line-height:1.5; }
+.network-card-link svg { width:15px; height:15px; flex:none; }
+.network-cooperation { padding-block:72px 80px; }
+.network-cooperation-inner { display:grid; grid-template-columns:.85fr 1.15fr; align-items:center; gap:70px; padding:48px 52px; background:#f6f0f9; border:1px solid #ece2f0; border-radius:28px; }
+.network-cooperation h2 { color:#593775; font-size:clamp(28px,3.1vw,40px); }
+.network-cooperation .network-kicker { color:#754497; margin-bottom:14px; }
+.network-cooperation h3 { color:#3e3148; font-size:20px; font-weight:700; line-height:1.4; margin-bottom:14px; }
+.network-cooperation p:not(.network-kicker) { color:#665a6d; margin-bottom:16px; line-height:1.8; }
+.network-cooperation .button { margin-top:8px; gap:14px; background:#754497; color:white; padding-inline:24px; }
+.network-cooperation .button:hover { background:#5c327a; }
+@media (max-width:1050px) and (min-width:741px) { .network-grid{gap:16px}.network-card{padding:17px}.network-card h3{font-size:16px}.network-logo{height:112px}.network-name-tile{font-size:19px}.network-story{gap:42px}.network-cooperation-inner{padding:36px;gap:38px} }
+@media (max-width:740px) {
+  .network-kicker{font-size:10px;letter-spacing:1.6px;margin-bottom:16px}
+  .network-story{grid-template-columns:1fr;gap:22px;padding-block:34px 42px}
+  .network-story h2{max-width:100%;font-size:28px}
+  .network-story-copy{font-size:15px}
+  .network-gallery-section{padding-block:40px 44px}
+  .network-section-head{margin-bottom:26px}
+  .network-section-head h2{font-size:28px}
+  .network-section-head p{font-size:15px}
+  .network-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .network-card{padding:16px 13px;border-radius:16px}
+  .network-logo{height:100px;margin-bottom:16px;padding:4px 2px 16px}
+  .network-name-tile{font-size:16px;line-height:1.3}
+  .network-card h3{font-size:16px;line-height:1.35;letter-spacing:-.2px}
+  .network-card-description{font-size:12px;line-height:1.65;margin-top:8px;margin-bottom:16px}
+  .network-card-link{font-size:11px;gap:5px}
+  .network-cooperation{padding-block:40px 48px}
+  .network-cooperation-inner{grid-template-columns:1fr;padding:28px 23px;gap:24px;border-radius:22px}
+  .network-cooperation h2{font-size:29px}
+  .network-cooperation p:not(.network-kicker){font-size:15px}
+  .network-cooperation .button{width:100%;font-size:13px;padding-inline:16px}
+}
+@media (max-width:360px) { .network-grid{gap:10px}.network-card{padding:13px 10px}.network-card h3{font-size:15px}.network-name-tile{font-size:16px}.network-card-link{font-size:10px} }
+@media (prefers-reduced-motion:reduce) { a.network-card{transition:none}a.network-card:hover{transform:none} }
+
+/* Desktop Netzwerk hero uses exactly the SAME component layout, gradients,
+   dimensions and image positioning as Angebote and Über uns in page-hero.css.
+   Only the illustration is unique to this page. Mobile/tablet stay intact. */
+@media (min-width: 981px) {
+  .network-hero {
+    --page-hero-image: url("images/netzwerk-hero-panorama.webp");
+    --page-hero-image-rise: 24px;
+  }
+}
+
+/* Partnerbilder aus den bereitgestellten Screenshots – keine gestreckten Logos. */
+.network-logo-photo {
+  padding:4px 4px 14px;
+}
+.network-logo-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:cover;
+  object-position:50% 64%;
+  border-radius:12px;
+}
+
+/* Zwei lokal gespeicherte, illustrative Namensgrafiken, keine offiziellen Markenlogos. */
+.network-logo img.network-artwork {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:100%;
+  object-fit:contain;
+}

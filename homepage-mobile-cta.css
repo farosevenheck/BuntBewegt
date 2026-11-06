@@ -1,0 +1,89 @@
+/* BuntBewegt | Startseite - Einladung
+   Mobile uses the same visual language as desktop: strong green type,
+   generously sized pill button, and the existing illustrated backdrop.
+   Scope to the home page so other offer buttons stay unchanged. */
+@media (max-width: 740px) {
+  .homepage-faq-cta-transition > .homepage-ideen-final.container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 10px 18px 26px;
+  }
+
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 36px 0 42px;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer p {
+    box-sizing: border-box;
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0;
+    color: #245c3b;
+    font-size: clamp(20px, 6.15vw, 25px);
+    font-weight: 800;
+    line-height: 1.34;
+    letter-spacing: 0;
+    text-align: center;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    text-shadow: 1px 1px 0 rgba(143, 158, 83, .5);
+  }
+
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer a {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: auto;
+    min-width: 225px;
+    max-width: 100%;
+    min-height: 58px;
+    margin: 0;
+    padding: 15px 24px;
+    background: #286840;
+    border: 0;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+    box-shadow: 0 6px 16px rgba(29, 81, 49, .10);
+  }
+
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer a:focus-visible {
+    outline: 3px solid #eebd45;
+    outline-offset: 4px;
+  }
+}
+
+@media (max-width: 350px) {
+  .homepage-faq-cta-transition > .homepage-ideen-final.container {
+    padding-inline: 14px;
+  }
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer {
+    gap: 20px;
+    padding-top: 30px;
+  }
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer a {
+    min-width: 214px;
+    font-size: 16px;
+  }
+}

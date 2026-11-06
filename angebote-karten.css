@@ -1,0 +1,128 @@
+
+/* Individually browsable programme cards, scoped to the Angebote page. */
+.all-angebote-section{position:relative;padding:58px 0 86px;background:linear-gradient(180deg,#f7f9f2 0%,#fffdf8 54%,#fff 100%);isolation:isolate}
+.all-angebote-section:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 0% 6%,#f9eed4 0%,transparent 22%),radial-gradient(circle at 100% 70%,#e7f3ef 0%,transparent 27%);pointer-events:none}
+.all-angebote-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:26px}
+.all-angebote-heading .eyebrow{color:#547d52;margin-bottom:13px}
+.all-angebote-heading h2{font-size:clamp(32px,3.4vw,45px);letter-spacing:-1.1px;color:#1e4732}
+.all-angebote-heading h2 span{color:#cf806b;font-weight:500}
+.all-angebote-heading p:last-child{color:#59665e;font-size:15px;max-width:720px;margin-top:13px;line-height:1.75}
+.all-angebote-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:27px}
+.all-angebote-filters button{display:inline-flex;align-items:center;gap:10px;min-height:41px;padding:9px 17px;border:1px solid #dfe7dc;border-radius:999px;color:#365441;background:#fff;font-size:13px;font-weight:700;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.all-angebote-filters button:hover{background:#f0f6ea;border-color:#a2bfa4;transform:translateY(-1px)}
+.all-angebote-filters button.is-active{background:#21623f;border-color:#21623f;color:white;box-shadow:0 6px 15px #21623f25}
+.all-angebote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.all-angebot-card{background:#fff;border:1px solid #ebeee7;border-radius:20px;overflow:hidden;min-width:0;box-shadow:0 8px 28px rgba(37,66,48,.05);transition:transform .23s,box-shadow .23s,border-color .23s}
+.all-angebot-card:hover{transform:translateY(-5px);box-shadow:0 17px 36px rgba(37,66,48,.13);border-color:#cadacb}
+.all-angebot-card[hidden]{display:none!important}
+.all-angebot-image{display:block;position:relative;aspect-ratio:3 / 2;background:#e8ede4;overflow:hidden}
+.all-angebot-image img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .45s}
+.all-angebot-card:hover .all-angebot-image img{transform:none}
+.all-angebot-content{padding:23px 22px 24px;display:flex;align-items:flex-start;flex-direction:column;min-height:205px;position:relative}
+.all-angebot-content h3{font-size:21px;line-height:1.24;letter-spacing:-.5px;max-width:100%;color:#224935;font-weight:800;margin:0 0 10px;padding-right:0;min-height:52px;display:flex;align-items:center}
+.all-angebot-content p{font-size:13px;line-height:1.7;color:#667168;margin-bottom:17px}
+.all-angebot-link{display:inline-flex;gap:11px;align-items:center;margin-top:auto;color:#21623f;font-size:12px;font-weight:800;border-bottom:2px solid #c1d9b7;padding-bottom:4px}
+.all-angebot-link span{font-size:17px;line-height:1;transition:transform .2s}
+.all-angebot-link:hover span{transform:translateX(3px)}
+.all-angebote-footer{display:flex;gap:13px;align-items:center;background:#e9f3e9;color:#295a3b;border-radius:17px;margin-top:34px;padding:22px 25px}
+.all-angebote-footer>span{font-size:23px;color:#e7ab37}
+.all-angebote-footer p{font-size:13px;font-weight:700;flex:1}
+.all-angebote-footer a{font-size:13px;font-weight:800;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:3px}
+.all-angebote-more-heading{margin-top:78px;margin-bottom:10px}
+.all-angebote-more-heading h2{color:#244b32;font-size:clamp(30px,3.2vw,41px)}
+.all-angebote-more-heading p:last-child{font-size:14px;max-width:640px;color:#667168;line-height:1.8;margin-top:13px}
+.all-angebote-empty{font-size:13px;color:#667168;margin-top:20px}
+@media(max-width:1024px){.all-angebote-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
+@media(max-width:740px){
+  .all-angebote-section{padding:46px 0 55px}
+  .all-angebote-heading{align-items:start}
+  .all-angebote-heading h2{font-size:33px}
+  .all-angebote-heading p:last-child{font-size:13px}
+  .all-angebote-filters{gap:7px;margin-bottom:19px}
+  .all-angebote-filters button{min-height:39px;padding:8px 13px;font-size:12px;gap:6px}
+  .all-angebote-grid{grid-template-columns:1fr;gap:18px}
+  .all-angebot-image{aspect-ratio:3 / 2}
+  .all-angebot-content{min-height:unset;padding:19px 18px 21px}
+  .all-angebot-content h3{font-size:21px;min-height:unset;margin-bottom:10px}
+  .all-angebot-content p{font-size:13px;margin-bottom:15px}
+  .all-angebote-footer{flex-wrap:wrap;padding:19px 17px}
+  .all-angebote-footer p{flex-basis:70%}
+  .all-angebote-footer a{margin-left:35px}
+  .all-angebote-more-heading{margin-top:58px}
+}
+@media(prefers-reduced-motion:reduce){.all-angebot-card,.all-angebot-image img,.all-angebote-filters button,.all-angebot-link span{transition:none}}
+
+
+/* Das unveränderte Originalbild liegt ALS HINTERGRUND HINTER dem Ideen-Text,
+   nicht als separates Bildelement darunter. */
+.all-angebote-footer {
+  background: #fffdf5 url("images/ideen-banner-original-site.webp") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  text-align: center;
+  min-height: clamp(245px, 27vw, 350px);
+  padding: 56px clamp(20px, 5vw, 58px);
+  border-radius: 18px;
+  color: #27613e;
+  isolation: isolate;
+}
+.all-angebote-footer > span { display: none; }
+.all-angebote-footer p {
+  flex: none;
+  margin: 0;
+  max-width: 740px;
+  font-size: clamp(20px, 2.5vw, 31px);
+  line-height: 1.35;
+  font-weight: 800;
+  color: #245c3b;
+  text-wrap: balance;
+}
+.all-angebote-footer a {
+  display: inline-block;
+  background: #286840;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  white-space: normal;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.all-angebote-footer a:hover, .all-angebote-footer a:focus-visible {
+  background: #18482d;
+  transform: translateY(-1px);
+}
+@media (max-width: 600px) {
+  .all-angebote-footer {
+    min-height: 250px;
+    padding: 42px 17px;
+    gap: 14px;
+    background-position: center center;
+  }
+  .all-angebote-footer p { font-size: clamp(18px, 5.2vw, 23px); }
+  .all-angebote-footer a { font-size: 13px; }
+}
+
+/* Ideen-Banner als letzter Seitenabschnitt, direkt vor dem allgemeinen Footer. */
+.angebote-ideen-final { padding-top: 34px; padding-bottom: 65px; }
+.angebote-ideen-final .all-angebote-footer { margin-top: 0; }
+@media (max-width: 740px) {
+  .angebote-ideen-final { padding-top: 24px; padding-bottom: 45px; }
+}
+
+
+/* Offer card images enlarge the matching picture in the page's built-in photo viewer. */
+.all-angebot-image[data-photo-lightbox] { cursor: zoom-in; }
+.all-angebot-image[data-photo-lightbox]::after {
+  content: '⌕'; position:absolute; right:14px; bottom:14px; width:36px; height:36px;
+  display:grid; place-items:center; border-radius:50%; background:rgba(255,255,255,.94);
+  color:#27613e; font-size:30px; font-weight:400; line-height:1;
+  box-shadow:0 4px 13px rgba(25,48,30,.12); transition:transform .2s;
+}
+.all-angebot-image[data-photo-lightbox]:hover::after {transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){.all-angebot-image[data-photo-lightbox]::after{transition:none}}

@@ -1,0 +1,117 @@
+/* Original open panorama hero: full-width image behind the copy.
+   Only the transition from white text area to photography is refined. */
+.page-hero-intro {
+  --page-hero-image: url("images/angebote-baum-panorama.webp");
+  --page-hero-image-rise: 24px;
+  position: relative;
+  isolation: isolate;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 36px 43px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.page-hero-about {
+  --page-hero-image: url("images/ueber-buntbewegt-baum.webp");
+}
+/* The picture remains in the hero background, not a separate card.
+   A broad white-to-transparent blend eliminates the vertical dividing edge. */
+.page-hero-intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  right: calc((100% - 100vw) / 2);
+  width: min(100vw, 1200px);
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg,
+      #fff 0%, rgba(255,255,255,.995) 14%,
+      rgba(255,255,255,.94) 26%, rgba(255,255,255,.76) 38%,
+      rgba(255,255,255,.42) 49%, rgba(255,255,255,.13) 60%,
+      rgba(255,255,255,0) 74%),
+    linear-gradient(180deg,
+      rgba(255,255,255,.82) 0%, rgba(255,255,255,0) 13%,
+      rgba(255,255,255,0) 83%, rgba(255,255,255,.68) 100%),
+    var(--page-hero-image);
+  background-position: center, center, right calc(50% - var(--page-hero-image-rise));
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, auto 109%;
+}
+.page-hero-intro > * { position: relative; z-index: 1; flex-shrink: 0; }
+.page-hero-intro h1 { max-width: 670px; }
+.page-hero-intro > .eyebrow { line-height: 1.6; }
+.page-hero-intro > p:not(.eyebrow) {
+  max-width: 565px;
+  color: #374b42;
+  font-weight: 500;
+}
+.page-hero-intro .overview-note {
+  max-width: 560px;
+  color: #245b3c;
+  font-weight: 700;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+@media (max-width: 980px) {
+  .page-hero-intro { min-height: 300px; }
+  .page-hero-intro::before {
+    width: 100vw;
+    background-image:
+      linear-gradient(90deg,
+        #fff 0%, rgba(255,255,255,.98) 23%,
+        rgba(255,255,255,.87) 43%, rgba(255,255,255,.48) 66%,
+        rgba(255,255,255,.06) 100%),
+      linear-gradient(180deg,
+        rgba(255,255,255,.7) 0%, transparent 18%,
+        transparent 80%, rgba(255,255,255,.65) 100%),
+      var(--page-hero-image);
+    background-size: 100% 100%, 100% 100%, auto 104%;
+    background-position: center, center, 69% calc(50% - var(--page-hero-image-rise));
+  }
+}
+@media (max-width: 740px) {
+  /* Keep the original compact hero: text on the left, the same tree
+     softly visible behind and to the right (no stacked image block). */
+  .page-hero-intro {
+    min-height: 280px;
+    justify-content: center;
+    padding-block: 26px 30px;
+  }
+  .page-hero-intro::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-image:
+      linear-gradient(90deg,
+        rgba(255,255,255,.985) 0%, rgba(255,255,255,.97) 32%,
+        rgba(255,255,255,.89) 57%, rgba(255,255,255,.54) 80%,
+        rgba(255,255,255,.24) 100%),
+      linear-gradient(180deg,
+        rgba(255,255,255,.58) 0%, transparent 17%,
+        transparent 82%, rgba(255,255,255,.64) 100%),
+      var(--page-hero-image);
+    background-position: center, center, 66% calc(50% - var(--page-hero-image-rise));
+    background-size: 100% 100%, 100% 100%, auto 86%;
+  }
+  .page-hero-intro > .eyebrow { font-size: 9px; margin-bottom: 14px; }
+  .page-hero-intro h1 { font-size: clamp(36px, 9.2vw, 44px); line-height: 1.08; }
+  .page-hero-intro .sprinkles {
+    inset-inline-start: -16px;
+    top: 0;
+    transform: scale(.45);
+    transform-origin: left center;
+  }
+  .page-hero-intro > p:not(.eyebrow) { font-size: 14px; line-height: 1.65; margin-top: 18px; }
+  .page-hero-intro .overview-note { font-size: 10.5px; line-height: 1.5; margin-top: 16px; }
+}

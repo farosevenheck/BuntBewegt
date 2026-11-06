@@ -1,0 +1,121 @@
+/* The same full-bleed, soft transition as the two Kontakt sections.
+   The FAQ and closing invitation share one continuous background;
+   no card outline, hard corners or separately framed CTA. */
+.homepage-faq-cta-transition {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 38px;
+  padding: 22px 0 64px;
+  background:
+    radial-gradient(ellipse 62% 230px at 10% 13%, rgba(220, 237, 207, .43) 0%, transparent 92%),
+    radial-gradient(ellipse 60% 280px at 90% 74%, rgba(255, 233, 190, .30) 0%, transparent 90%),
+    linear-gradient(180deg, #ffffff 0%, #f6f8f2 13%, #f5f7ef 45%, #faf9f3 75%, #ffffff 100%);
+}
+/* Organic artwork fades INTO the surrounding background, across the full
+   section width, rather than sitting inside a detached rectangle. */
+.homepage-faq-cta-transition::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("images/ideen-banner-original-site.webp") center bottom / 100% auto no-repeat;
+  opacity: .68;
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%, transparent 40%, rgba(0,0,0,.3) 52%, #000 76%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%, transparent 40%, rgba(0,0,0,.3) 52%, #000 76%, #000 90%, transparent 100%);
+  pointer-events: none;
+}
+.homepage-faq-cta-transition > .faq.section.container {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 54px;
+  padding-bottom: 38px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.homepage-faq-cta-transition > .homepage-ideen-final.container {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer {
+  position: relative;
+  margin-top: 0;
+  min-height: 275px;
+  padding: 52px 44px;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer::before {
+  display: none;
+}
+.homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer p {
+  max-width: 760px;
+}
+@media (max-width: 740px) {
+  .homepage-faq-cta-transition {
+    margin-top: 22px;
+    padding: 10px 0 42px;
+  }
+  .homepage-faq-cta-transition::before {
+    background-size: auto 52%;
+    background-position: 48% bottom;
+    opacity: .50;
+  }
+  .homepage-faq-cta-transition > .faq.section.container {
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+  .homepage-faq-cta-transition > .homepage-ideen-final.container {
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  .homepage-faq-cta-transition .homepage-ideen-final .all-angebote-footer {
+    min-height: 235px;
+    padding: 34px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homepage-faq-cta-transition * { scroll-behavior: auto; }
+}
+
+/* Seamless upper connection: the join-steps section flows directly into FAQ.
+   The old decorative wave and separate 38px margin created the visible stripe. */
+main > .join-steps {
+  background: linear-gradient(180deg,
+    #faf9f4 0%,
+    #faf9f4 70%,
+    #f6f8f2 100%);
+}
+main > .join-steps > .join-wave { display: none; }
+main > .homepage-faq-cta-transition {
+  margin-top: 0;
+  padding-top: 0;
+  background:
+    radial-gradient(ellipse 62% 230px at 10% 13%, rgba(220,237,207,.27) 0%, transparent 92%),
+    radial-gradient(ellipse 60% 280px at 90% 74%, rgba(255,233,190,.30) 0%, transparent 90%),
+    linear-gradient(180deg, #f6f8f2 0%, #f6f8f2 14%, #f5f7ef 45%, #faf9f3 75%, #ffffff 100%);
+}
+main > .homepage-faq-cta-transition > .faq.section.container {
+  padding-top: 36px;
+}
+@media (max-width: 740px) {
+  main > .homepage-faq-cta-transition {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  main > .homepage-faq-cta-transition > .faq.section.container {
+    padding-top: 26px;
+  }
+}

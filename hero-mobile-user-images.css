@@ -1,0 +1,150 @@
+/* Mobile only: full-bleed photographic hero behind title, not below it.
+   White space in the provided portraits is reserved for readable copy. */
+@media (max-width: 740px) {
+  .hero-slider,
+  .hero-slider[data-hero-theme="artwork"],
+  .hero-slider[data-hero-theme="dark"] {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    width: 100%;
+    min-height: 0;
+    background: #fffdf7;
+    overflow: hidden;
+    color: #24442f;
+  }
+  .hero-slider .hero-slides {
+    position: absolute;
+    inset: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #fffdf7;
+    z-index: -2;
+  }
+  .hero-slider .hero-slides .hero-slide { inset: 0; width: 100%; height: 100%; }
+  .hero-slider .hero-photo {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .hero.hero-slider[data-hero-theme] .hero-shade {
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.42) 0%,
+      rgba(255,255,255,.27) 19%,
+      rgba(255,255,255,.05) 37%,
+      rgba(255,255,255,0) 50%);
+  }
+  .hero-slider .hero-inner {
+    --hero-gutter: clamp(18px, 5.6vw, 32px);
+    --hero-copy-offset: 24px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: calc(100% - var(--hero-gutter) - var(--hero-gutter));
+    max-width: 360px;
+    margin-left: var(--hero-gutter);
+    margin-right: auto;
+    padding-top: calc(clamp(32px, 8vw, 48px) + var(--hero-copy-offset));
+    padding-bottom: calc(clamp(360px, 104vw, 440px) - var(--hero-copy-offset));
+    text-align: left;
+  }
+  .hero.hero-slider[data-hero-theme] .hero-eyebrow {
+    color: #386d48;
+    max-width: 100%;
+    font-size: 9.5px;
+    line-height: 1.6;
+    letter-spacing: .7px;
+    margin-bottom: 14px;
+    align-items: baseline;
+  }
+  .hero-slider .hero-eyebrow-text {
+    min-width: 0;
+    white-space: normal;
+  }
+  .hero-slider h1 {
+    max-width: 100%;
+    font-size: clamp(26px, 7.2vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -.7px;
+    color: #214631;
+    text-shadow: none;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+  }
+  .hero.hero-slider[data-hero-theme] .hero-description {
+    color: #3f5b4b;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.6;
+    max-width: 100%;
+    min-height: 0;
+    margin: 14px 0 18px;
+    text-shadow: none;
+  }
+  .hero-slider .hero-inner .button {
+    min-height: 46px;
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 16px;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 999px;
+  }
+  .hero-slider .hero-cta-label {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .hero-slider .hero-inner .button > svg { flex-shrink: 0; }
+  .hero.hero-slider[data-hero-theme] .hero-note {
+    margin-top: 12px;
+    max-width: 100%;
+    min-height: 0;
+    color: #547052;
+    font-size: 11px;
+    line-height: 1.5;
+    align-items: baseline;
+    text-shadow: none;
+  }
+  .hero-slider .hero-note .tiny-spark { flex-shrink: 0; }
+  /* The first slide is a photograph rather than white artwork: stronger
+     ivory fade at the top keeps the heading readable without a text panel. */
+  .hero.hero-slider[data-hero-theme="dark"] .hero-shade {
+    background: linear-gradient(180deg,
+      rgba(255,253,246,.96) 0%,
+      rgba(255,253,246,.91) 22%,
+      rgba(255,253,246,.73) 35%,
+      rgba(255,253,246,.22) 51%,
+      rgba(255,253,246,0) 66%);
+  }
+  .hero.hero-slider[data-hero-theme="artwork"] .hero-shade {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.80) 0%,
+      rgba(255,255,255,.72) 20%,
+      rgba(255,255,255,.35) 38%,
+      rgba(255,255,255,0) 54%);
+  }
+  .hero-slider .hero-carousel-bar {
+    z-index: 3;
+    bottom: 17px;
+  }
+}
+@media (max-width: 380px) {
+  .hero-slider .hero-inner {
+    padding-bottom: calc(clamp(345px, 109vw, 420px) - var(--hero-copy-offset));
+  }
+  .hero-slider .hero-carousel-bar { bottom: 12px; }
+}

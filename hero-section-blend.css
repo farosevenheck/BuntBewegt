@@ -1,0 +1,105 @@
+/* Join each secondary hero to its following section. The final colour of
+   the hero fade and the first colour below it must be identical. */
+.angebote-page { --hero-join-rgb: 248, 244, 230; }
+.about-page { --hero-join-rgb: 245, 247, 239; }
+.kontakt-page { --hero-join-rgb: 248, 247, 240; }
+
+.page-hero-intro,
+.kontakt-page .kontakt-art-intro {
+  margin-bottom: 0;
+}
+
+.page-hero-intro::after,
+.kontakt-page .kontakt-art-intro::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  bottom: -1px;
+  height: clamp(88px, 10vw, 128px);
+  background: linear-gradient(180deg,
+    rgba(var(--hero-join-rgb), 0) 0%,
+    rgba(var(--hero-join-rgb), .38) 35%,
+    rgba(var(--hero-join-rgb), .82) 72%,
+    rgb(var(--hero-join-rgb)) 100%);
+  pointer-events: none;
+}
+
+/* The panorama is behind this fade; the copy stays above it. */
+.page-hero-intro > * { z-index: 1; }
+.kontakt-page .kontakt-art-intro::after { z-index: 1; }
+.kontakt-page .kontakt-art-copy { z-index: 2; }
+
+.angebote-page .all-angebote-section {
+  margin-top: 0;
+  background: linear-gradient(180deg,
+    rgb(var(--hero-join-rgb)) 0%,
+    #fffdf8 54%,
+    #fff 100%);
+}
+/* Reveal decorative colours gradually so they cannot form a new edge. */
+.angebote-page .all-angebote-section::before {
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 120px);
+  mask-image: linear-gradient(180deg, transparent, #000 120px);
+}
+.about-page .ab-pillars-wrap {
+  margin-top: 0;
+  border-top: 0;
+  background: rgb(var(--hero-join-rgb));
+}
+
+/* The contact artwork continues into the illustrated form background. */
+.kontakt-page .kontakt-form-section {
+  margin-top: 0;
+  border-radius: 0;
+  background-color: rgb(var(--hero-join-rgb));
+}
+.kontakt-page .kontakt-form-section::before {
+  background:
+    linear-gradient(180deg,
+      rgb(var(--hero-join-rgb)) 0px,
+      rgba(var(--hero-join-rgb), .75) 40px,
+      rgba(var(--hero-join-rgb), 0) 128px),
+    rgba(var(--hero-join-rgb), .18);
+}
+
+/* Programme photos fade into the white surface of the benefits section.
+   Mask only the photograph, preserving captions and decorative marks. */
+.program-page .program-hero {
+  padding-bottom: 24px;
+}
+.program-page .program-hero-visual {
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  background: transparent;
+}
+.program-page .program-hero-visual > img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-mask-image: linear-gradient(180deg,
+    #000 0%, #000 calc(100% - 100px), transparent 100%);
+  mask-image: linear-gradient(180deg,
+    #000 0%, #000 calc(100% - 100px), transparent 100%);
+}
+.program-page .program-hero + .program-benefits {
+  border-top: 0;
+}
+
+@media (max-width: 740px) {
+  .kontakt-page .kontakt-form-section::before {
+    background:
+      linear-gradient(180deg,
+        rgb(var(--hero-join-rgb)) 0px,
+        rgba(var(--hero-join-rgb), .75) 32px,
+        rgba(var(--hero-join-rgb), 0) 96px),
+      rgba(var(--hero-join-rgb), .28);
+  }
+  .program-page .program-hero { padding-bottom: 16px; }
+  .program-page .program-hero-visual > img {
+    -webkit-mask-image: linear-gradient(180deg,
+      #000 0%, #000 calc(100% - 72px), transparent 100%);
+    mask-image: linear-gradient(180deg,
+      #000 0%, #000 calc(100% - 72px), transparent 100%);
+  }
+}

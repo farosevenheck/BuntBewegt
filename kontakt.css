@@ -1,0 +1,492 @@
+/* BuntBewegt — standalone contact page, consistent with original site */
+.kontakt-page {background:#fff}
+.kontakt-page .breadcrumbs {padding-top:24px;padding-bottom:18px}
+.kontakt-hero{position:relative;display:grid;grid-template-columns:.98fr 1.02fr;min-height:520px;align-items:center;isolation:isolate;background:#f1f8ef;border-radius:31px;overflow:hidden;margin-bottom:62px}
+.kontakt-hero-content{padding:60px 48px 64px 60px;position:relative;z-index:2}
+.kontakt-hero .eyebrow{font-size:11px;letter-spacing:2.4px;font-weight:800;color:#416d49;margin-bottom:20px}
+.kontakt-hero h1{font-family:"Trebuchet MS",Arial,sans-serif;font-size:clamp(36px,4.5vw,59px);letter-spacing:-2px;line-height:1.12;font-weight:800;color:#203a2d}
+.kontakt-hero h1 span{color:#38714b}
+.kontakt-lead{font-size:15px;line-height:1.9;color:#4c6653;max-width:480px;margin-top:22px}
+.kontakt-hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:26px}
+.kontakt-hero-actions .button{font-size:13px;padding:14px 22px;gap:17px;box-shadow:0 12px 25px #21623f24}
+.kontakt-text-action{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#21623f;white-space:nowrap;text-decoration:underline;text-underline-offset:5px}
+.kontakt-mini-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.kontakt-mini-tags span{font-size:11px;color:#41624b;background:#fff9;border:1px solid #d8e6d9;padding:6px 12px;border-radius:999px}
+.kontakt-hero-visual{position:relative;height:100%;min-height:520px;margin:0;overflow:hidden}
+.kontakt-hero-visual:before{position:absolute;content:"";inset:0;background:linear-gradient(90deg,rgba(241,248,239,.19),transparent 42%);z-index:1}
+.kontakt-hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:52% center}
+.kontakt-hero-visual figcaption{position:absolute;bottom:28px;left:24px;right:24px;width:max-content;max-width:calc(100% - 48px);z-index:2;border-radius:16px;background:#fffef0ee;padding:12px 16px;font-size:12px;font-weight:700;color:#29563c;box-shadow:0 7px 24px #1325181f}
+.kontakt-hero-visual figcaption span{color:#da795a;font-size:24px;vertical-align:middle;margin-right:6px;line-height:0}
+.kontakt-decoration{position:absolute;pointer-events:none;z-index:2}
+.kontakt-decoration-a{left:20px;bottom:25px;font-size:40px;color:#ffd23b;transform:rotate(-18deg)}
+.kontakt-decoration-b{left:48%;top:22px;color:#f08a78;font-size:24px}
+.kontakt-steps{padding-bottom:84px}
+.kontakt-steps-header{text-align:center;margin-bottom:30px}
+.kontakt-steps-header .eyebrow{margin-bottom:8px}
+.kontakt-steps h2{font-size:clamp(28px,3vw,38px);color:#203a2d}
+.kontakt-step-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0}
+.kontakt-step-list>li{background:#fff;border:1px solid #e8ebe1;box-shadow:0 7px 22px #263a3010;border-radius:20px;padding:25px 22px;display:flex;gap:16px;align-items:flex-start}
+.kontakt-step-icon{border-radius:16px;width:50px;height:50px;flex-shrink:0;display:grid;place-items:center;font-size:24px;font-weight:800}
+.kontakt-step-yellow{background:#fff3cb;color:#a57910}
+.kontakt-step-green{background:#e8f4e6;color:#377049}
+.kontakt-step-blue{background:#e3f5fd;color:#0b7ba9}
+.kontakt-step-list h3{font-size:17px;color:#234431;margin-top:1px;margin-bottom:9px}
+.kontakt-step-list p{font-size:12px;color:#657267;line-height:1.8}
+.kontakt-form-section{background:#f8f7f0;padding-block:85px 95px;border-radius:30px}
+.kontakt-form-section .contact-grid{align-items:start;gap:65px}
+.kontakt-form-section .contact-copy h2{font-size:clamp(30px,3.2vw,44px);color:#203a2d}
+.kontakt-form-section .contact-copy>p:not(.eyebrow){max-width:380px;font-size:15px;line-height:1.85}
+.kontakt-form-section .contact-form-wrap{background:#fff;box-shadow:0 12px 45px #1f3b2914;border:1px solid #e7ebe0;padding:38px;border-radius:23px;min-height:0}
+.kontakt-form-section form label{font-size:12px}
+.kontakt-form-section input:not([type=checkbox]),.kontakt-form-section textarea,.kontakt-form-section select{font-size:13px;border-radius:10px;padding:13px 14px}
+.kontakt-form-section .submit-button{min-height:48px;font-size:13px;border-radius:12px}
+.kontakt-form-section .contact-scribble{color:#eca954}
+.kontakt-form-section .wave{display:none}
+.kontakt-outro{display:flex;align-items:center;justify-content:space-between;gap:50px;padding-block:85px 95px}
+.kontakt-outro-copy{max-width:490px}
+.kontakt-outro-copy h2{font-size:clamp(29px,3vw,42px);color:#203a2d}
+.kontakt-outro-copy>p:not(.eyebrow){font-size:14px;color:#637067;line-height:1.85;margin:17px 0 25px}
+.kontakt-outro-images{width:min(455px,48%);display:grid;grid-template-columns:1fr 1fr;gap:12px;transform:rotate(2deg)}
+.kontakt-outro-images img{width:100%;height:225px;object-fit:cover;border-radius:19px;box-shadow:0 12px 27px #1427191a}
+.kontakt-outro-images img:nth-child(2){margin-top:34px}
+@media(max-width:1020px){.kontakt-hero-content{padding:44px 30px}.kontakt-hero{min-height:460px}.kontakt-hero-visual{min-height:460px}.kontakt-hero h1{font-size:clamp(35px,4.2vw,50px)}.kontakt-step-list>li{padding:22px 15px;gap:12px}.kontakt-step-icon{width:44px;height:44px}.kontakt-form-section .contact-grid{gap:30px}}
+@media(max-width:740px){.kontakt-page .breadcrumbs{padding-block:19px 14px}.kontakt-hero{display:flex;flex-direction:column-reverse;align-items:stretch;min-height:0;border-radius:22px;margin-bottom:42px}.kontakt-hero-visual{height:240px;min-height:240px}.kontakt-hero-visual img{object-position:center 48%}.kontakt-hero-visual:before{background:linear-gradient(0deg,rgba(241,248,239,.25),transparent 46%)}.kontakt-hero-visual figcaption{font-size:10px;left:15px;bottom:14px;padding:9px 12px;max-width:calc(100% - 30px)}.kontakt-hero-content{padding:32px 23px 38px}.kontakt-hero h1{font-size:clamp(34px,8vw,43px);letter-spacing:-1.4px}.kontakt-lead{font-size:14px;margin-top:16px}.kontakt-hero-actions{gap:18px;margin-top:20px}.kontakt-hero-actions .button{min-height:42px;font-size:12px;padding:12px 18px}.kontakt-mini-tags{margin-top:26px}.kontakt-decoration-a,.kontakt-decoration-b{display:none}.kontakt-steps{padding-bottom:48px}.kontakt-steps-header{text-align:left;margin-bottom:21px}.kontakt-step-list{grid-template-columns:1fr;gap:11px}.kontakt-step-list>li{padding:18px;border-radius:16px}.kontakt-steps h2{font-size:27px}.kontakt-step-list h3{font-size:15px;margin-bottom:4px}.kontakt-form-section{padding-block:53px 58px;border-radius:20px}.kontakt-form-section .contact-grid{gap:25px}.kontakt-form-section .contact-form-wrap{padding:23px 18px;border-radius:17px}.kontakt-form-section .contact-copy>p:not(.eyebrow){font-size:13px}.kontakt-outro{padding-block:55px 65px;flex-direction:column;align-items:stretch;gap:30px}.kontakt-outro-images{width:100%;max-width:450px}.kontakt-outro-images img{height:190px}}
+@media(max-width:390px){.kontakt-hero-visual{height:200px;min-height:200px}.kontakt-hero-actions{gap:12px}.kontakt-text-action{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.kontakt-outro-images{transform:none}}
+@media(max-width:740px){
+  .kontakt-form-section .form-row{grid-template-columns:1fr;gap:0}
+  .kontakt-form-section .form-row>label{min-width:0}
+}
+
+
+/* Decorative background styling inspired by the provided design */
+.kontakt-form-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#fbfaf5 0%,#f8f6ee 100%)}
+.kontakt-form-section .contact-grid{position:relative;z-index:2}
+.kontakt-bg-shape,.kontakt-doodle,.kontakt-leaf-cluster{position:absolute;pointer-events:none;z-index:1}
+.kontakt-bg-shape{filter:blur(.2px);opacity:.92}
+.kontakt-bg-top-left{top:0;left:0;width:180px;height:120px;background:#dfe8d3;border-radius:0 0 44px 0}
+.kontakt-bg-top-right{top:0;right:0;width:170px;height:118px;background:#efe4cf;border-radius:0 0 0 52px;opacity:.7}
+.kontakt-bg-bottom-left{left:-18px;bottom:-18px;width:260px;height:165px;background:radial-gradient(circle at 38% 35%,rgba(247,213,178,.95) 0%,rgba(245,205,160,.86) 43%,rgba(244,196,137,.72) 62%,rgba(244,196,137,0) 63%)}
+.kontakt-bg-bottom-right{right:-12px;bottom:-15px;width:290px;height:170px;background:radial-gradient(circle at 62% 45%,rgba(245,222,119,.68) 0%,rgba(243,214,102,.58) 38%,rgba(243,214,102,0) 64%)}
+.kontakt-doodle-dots-left{top:76px;left:110px;width:96px;height:58px;background-image:radial-gradient(circle,rgba(139,164,118,.85) 0 4px,transparent 4.5px);background-size:28px 20px;background-position:0 0;transform:rotate(-10deg)}
+.kontakt-doodle-dots-right{right:96px;bottom:84px;width:112px;height:74px;background-image:radial-gradient(circle,rgba(239,171,82,.92) 0 4px,transparent 4.5px);background-size:28px 24px;transform:rotate(18deg)}
+.kontakt-doodle-heart-right{top:245px;right:78px;font-size:56px;line-height:1;color:#e5c355;transform:rotate(18deg)}
+.kontakt-doodle-star-left{left:390px;bottom:292px;font-size:54px;line-height:1;color:#e8a641;transform:rotate(-8deg)}
+.kontakt-doodle-wave-left{left:-30px;bottom:42px;width:460px;height:180px;border:4px solid transparent;border-top:none;border-right:none;border-bottom:4px solid rgba(128,154,109,.82);border-radius:0 0 0 180px;transform:rotate(6deg)}
+.kontakt-doodle-path-right{top:168px;right:122px;width:230px;height:250px;border:2px dashed rgba(234,195,90,.85);border-left:none;border-bottom:none;border-radius:0 180px 0 0;opacity:.85}
+.kontakt-leaf-cluster-right{right:122px;top:257px;font-size:122px;color:rgba(177,194,160,.55);transform:rotate(18deg);font-family:Georgia,serif;line-height:.8}
+.kontakt-leaf-cluster-bottom{right:330px;bottom:104px;font-size:102px;color:rgba(192,205,178,.38);transform:rotate(-12deg);font-family:Georgia,serif;line-height:.8}
+.kontakt-form-section .contact-copy{padding-top:20px}
+.kontakt-form-section .contact-friendly{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.42);padding:8px 12px;border-radius:999px}
+
+@media(max-width:1020px){
+  .kontakt-doodle-star-left{left:260px;bottom:275px}
+  .kontakt-doodle-path-right{right:55px;width:190px}
+  .kontakt-leaf-cluster-bottom{right:250px;bottom:86px}
+}
+@media(max-width:740px){
+  .kontakt-bg-top-left{width:120px;height:84px;border-radius:0 0 30px 0}
+  .kontakt-bg-top-right{width:110px;height:88px;border-radius:0 0 0 34px}
+  .kontakt-bg-bottom-left{width:185px;height:120px;left:-28px;bottom:-24px}
+  .kontakt-bg-bottom-right{width:190px;height:120px;right:-35px;bottom:-28px}
+  .kontakt-doodle-dots-left{top:52px;left:22px;width:70px;height:38px;background-size:23px 18px}
+  .kontakt-doodle-dots-right{right:24px;bottom:52px;width:76px;height:48px;background-size:22px 20px}
+  .kontakt-doodle-heart-right{top:198px;right:26px;font-size:34px}
+  .kontakt-doodle-star-left{left:36px;bottom:296px;font-size:34px}
+  .kontakt-doodle-wave-left{left:-84px;bottom:28px;width:280px;height:110px;border-bottom-width:3px}
+  .kontakt-doodle-path-right{top:146px;right:18px;width:118px;height:132px}
+  .kontakt-leaf-cluster-right{right:12px;top:280px;font-size:74px}
+  .kontakt-leaf-cluster-bottom{right:80px;bottom:136px;font-size:64px}
+  .kontakt-form-section .contact-friendly{font-size:11px;line-height:1.45;padding:7px 10px}
+}
+@media(max-width:520px){
+  .kontakt-leaf-cluster-bottom{display:none}
+  .kontakt-doodle-star-left{bottom:338px}
+}
+
+
+/* Use uploaded artwork as the real background image for Kontakt */
+.kontakt-form-section{
+  position:relative;
+  overflow:hidden;
+  background-color:#f8f7f0;
+  background-image:url("images/kontakt-background-full-site.webp");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+}
+.kontakt-form-section .contact-grid{position:relative;z-index:2}
+.kontakt-form-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(248,247,240,.18);
+  z-index:1;
+  pointer-events:none;
+}
+.kontakt-bg-shape,
+.kontakt-doodle,
+.kontakt-leaf-cluster{
+  display:none !important;
+}
+
+/* Keep content readable above the image */
+.kontakt-form-section .contact-copy,
+.kontakt-form-section .contact-form-wrap{
+  position:relative;
+  z-index:2;
+}
+.kontakt-form-section .contact-copy{
+  padding:18px 18px 18px 0;
+}
+.kontakt-form-section .contact-copy h2,
+.kontakt-form-section .contact-copy > p:not(.eyebrow),
+.kontakt-form-section .contact-friendly,
+.kontakt-form-section .eyebrow{
+  text-shadow:0 1px 0 rgba(255,255,255,.38);
+}
+.kontakt-form-section .contact-form-wrap{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+}
+
+@media(max-width:740px){
+  .kontakt-form-section{
+    background-position:center center;
+    background-size:cover;
+  }
+  .kontakt-form-section::before{
+    background:rgba(248,247,240,.28);
+  }
+  .kontakt-form-section .contact-copy{
+    padding:0;
+  }
+}
+
+/* AUCH DIREKT ERREICHBAR: keep original layout, only add the supplied image as background */
+.kontakt-outro{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+  padding:56px 46px;
+  margin-top:18px;
+  background-color:#faf8f1;
+  background-image:url("images/kontakt-direkt-erreichbar-bg-site.webp");
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+}
+.kontakt-outro::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(250,248,241,.96) 0%, rgba(250,248,241,.93) 34%, rgba(250,248,241,.76) 56%, rgba(250,248,241,.45) 72%, rgba(250,248,241,.20) 100%);
+  pointer-events:none;
+}
+.kontakt-outro > *{
+  position:relative;
+  z-index:1;
+}
+.kontakt-outro-copy{max-width:490px}
+.kontakt-outro-images{
+  width:min(455px,48%);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  transform:rotate(2deg);
+}
+.kontakt-outro-images img{
+  width:100%;
+  height:225px;
+  object-fit:cover;
+  border-radius:19px;
+  box-shadow:0 12px 27px #1427191a;
+  background:#fff;
+}
+.kontakt-outro-images img:nth-child(2){margin-top:34px}
+
+@media(max-width:740px){
+  .kontakt-outro{
+    padding:32px 18px 36px;
+    border-radius:22px;
+    background-position:center center;
+  }
+  .kontakt-outro::before{
+    background:linear-gradient(180deg, rgba(250,248,241,.95) 0%, rgba(250,248,241,.86) 34%, rgba(250,248,241,.72) 58%, rgba(250,248,241,.50) 100%);
+  }
+  .kontakt-outro-images{width:100%;max-width:450px}
+  .kontakt-outro-images img{height:190px}
+}
+
+/* Compact visual intro for Kontakt, consistent with the existing pastel artwork.
+   On mobile the illustration stays on the right, just smaller. */
+.kontakt-art-intro {
+  display:grid;
+  grid-template-columns:minmax(0, 1.4fr) minmax(240px, 0.8fr);
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  min-height:235px;
+  margin-top:22px;
+  margin-bottom:32px;
+  padding:18px 42px;
+  background:#fbfcf5 url("images/kontakt-background-full-site.webp") center / cover no-repeat;
+  border-radius:25px;
+  border:1px solid #e9eee0;
+}
+.kontakt-art-copy { position:relative;z-index:1; }
+.kontakt-art-kicker {font-size:11px;font-weight:800;letter-spacing:.18em;color:#538066;margin-bottom:12px}
+.kontakt-art-heading {font-size:clamp(36px,4vw,53px);font-weight:800;line-height:1.09;letter-spacing:-.04em;color:#24533a;margin:0 0 10px}
+.kontakt-art-heading span {color:#d17d6b}
+.kontakt-art-subtitle {font-size:14px;color:#52665a;max-width:425px;line-height:1.6;margin:0}
+.kontakt-art-picture {width:100%;max-width:355px;justify-self:end;display:block;position:relative;z-index:1}
+.kontakt-art-picture img {width:100%;height:auto;display:block}
+@media (max-width:740px) {
+ .kontakt-art-intro { grid-template-columns:minmax(0, 1fr) 39%; min-height:190px; margin-top:12px; margin-bottom:21px;padding:18px 18px 18px 22px;border-radius:18px;gap:2px; }
+ .kontakt-art-heading {font-size:clamp(27px,7vw,35px);letter-spacing:-.025em}
+ .kontakt-art-kicker {font-size:8px;letter-spacing:.1em;margin-bottom:7px}
+ .kontakt-art-subtitle {font-size:11px;line-height:1.5}
+ .kontakt-art-picture { max-width:190px; }
+}
+@media (max-width:380px) {
+ .kontakt-art-intro {padding:15px 10px 15px 16px; grid-template-columns:minmax(0,1fr) 36%;min-height:175px}
+ .kontakt-art-heading {font-size:26px}
+ .kontakt-art-subtitle {font-size:10px}
+}
+
+/* Kontakt hero: same open, edge-free image-to-copy transition as
+   Angebote and Über BuntBewegt. Keep the existing envelope illustration. */
+.kontakt-page .kontakt-art-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 310px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  padding: 36px 0 43px;
+  gap: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.kontakt-page .kontakt-art-copy {
+  position: relative;
+  z-index: 2;
+  width: min(57%, 570px);
+}
+.kontakt-page .kontakt-art-heading { line-height: 1.12; }
+.kontakt-page .kontakt-art-subtitle { max-width: 475px; }
+.kontakt-page .kontakt-art-picture {
+  position: absolute;
+  z-index: 0;
+  right: calc((100% - 100vw) / 2);
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: min(100vw, 1120px);
+  max-width: none;
+  height: auto;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* The image melts into white around the copy — no sharp rectangular edge. */
+.kontakt-page .kontakt-art-picture img {
+  display: block;
+  width: min(48vw, 540px);
+  max-width: none;
+  height: auto;
+  max-height: 100%;
+  margin-right: 3vw;
+  object-fit: contain;
+  object-position: right center;
+  -webkit-mask-image: linear-gradient(90deg,
+    transparent 0%, rgba(0,0,0,.16) 10%, rgba(0,0,0,.66) 27%,
+    rgba(0,0,0,.98) 48%, #000 64%);
+  mask-image: linear-gradient(90deg,
+    transparent 0%, rgba(0,0,0,.16) 10%, rgba(0,0,0,.66) 27%,
+    rgba(0,0,0,.98) 48%, #000 64%);
+}
+@media (max-width: 980px) {
+  .kontakt-page .kontakt-art-intro { min-height: 300px; }
+  .kontakt-page .kontakt-art-copy { width: 60%; }
+  .kontakt-page .kontakt-art-picture img { width: 56vw; }
+}
+@media (max-width: 740px) {
+  .kontakt-page .kontakt-art-intro {
+    min-height: 280px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+    padding: 26px 0 30px;
+  }
+  .kontakt-page .kontakt-art-copy { width: min(77%, 340px); }
+  .kontakt-page .kontakt-art-kicker { font-size: 9px; margin-bottom: 14px; }
+  .kontakt-page .kontakt-art-heading {
+    font-size: clamp(36px, 9.2vw, 44px);
+    line-height: 1.08;
+    margin-bottom: 12px;
+  }
+  .kontakt-page .kontakt-art-subtitle {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 245px;
+  }
+  .kontakt-page .kontakt-art-picture { width: 100vw; }
+  .kontakt-page .kontakt-art-picture img {
+    width: 72vw;
+    max-height: 96%;
+    margin-right: 0;
+    -webkit-mask-image: linear-gradient(90deg,
+      transparent 0%, rgba(0,0,0,.04) 25%, rgba(0,0,0,.34) 55%,
+      rgba(0,0,0,.85) 78%, #000 100%);
+    mask-image: linear-gradient(90deg,
+      transparent 0%, rgba(0,0,0,.04) 25%, rgba(0,0,0,.34) 55%,
+      rgba(0,0,0,.85) 78%, #000 100%);
+  }
+}
+
+/* Maintain contrast on narrow screens while the illustration remains on
+   the right, fading out toward the copy like the other two page heroes. */
+@media (max-width: 740px) {
+  .kontakt-page .kontakt-art-picture::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      #fff 0%, rgba(255,255,255,.98) 35%,
+      rgba(255,255,255,.83) 53%, rgba(255,255,255,.27) 78%,
+      transparent 100%);
+    pointer-events: none;
+  }
+}
+
+/* Neutral, circular Instagram link: same minimal look as the reference.
+   No green button, gradient, text label or arrow. */
+.kontakt-outro .kontakt-instagram-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(66, 69, 65, .14);
+  background: rgba(255, 255, 255, .75);
+  color: #505553;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.kontakt-outro .kontakt-instagram-button:hover {
+  background: #fff;
+  border-color: rgba(66, 69, 65, .36);
+  transform: translateY(-2px);
+}
+.kontakt-outro .kontakt-instagram-button:focus-visible {
+  outline: 2px solid #4d5550;
+  outline-offset: 3px;
+}
+.kontakt-outro .kontakt-instagram-logo {
+  display: block;
+  width: 21px;
+  height: 21px;
+  flex: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kontakt-outro .kontakt-instagram-button { transition: none; }
+  .kontakt-outro .kontakt-instagram-button:hover { transform: none; }
+}
+
+
+/* Seamless handoff from the contact form into "Folgt unseren bunten Ideen".
+   Both sections share a full-width pastel field; content remains constrained
+   to the original container, without the visual break of a separate card. */
+.kontakt-page .kontakt-form-section {
+  border-radius: 30px 30px 0 0;
+}
+.kontakt-page .kontakt-outro-transition {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: -1px;
+  padding: 18px 0 70px;
+  background:
+    radial-gradient(ellipse 70% 210px at 30% 0%, rgba(214,231,204,.70) 0%, rgba(227,238,218,.35) 50%, transparent 100%),
+    radial-gradient(ellipse 58% 190px at 95% 0%, rgba(250,228,189,.43) 0%, transparent 100%),
+    linear-gradient(180deg,
+      #f4f6ed 0%,
+      #faf8f2 30%,
+      #fbfaf6 74%,
+      #ffffff 100%);
+}
+.kontakt-page .kontakt-outro-transition::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("images/kontakt-direkt-erreichbar-bg-site.webp") center 46% / cover no-repeat;
+  opacity: .54;
+  -webkit-mask-image: linear-gradient(to bottom,
+    transparent 0%, #000 16%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom,
+    transparent 0%, #000 16%, #000 72%, transparent 100%);
+  pointer-events: none;
+}
+.kontakt-page .kontakt-outro-transition .kontakt-outro {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 48px 44px 52px;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.kontakt-page .kontakt-outro-transition .kontakt-outro::before {
+  background: linear-gradient(90deg,
+    rgba(250, 248, 242, .7) 0%,
+    rgba(250, 248, 242, .38) 36%,
+    transparent 76%);
+}
+@media (max-width: 740px) {
+  .kontakt-page .kontakt-form-section { border-radius: 20px 20px 0 0; }
+  .kontakt-page .kontakt-outro-transition { padding: 10px 0 40px; }
+  .kontakt-page .kontakt-outro-transition .kontakt-outro {
+    padding: 36px 16px 42px;
+  }
+  .kontakt-page .kontakt-outro-transition .kontakt-outro::before {
+    background: linear-gradient(180deg,
+      rgba(250,248,242,.72) 0%,
+      rgba(250,248,242,.25) 55%,
+      transparent 100%);
+  }
+}
+/* Avoid recreating a rectangular inset through the old card overlay. */
+.kontakt-page .kontakt-outro-transition .kontakt-outro::before {
+  display: none;
+}
+
+/* Kontakt navigation lands directly on the form beneath the sticky header.
+   The site-wide scroll-padding takes care of its header offset. */
+#kontakt { scroll-margin-top: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .kontakt-smooth-arrival .kontakt-page {
+    animation: kontakt-smooth-arrive 360ms ease-out both;
+  }
+  @keyframes kontakt-smooth-arrive {
+    from { opacity: .38; }
+    to { opacity: 1; }
+  }
+}

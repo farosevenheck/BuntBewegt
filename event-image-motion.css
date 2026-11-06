@@ -1,0 +1,27 @@
+/* Ruhige Bewegung des Veranstaltungsplakats in News & Events und Startseite.
+   Das Motiv selbst bleibt vollständig sichtbar und weiterhin anklickbar. */
+@keyframes bunt-event-poster-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-.5deg); }
+  50% { transform: translate3d(0, -10px, 0) rotate(.5deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .j-home-news #ktv-adler .j-hero-poster.j-cover-poster,
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {
+    animation: bunt-event-poster-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  .j-home-news #ktv-adler .j-hero-poster.j-cover-poster:hover,
+  .j-home-news #ktv-adler .j-hero-poster.j-cover-poster:focus-visible,
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo:hover,
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo:focus-visible {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .j-home-news #ktv-adler .j-hero-poster.j-cover-poster,
+  .festival-news-page #ktv-adler .j-hero-poster.j-cover-poster.news-feature-photo {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+}

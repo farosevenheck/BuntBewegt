@@ -1,0 +1,243 @@
+/* index.html ONLY – keep the cover style from the screenshot, but remove its
+   illustrated background. The poster itself is fully visible and opens in the viewer.
+   This file is intentionally not loaded by bilder-material.html. */
+.j-home-news .j-feature-compact {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
+}
+.j-home-news .j-feature-compact .j-feature-art {
+  min-height: 0;
+  padding: 25px 25px;
+  background: transparent;
+  background-image: none;
+  border: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.j-home-news .j-feature-compact .j-feature-copy::after { content: none; display: none; }
+.j-home-news .j-feature-compact .j-feature-art::before,
+.j-home-news .j-feature-compact .j-feature-art::after {
+  content: none;
+  display: none;
+}
+.j-home-news .j-feature-compact .j-hero-poster.j-cover-poster {
+  display: block;
+  position: relative;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 7px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 17px;
+  overflow: hidden;
+  transform: none;
+  animation: none;
+  filter: none;
+  box-shadow: 0 12px 28px rgba(29,52,58,.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+  line-height: 0;
+}
+.j-home-news .j-feature-compact .j-hero-poster.j-cover-poster:hover,
+.j-home-news .j-feature-compact .j-hero-poster.j-cover-poster:focus-visible {
+  transform: none;
+  box-shadow: 0 17px 34px rgba(29,52,58,.20);
+}
+.j-home-news .j-feature-compact .j-hero-poster.j-cover-poster > img.j-cover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 11px;
+  border: 0;
+  transform: none;
+  box-shadow: none;
+}
+.j-home-news .j-feature-compact .j-cover-poster .j-image-action {
+  display: inline-flex;
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  gap: 7px;
+  align-items: center;
+  padding: 9px 11px;
+  border-radius: 24px;
+  background: rgba(255,252,245,.96);
+  color: #164756;
+  border: 1px solid rgba(255,255,255,.8);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 4px 12px rgba(13,48,56,.12);
+  pointer-events: none;
+}
+.j-home-news .j-feature-compact .j-feature-art > p {display: none;}
+@media (max-width: 860px) {
+  .j-home-news .j-feature-compact {grid-template-columns: 1fr;}
+  .j-home-news .j-feature-compact .j-feature-art {
+    min-height: 0;
+    padding: 0 20px 26px;
+    border-top: 0;
+  }
+}
+@media (max-width: 550px) {
+  .j-home-news .j-feature-compact .j-hero-poster.j-cover-poster {
+    max-width: 240px;
+    width: min(100%, 240px);
+    padding: 6px;
+    border-radius: 14px;
+  }
+  .j-home-news .j-feature-compact .j-cover-poster .j-image-action {
+    right: 11px;
+    bottom: 11px;
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .j-home-news .j-feature-compact .j-hero-poster.j-cover-poster {transition: none;}
+}
+
+
+/* Only on index.html: small hand-drawn confetti details like the user's
+   pink heart and turquoise star examples. No large illustrated backdrop. */
+.j-home-news .j-feature-compact .j-feature-art {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:transparent;
+  background-image:none;
+  border:0;
+  box-shadow:none;
+}
+.j-home-news .j-feature-compact .j-feature-art::before,
+.j-home-news .j-feature-compact .j-feature-art::after {content:none;display:none}
+.j-home-news .index-cover-doodles {
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+.j-home-news .index-cover-doodles svg {
+  display:block;
+  position:absolute;
+  width:70px;
+  height:auto;
+  overflow:visible;
+  will-change:transform;
+}
+.j-home-news .index-cover-doodles .index-cover-heart {
+  left:0%;
+  top:8%;
+  animation:index-doodle-heart 5.8s ease-in-out infinite;
+}
+.j-home-news .index-cover-doodles .index-cover-star {
+  width:80px;
+  right:0%;
+  bottom:7%;
+  animation:index-doodle-star 6.2s ease-in-out 1s infinite;
+}
+.j-home-news .j-feature-compact .j-hero-poster.j-cover-poster {z-index:1;}
+@keyframes index-doodle-heart {
+  0%,100% {transform:translateY(0) rotate(-6deg)}
+  50% {transform:translateY(-6px) rotate(-1deg)}
+}
+@keyframes index-doodle-star {
+  0%,100% {transform:translateY(0) rotate(3deg)}
+  50% {transform:translateY(5px) rotate(-5deg)}
+}
+@media(max-width:860px) {
+  .j-home-news .index-cover-doodles .index-cover-heart {left:8%;top:10%;}
+  .j-home-news .index-cover-doodles .index-cover-star {right:8%;bottom:6%;}
+}
+@media(max-width:550px) {
+  .j-home-news .index-cover-doodles .index-cover-heart {left:0%;top:16%;}
+  .j-home-news .index-cover-doodles .index-cover-star {right:0%;bottom:9%;}
+  .j-home-news .index-cover-doodles .index-cover-heart {width:64px}
+  .j-home-news .index-cover-doodles .index-cover-star {width:70px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .j-home-news .index-cover-doodles svg {animation:none;will-change:auto}
+}
+
+
+/* Homepage feature on phones: the poster comes before date, location and
+   action links; desktop and tablet keep their original composition. */
+@media (max-width: 650px) {
+  .j-home-news .j-feature-compact {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fffaf1;
+  }
+  .j-home-news .j-feature-compact .j-feature-copy {
+    display: contents;
+  }
+  .j-home-news .j-feature-compact .j-feature-copy > .j-eyebrow {
+    order: 1;
+    margin: 0 0 14px;
+    padding: 28px 23px 0;
+  }
+  .j-home-news .j-feature-compact .j-feature-copy > h3 {
+    order: 2;
+    padding: 0 23px;
+    margin: 0 0 16px;
+  }
+  .j-home-news .j-feature-compact .j-feature-copy > p:not(.j-eyebrow) {
+    order: 3;
+    max-width: none;
+    padding: 0 23px 14px;
+    margin: 0;
+  }
+  .j-home-news .j-feature-compact .j-feature-art {
+    order: 4;
+    min-height: 0;
+    padding: 10px 22px 22px;
+  }
+  .j-home-news .j-feature-compact .j-event-facts {
+    order: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 14px;
+    margin: 0 23px;
+    padding: 23px 0 0;
+    border-top: 1px solid #efcbbc;
+  }
+  .j-home-news .j-feature-compact .j-event-facts > div {min-width: 0;}
+  .j-home-news .j-feature-compact .j-event-facts dt {font-size: 10px;}
+  .j-home-news .j-feature-compact .j-event-facts dd {
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .j-home-news .j-feature-compact .j-event-facts dd span {font-size: 11px;}
+  .j-home-news .j-feature-compact .j-actions {
+    order: 6;
+    margin: 18px 0 0;
+    padding: 0 23px 29px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .j-home-news .j-feature-compact .j-actions .button-yellow {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .j-home-news .j-feature-compact .j-actions .j-light-link {
+    padding: 6px 0;
+  }
+}
+@media (max-width: 370px) {
+  .j-home-news .j-feature-compact .j-event-facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

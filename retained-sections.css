@@ -1,0 +1,81 @@
+/* Only the two requested sections retain the premium card design.
+   Everything else uses the previous BuntBewegt design unmodified. */
+
+/* Unsere Zielgruppen (reference screenshot 1) */
+.about{
+  width:min(1234px,calc(100% - 64px)); margin:0 auto 40px;
+  display:grid;grid-template-columns:1fr 1fr;min-height:520px;
+  background:#e5f2ec;border-radius:42px;overflow:hidden;
+  box-shadow:0 22px 55px rgba(44,74,49,.095);
+  align-items:stretch;
+}
+.about-photo-wrap{
+  min-height:520px;max-width:none;width:100%;margin:0;
+  position:relative;overflow:hidden;border-radius:0;
+}
+.about-photo{width:100%;height:100%;object-fit:cover;object-position:55% 50%;}
+.about-content{padding:60px 56px;max-width:none;align-self:center;}
+.about .eyebrow{font-size:11px;letter-spacing:2.1px;font-weight:800;color:#557d61;}
+.about h2{font-family:'Trebuchet MS',Arial,sans-serif;font-size:clamp(30px,3.1vw,43px);font-weight:800;color:#223c33;letter-spacing:-.03em;}
+.about-text{font-size:14px;line-height:1.85;margin:18px 0 24px;color:#5b766b;}
+.about .check-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:0;}
+.about .check-list li{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.84);padding:8px 11px;border-radius:11px;font-size:12px;line-height:1.5;font-weight:750;color:#3c6453;min-width:0;}
+.about .check-list li>span{border-radius:50%;background:#6b9f83;color:#fff;width:19px;height:19px;min-width:19px;display:grid;place-items:center;margin:0;font-size:13px;flex-shrink:0;}
+.about-leaf{background:#aad0a1;bottom:-16px;right:-25px;}
+.about-sun{background:#f3cc70;}
+
+/* Unsere Werte (reference screenshot 2) */
+.steps{padding-top:76px;padding-bottom:108px;}
+.steps .title-wrap{margin-bottom:30px;}
+.steps .eyebrow{font-size:11px;font-weight:800;color:#557d61;letter-spacing:2px;}
+.steps h2{font-family:'Trebuchet MS',Arial,sans-serif;font-size:clamp(30px,3.1vw,43px);font-weight:800;letter-spacing:-.03em;color:#223c33;}
+.steps-grid.retained-values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0;padding:0;}
+.steps-grid.retained-values li,
+.steps-grid.retained-values li:first-child,
+.steps-grid.retained-values li:last-child{
+  min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:12px;padding:20px 16px;
+  border:1px solid #efeee2;border-radius:22px;background:#fff;
+  box-shadow:0 8px 24px rgba(36,71,43,.045);
+}
+.steps-grid.retained-values li+li{border:1px solid #efeee2;}
+.steps-grid.retained-values li:nth-child(3n+2){background:#fff5e8;}
+.steps-grid.retained-values li:nth-child(3n+3){background:#edf7f7;}
+.steps-grid.retained-values .step-number{
+  font:500 38px/1 Georgia,serif;width:66px;height:66px;margin:0;
+  display:grid;place-items:center;border-radius:50%;
+  background:#ffecdd;color:#d47d68;flex:none;
+}
+.steps-grid.retained-values li:nth-child(3n+2) .step-number{background:#e4f2df;color:#6e9870;}
+.steps-grid.retained-values li:nth-child(3n+3) .step-number{background:#dff1f2;color:#6493a1;}
+.steps-grid.retained-values h3{font-size:15px;line-height:1.5;margin:0;font-weight:800;color:#315845;letter-spacing:-.02em;}
+
+@media(max-width:1100px){
+  .about{width:calc(100% - 52px);min-height:480px;}
+  .about-photo-wrap{min-height:480px;}
+  .about-content{padding:35px 26px;}
+  .about .check-list{gap:7px;}
+  .about .check-list li{font-size:11px;padding:7px 8px;}
+  .steps-grid.retained-values{gap:11px;}
+  .steps-grid.retained-values h3{font-size:13px;}
+}
+@media(max-width:740px){
+  .about{width:calc(100% - 36px);display:flex;flex-direction:column;min-height:0;border-radius:29px;margin:0 auto 24px;overflow:hidden;}
+  .about-photo-wrap{height:290px;min-height:290px;width:100%;margin:0;border-radius:0;}
+  .about-content{padding:30px 24px 36px;}
+  .about h2{font-size:30px;}
+  .about-text{font-size:13px;}
+  .about .check-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+  .about .check-list li{font-size:11px;}
+  .about-leaf,.about-sun{display:none;}
+  .steps{padding-top:50px;padding-bottom:73px;}
+  .steps-grid.retained-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .steps-grid.retained-values li,.steps-grid.retained-values li:first-child,.steps-grid.retained-values li:last-child{padding:19px 9px;border-radius:18px;}
+  .steps-grid.retained-values .step-number{width:58px;height:58px;font-size:34px;}
+  .steps-grid.retained-values h3{font-size:12px;overflow-wrap:anywhere;}
+}
+@media(max-width:350px){
+  .about-content{padding-inline:17px;}
+  .about .check-list li{font-size:10px;padding:6px;gap:5px;}
+  .steps-grid.retained-values h3{font-size:11px;}
+}
