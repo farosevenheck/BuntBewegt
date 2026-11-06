@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+<title id="title">Ich lese gern – Büchereiverein Dietrichsdorf</title>
+<circle cx="160" cy="160" r="136" fill="#a7190f"/>
+<g transform="rotate(-12 160 157)" fill="#fff" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="900" letter-spacing="-1">
+<text x="160" y="141" font-size="48" textLength="226" lengthAdjust="spacingAndGlyphs">ICH LESE</text>
+<text x="160" y="204" font-size="76" textLength="218" lengthAdjust="spacingAndGlyphs">GERN</text>
+</g>
+</svg>

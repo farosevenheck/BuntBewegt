@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 265" role="img" aria-labelledby="title desc">
+<title id="title">Nerdlicht – individuell gestaltete Namensgrafik</title>
+<desc id="desc">Illustratives, nicht offizielles Motiv mit Sternen, Controller und dem Namen Nerdlicht.</desc>
+<defs>
+ <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#251B4D"/><stop offset="1" stop-color="#142A47"/></linearGradient>
+ <linearGradient id="bubble" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#FAEF89"/><stop offset=".55" stop-color="#D0F4C5"/><stop offset="1" stop-color="#85DFEF"/></linearGradient>
+</defs>
+<rect x="6" y="6" width="768" height="253" rx="34" fill="url(#panel)" />
+<g transform="translate(36 32)">
+ <rect x="2" y="14" width="191" height="181" rx="43" fill="#FFFFFF" fill-opacity=".065" stroke="#FFFFFF" stroke-opacity=".18" stroke-width="2"/>
+ <path d="M94 21 110 69 157 86 110 103 94 149 78 103 31 86 78 69Z" fill="url(#bubble)" opacity=".95"/>
+ <rect x="51" y="69" width="85" height="49" rx="22" fill="#2E2D67" stroke="#FFFFFF" stroke-width="4"/>
+ <path d="M69 86v20M59 96h20" stroke="#B2F4E5" stroke-width="6" stroke-linecap="round"/>
+ <circle cx="116" cy="89" r="5" fill="#F9A1D1"/><circle cx="104" cy="99" r="5" fill="#F9A1D1"/>
+ <path d="m165 31 4 12 12 4-12 4-4 12-4-12-12-4 12-4Z" fill="#FDE8A0"/>
+ <circle cx="34" cy="44" r="6" fill="#9EE5FE"/>
+ <circle cx="161" cy="146" r="6" fill="#F3AED0"/>
+</g>
+<text x="250" y="140" fill="#FFFFFF" font-size="100" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" letter-spacing="-2">Nerdlicht</text>
+<text x="255" y="183" fill="#A9DACC" font-size="24" font-family="Arial, sans-serif" letter-spacing="3.5" font-weight="700">DIE NERDCOMMUNITY IM NORDEN</text>
+<path d="M254 205 H716" stroke="#D6F0D6" stroke-opacity=".25" stroke-width="2"/>
+</svg>

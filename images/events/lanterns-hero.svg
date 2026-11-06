@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="760" viewBox="0 0 640 760" fill="none">
+ <defs>
+  <linearGradient id="bg" x1="35" y1="34" x2="557" y2="748" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe5cf"/><stop offset=".55" stop-color="#ffd2bd"/><stop offset="1" stop-color="#ffe7b7"/></linearGradient>
+  <linearGradient id="coral" x1="120" y1="101" x2="207" y2="302" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb4a0"/><stop offset=".5" stop-color="#f76c66"/><stop offset="1" stop-color="#d9575e"/></linearGradient>
+  <linearGradient id="gold" x1="283" y1="130" x2="365" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe2a3"/><stop offset=".55" stop-color="#ffc656"/><stop offset="1" stop-color="#e99a37"/></linearGradient>
+  <linearGradient id="aqua" x1="455" y1="132" x2="552" y2="318" gradientUnits="userSpaceOnUse"><stop stop-color="#9de4df"/><stop offset=".5" stop-color="#5bc7c8"/><stop offset="1" stop-color="#319da9"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#fff5c8" stop-opacity=".95"/><stop offset=".55" stop-color="#fff5c8" stop-opacity=".28"/><stop offset="1" stop-color="#fff5c8" stop-opacity="0"/></radialGradient>
+  <filter id="blur" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10"/></filter>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="14" stdDeviation="9" flood-color="#803d25" flood-opacity=".14"/></filter>
+  <clipPath id="c1"><ellipse cx="161" cy="206" rx="85" ry="103"/></clipPath>
+  <clipPath id="c2"><rect x="286" y="156" width="106" height="186" rx="41"/></clipPath>
+  <clipPath id="c3"><ellipse cx="500" cy="225" rx="86" ry="95"/></clipPath>
+ </defs>
+ <rect width="640" height="760" fill="url(#bg)"/>
+ <path d="M447 0c43 81 99 111 193 93V0H447Z" fill="#ffb9a5" opacity=".6"/>
+ <path d="M640 367c-70-47-122-8-166 35-68 66-153 30-213 93-85 92-67 186-161 265h540V367Z" fill="#ffc94f" opacity=".64"/>
+ <path d="M0 580c135-54 217 52 343 29 97-18 161-3 297 83v68H0V580Z" fill="#7cd7d2" opacity=".82"/>
+ <path d="M277 760c75-98 166-100 247-87 46 7 84 25 116 36v51H277Z" fill="#28abb2" opacity=".68"/>
+ <circle cx="18" cy="366" r="9" fill="#ffbf3d"/><circle cx="70" cy="413" r="5" fill="#fa6d63"/><circle cx="583" cy="396" r="9" fill="#f9836d"/><circle cx="526" cy="460" r="6" fill="#fff6d1"/><circle cx="35" cy="510" r="6" fill="#fff0a3"/><circle cx="615" cy="549" r="4" fill="#e77359"/>
+ <g fill="#f7b53c"><circle cx="50" cy="332" r="4"/><circle cx="91" cy="352" r="3"/><circle cx="552" cy="386" r="4"/><circle cx="568" cy="411" r="2"/><circle cx="445" cy="450" r="4"/></g>
+ <g fill="#fc886c"><circle cx="108" cy="416" r="4"/><circle cx="590" cy="475" r="5"/><circle cx="34" cy="630" r="4"/><circle cx="464" cy="592" r="4"/><circle cx="511" cy="580" r="2"/></g>
+ <!-- garland -->
+ <path d="M-20 24c212 69 414 49 682 110" stroke="#073c4e" stroke-width="7" stroke-linecap="round"/>
+ <path d="M161 64v42M340 89v66M500 111v20" stroke="#073c4e" stroke-width="5" stroke-linecap="round"/>
+ <!-- glowy bulbs -->
+ <g><circle cx="66" cy="47" r="30" fill="url(#light)"/><circle cx="66" cy="47" r="9" fill="#fff7b6"/><circle cx="248" cy="85" r="30" fill="url(#light)"/><circle cx="248" cy="85" r="9" fill="#fff2a7"/><circle cx="440" cy="101" r="31" fill="url(#light)"/><circle cx="440" cy="101" r="8" fill="#fff5bb"/><circle cx="610" cy="124" r="28" fill="url(#light)"/><circle cx="610" cy="124" r="8" fill="#fff5bb"/></g>
+ <!-- coral round lantern -->
+ <g filter="url(#shadow)"><rect x="142" y="94" width="38" height="13" rx="5" fill="#123e48"/><ellipse cx="161" cy="206" rx="85" ry="103" fill="url(#coral)"/><g clip-path="url(#c1)" stroke="#cf5b5e" stroke-width="3" opacity=".5"><path d="M66 145c66 19 124 21 192-1M66 174c68 22 126 23 192 3M66 205c69 16 130 18 192 0M66 233c61 21 132 22 192 5M65 265c63 21 130 20 193 0M91 294c48 11 105 12 142 0"/><path d="M159 100c-59 46-59 182 0 209M163 100c59 46 59 182 0 209" opacity=".25"/></g><ellipse cx="151" cy="187" rx="36" ry="63" fill="url(#light)" opacity=".74"/><rect x="141" y="298" width="40" height="12" rx="5" fill="#153b45"/></g>
+ <!-- saffron tall lantern -->
+ <g filter="url(#shadow)"><rect x="325" y="144" width="31" height="14" rx="4" fill="#0c3b4a"/><rect x="286" y="156" width="106" height="186" rx="41" fill="url(#gold)"/><g clip-path="url(#c2)" stroke="#e1a53d" stroke-width="2.7" opacity=".65"><path d="M284 183q55 23 111 0M284 213q55 25 111 0M284 245q55 23 111 0M284 278q55 23 111 0M284 310q55 23 111 0"/></g><ellipse cx="338" cy="240" rx="33" ry="62" fill="url(#light)" opacity=".9"/><rect x="311" y="332" width="56" height="13" rx="5" fill="#123c48"/></g>
+ <!-- turquoise lantern -->
+ <g filter="url(#shadow)"><rect x="482" y="120" width="35" height="14" rx="5" fill="#123d4a"/><ellipse cx="500" cy="225" rx="86" ry="95" fill="url(#aqua)"/><g clip-path="url(#c3)" stroke="#238d9b" stroke-width="2.8" opacity=".55"><path d="M400 181q97 24 198 0M400 213q97 23 198 0M400 241q97 23 198 0M410 274q90 23 180 0M470 128c-47 50-42 143 0 192M523 127c47 50 42 143 0 192"/></g><ellipse cx="493" cy="223" rx="39" ry="57" fill="url(#light)" opacity=".55"/><rect x="474" y="311" width="51" height="12" rx="5" fill="#123c48"/></g>
+ <!-- upper leaves -->
+ <g fill="#146e6d"><path d="M640 20c-63 0-75-26-103-50 8 44 20 65 103 70Z"/><path d="M638 78c-55-12-77-56-79-91 44 18 73 44 79 91Z"/><path d="M617 96c-30-34-50-69-51-101 45 29 59 63 51 101Z"/></g>
+ <g fill="#056c73" opacity=".96"><path d="M641 520c-78-8-106-49-119-94 60 11 107 47 119 94Z"/><path d="M639 567c-76 11-118-15-145-53 65-8 115 3 145 53Z"/><path d="M640 622c-78 14-135-7-170-38 67-23 133-4 170 38Z"/><path d="M641 663c-60-16-97-55-103-92 60 13 93 42 103 92Z"/><path d="M638 718c-57-17-90-50-108-84 57 11 98 37 108 84Z"/></g>
+ <path d="M640 695c-72-119-104-159-141-235" stroke="#063e56" stroke-width="5" opacity=".55"/>
+ <g fill="#f9fbeb" opacity=".55"><circle cx="32" cy="246" r="3"/><circle cx="267" cy="369" r="4"/><circle cx="426" cy="355" r="3"/><circle cx="90" cy="541" r="3"/><circle cx="392" cy="492" r="4"/></g>
+</svg>
