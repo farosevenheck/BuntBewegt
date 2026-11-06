@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+  <title>Kreativität</title>
+  <defs>
+    <linearGradient id="palette" x1="18" y1="24" x2="81" y2="79" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF826F"/>
+      <stop offset="1" stop-color="#ED385A"/>
+    </linearGradient>
+    <linearGradient id="brush" x1="65" y1="77" x2="90" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#087CF0"/>
+      <stop offset="1" stop-color="#50C7F5"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="26" fill="#FFF0EB"/>
+  <path d="M48 20C28 17 15 30 15 48c0 19 14 32 33 32h7c7 0 10-6 7-11-2-4-1-7 3-10 5-3 9 3 15 1 8-2 9-10 6-19C81 27 67 19 48 20Z" transform="translate(0 3)" fill="#D64156" opacity=".16"/>
+  <path d="M48 20C28 17 15 30 15 48c0 19 14 32 33 32h7c7 0 10-6 7-11-2-4-1-7 3-10 5-3 9 3 15 1 8-2 9-10 6-19C81 27 67 19 48 20Z" fill="url(#palette)"/>
+  <path d="M22 43c2-12 12-19 26-19" stroke="#FFB0A0" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28" cy="42" r="6" fill="#72CF45"/><circle cx="27" cy="40" r="2" fill="#E9FFCB" opacity=".85"/>
+  <circle cx="39" cy="30" r="6" fill="#1988F5"/><circle cx="38" cy="28" r="2" fill="#C3EAFF" opacity=".85"/>
+  <circle cx="56" cy="30" r="6" fill="#FFCE2F"/><circle cx="55" cy="28" r="2" fill="#FFF5BC" opacity=".85"/>
+  <circle cx="71" cy="42" r="6" fill="#FFF9EE"/><circle cx="69" cy="40" r="2" fill="#FFF"/>
+  <ellipse cx="36" cy="62" rx="7.5" ry="8" fill="#FFF0EB"/>
+  <path d="m67 72 17-21c2-2 5-2 7 0s2 4 0 6L73 78Z" fill="url(#brush)"/>
+  <path d="m64 69 10 8-5 6-10-8Z" fill="#FDFBF2"/>
+  <path d="M60 75c-7 0-5 8-11 10 10 4 18 0 20-9l-5-5Z" fill="#67BD43"/>
+  <path d="M48 85c6-1 9-3 11-6" stroke="#B7E68D" stroke-width="2" stroke-linecap="round"/>
+</svg>

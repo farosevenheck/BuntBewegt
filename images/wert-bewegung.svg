@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+  <title>Bewegung – Radschlag</title>
+  <defs>
+    <linearGradient id="shirt" x1="44" y1="42" x2="65" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43B8FF"/>
+      <stop offset="1" stop-color="#0F78E9"/>
+    </linearGradient>
+    <linearGradient id="pants" x1="42" y1="17" x2="77" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE069"/>
+      <stop offset="1" stop-color="#F6B624"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="26" fill="#EAF5FF"/>
+  <path d="M14 78c17 8 44 9 67-4" stroke="#93CBE8" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <path d="M60 41C51 30 45 24 36 17" stroke="url(#pants)" stroke-width="11" stroke-linecap="round"/>
+  <path d="M61 42c9-8 16-16 19-25" stroke="url(#pants)" stroke-width="11" stroke-linecap="round"/>
+  <path d="m35 17-7-5" stroke="#ED5660" stroke-width="8" stroke-linecap="round"/>
+  <path d="m80 17 6-5" stroke="#ED5660" stroke-width="8" stroke-linecap="round"/>
+  <path d="M49 49c-11 7-20 16-32 26" stroke="#EFB083" stroke-width="8" stroke-linecap="round"/>
+  <path d="M55 49c10 5 17 15 22 26" stroke="#EFB083" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="17" cy="75" r="4.5" fill="#F7BE91"/>
+  <circle cx="77" cy="75" r="4.5" fill="#F7BE91"/>
+  <path d="m55 39 8-2 5 8-9 5-6-5Z" fill="url(#pants)"/>
+  <path d="M49 46c3-4 6-6 10-6 4 0 7 3 9 6-4 5-10 10-16 13l-9-8Z" fill="url(#shirt)"/>
+  <path d="m45 54 5 2" stroke="#F7BE91" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="41" cy="61" r="8" fill="#F7BE91"/>
+  <path d="M34 60c0-6 5-10 10-9 4 1 6 4 6 7-4-2-7-4-9-4-3 0-5 2-7 6Z" fill="#5A3F3D"/>
+  <path d="m14 40 7 3m-8 5 7 2" stroke="#ED5660" stroke-width="3" stroke-linecap="round"/>
+  <path d="m77 51 6-2m-4 8 6-1" stroke="#59BF53" stroke-width="3" stroke-linecap="round"/>
+</svg>

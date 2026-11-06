@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+<title id="title">BuntBewegt: eine bunte Nachricht voller Ideen</title>
+<desc id="desc">Illustration eines grünen Briefumschlags mit farbenfrohem Herz, Blumen und spielerischen Sternen.</desc>
+<defs>
+ <linearGradient id="env" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#dbeedb"/><stop offset="1" stop-color="#a9d2a8"/></linearGradient>
+ <linearGradient id="paper" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#fff6e9"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-40%" width="160%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#275843" flood-opacity=".15"/></filter>
+</defs>
+<path d="M172 424c20 63 181 122 399 107 182-13 300-93 259-183-34-75-161-121-354-101C266 270 140 326 172 424" fill="#f0f5e9"/>
+<path d="M203 117c-12-17-3-37 15-41 19-5 28 10 30 23 8-16 29-22 41-7 13 17 0 37-18 53l-26 24-42-52Z" fill="#f4b9aa" opacity=".9"/>
+<circle cx="777" cy="101" r="18" fill="#f2d56c" opacity=".85"/>
+<path d="m786 153 13 28 30 6-29 12-6 32-13-28-31-7 28-12z" fill="#e8ba4f"/>
+<path d="M156 318c-27-44-24-67 0-93m0 93c-40-7-61-19-73-46m73 46c36-28 58-35 77-33" stroke="#81b38b" stroke-width="12" stroke-linecap="round" fill="none"/>
+<path d="M121 247c-16-5-26-17-30-34 26-2 40 5 44 24m70 38c15-23 30-31 49-26-10 22-25 33-44 34" fill="#b6d49d"/>
+<g transform="translate(225 129) rotate(-7 267 208)" filter="url(#shadow)">
+ <rect x="103" y="26" width="431" height="297" rx="30" fill="url(#paper)" stroke="#c1d9bc" stroke-width="5"/>
+ <path d="M148 90h220M148 123h255M148 156h169" stroke="#d8e4ce" stroke-width="14" stroke-linecap="round"/>
+ <g transform="translate(350 170)">
+  <path d="M0 43C-67-3-56-61-15-59 4-58 17-44 23-30 42-68 93-61 92-19c0 27-28 56-69 88L0 43Z" fill="#e98f86"/>
+  <path d="M23-30c10-19 23-31 44-30" stroke="#fad4c1" stroke-width="9" stroke-linecap="round" fill="none"/>
+ </g>
+ <rect x="20" y="218" width="599" height="281" rx="37" fill="url(#env)" stroke="#8cbd9a" stroke-width="7"/>
+ <path d="M38 234 319 428 600 234" fill="none" stroke="#75a988" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M38 478 239 322M600 478 398 322" fill="none" stroke="#a8d2a5" stroke-width="8"/>
+ <path d="M34 482 284 302c20-14 49-14 69 0l250 180" fill="#c5e2bb" stroke="#8cbd9a" stroke-width="7" stroke-linejoin="round"/>
+ <circle cx="318" cy="398" r="35" fill="#f4d76b"/><path d="m302 398 11 13 22-27" fill="none" stroke="#387950" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M847 350c11-31 33-45 64-40m-64 40c-17-20-35-29-57-27m57 27c0 37 9 58 27 72" stroke="#73aa89" stroke-width="10" stroke-linecap="round" fill="none"/>
+<ellipse cx="903" cy="309" rx="23" ry="12" transform="rotate(-31 903 309)" fill="#a4ca92"/>
+<ellipse cx="791" cy="322" rx="22" ry="12" transform="rotate(32 791 322)" fill="#a4ca92"/>
+<path d="m121 474 8-24 8 24 24 8-24 8-8 24-8-24-24-8z" fill="#e8aa5e"/>
+<circle cx="738" cy="522" r="11" fill="#e9a18d"/>
+<circle cx="788" cy="515" r="7" fill="#8cbf96"/>
+</svg>
