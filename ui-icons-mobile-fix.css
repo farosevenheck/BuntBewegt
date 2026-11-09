@@ -1,0 +1,48 @@
+/* BuntBewegt – stable vector iconography on iOS / Android and desktop. */
+.bb-ui-arrow,.bb-ui-check,.bb-ui-sparkle,.bb-ui-star,.bb-ui-heart,.bb-ui-expand{
+  display:block;flex:none;max-width:none;pointer-events:none;
+  fill:none;stroke:currentColor;vertical-align:middle;
+}
+/* Homepage: use exactly the vector-arrow treatment of Angebote, not the iOS emoji arrow. */
+.bb-home-tile__action .bb-arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;min-width:30px;padding:0;border:1px solid rgba(50,86,68,.13);
+  border-radius:50%;background:#fff;color:var(--bb-tone);
+}
+.bb-home-tile__action .bb-arrow .bb-ui-arrow{width:18px;height:18px}
+.bb-home-tile:hover .bb-arrow,.bb-home-tile:focus-visible .bb-arrow{transform:translateX(3px)}
+/* Visible inline arrows behave like icons instead of characters. */
+.bb-detail .bbd-textlink .bb-ui-arrow,.bb-detail .bbd-button .bb-ui-arrow,
+.bb-detail .birthday-wizard__back .bb-ui-arrow,
+.bb-detail .birthday-wizard__next .bb-ui-arrow{display:inline-block;width:18px;height:18px;vertical-align:middle;flex:none}
+.bb-detail .bbd-breadcrumb .bb-ui-arrow{width:14px;height:14px}
+.bb-detail .bbd-hero__photo figcaption .bb-ui-star{width:16px;height:16px}
+.bb-detail .bbd-kicker .bb-ui-star{display:inline-block;width:14px;height:14px;vertical-align:-2px}
+.bb-detail .bbd-benefit__symbol svg{width:21px;height:21px}
+.bb-detail .bbd-stations__summary-icon svg{width:23px;height:23px}
+.bb-detail .bbd-tailored__symbol svg{width:26px;height:26px}
+.bb-detail .bbd-station__checkmark svg,.team-ref-page .team-event-card__checkmark svg,
+.bb-detail .birthday-extra__indicator svg{width:15px;height:15px}
+.bb-detail .bbd-material-card .bb-ui-expand{display:inline-block;width:13px;height:13px;margin-left:4px}
+.team-ref-page .team-event-deco svg{width:23px;height:23px}
+.footer-legal-heart svg{display:inline-block;width:14px;height:14px;vertical-align:middle}
+/* Fix the huge bright-green emoji from ✳ on iPhones in the colored CTA sections.
+   A quiet geometric ring replaces the text glyph entirely. */
+.bb-detail .bbd-cta__deco{
+  display:block!important;position:absolute;right:7%;bottom:-95px;top:auto;
+  width:265px;height:265px;box-sizing:border-box;border:35px solid rgba(255,255,255,.055);
+  border-radius:50%;background:transparent;color:transparent;font-size:0;line-height:0;
+  pointer-events:none;z-index:0;opacity:1;
+}
+.bb-detail .bbd-cta__deco::after{
+  content:"";position:absolute;inset:29px;border:2px solid rgba(255,255,255,.09);border-radius:50%;
+}
+.bb-detail .bbd-cta__layout>div,.bb-detail .bbd-cta__layout>a{position:relative;z-index:1}
+@media(max-width:560px){
+  .bb-home-tile__action .bb-arrow{width:27px;height:27px;min-width:27px}
+  .bb-home-tile__action .bb-arrow .bb-ui-arrow{width:17px;height:17px}
+  .bb-detail .bbd-cta__deco{right:-65px;bottom:-70px;width:185px;height:185px;border-width:25px;opacity:.7}
+}
+@media(prefers-reduced-motion:reduce){
+ .bb-home-tile__action .bb-arrow{transition:none!important}
+}
