@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" fill="none"><title>Spinnennetz</title><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9ef"/><stop offset="1" stop-color="#fff2f6"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffbd9"/><stop offset="1" stop-color="#f4b85d"/></linearGradient>
+</defs>
+<ellipse cx="180" cy="263" rx="141" ry="20" fill="#b6dfc7" opacity=".55"/>
+<path d="M44 274Q180 298 316 274" stroke="#9ecdbb" stroke-width="6" stroke-linecap="round"/>
+<path d="M26 54l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#f6c969"/>
+<path d="M331 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f1a1b7"/>
+<path d="M77 96L282 96L282 243L77 243Z" fill="#e7f7f1" stroke="#63b79d" stroke-width="8" stroke-linejoin="round"/>
+<g stroke="#b077d0" stroke-width="5" opacity=".94"><path d="M77 96L282 243M282 96L77 243M77 170L282 170M179 96L179 243M77 122L282 218M77 218L282 122"/></g>
+<circle cx="181" cy="170" r="26" fill="#fff7e7" stroke="#f3af64" stroke-width="5"/><path d="M181 151V187M162 170H199" stroke="#f3af64" stroke-width="4"/>
+<circle cx="60" cy="206" r="17" fill="#f5ba95"/><path d="M42 225L37 253M79 225L88 255M45 230L18 214M77 230L106 202" stroke="#4faaa7" stroke-width="11" stroke-linecap="round"/><path d="M45 202q15-16 30 0" stroke="#7f4a3d" stroke-width="7"/>
+<circle cx="303" cy="207" r="17" fill="#f5ba95"/><path d="M285 227L281 253M318 227L329 251M288 229L261 205M319 226L340 209" stroke="#f293aa" stroke-width="11" stroke-linecap="round"/></svg>

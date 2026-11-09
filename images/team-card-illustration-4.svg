@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" fill="none"><title>Blindparcours</title><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9ef"/><stop offset="1" stop-color="#fff2f6"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffbd9"/><stop offset="1" stop-color="#f4b85d"/></linearGradient>
+</defs>
+<ellipse cx="180" cy="263" rx="141" ry="20" fill="#b6dfc7" opacity=".55"/>
+<path d="M44 274Q180 298 316 274" stroke="#9ecdbb" stroke-width="6" stroke-linecap="round"/>
+<path d="M26 54l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#f6c969"/>
+<path d="M331 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f1a1b7"/>
+<path d="M48 246Q90 222 135 242T228 240T320 238" fill="none" stroke="#b6d9ab" stroke-width="16" stroke-linecap="round"/>
+<path d="M39 249h24l-12-38z" fill="#f48a75" stroke="#d45b62" stroke-width="3"/><path d="M292 249h26l-13-38z" fill="#f48a75" stroke="#d45b62" stroke-width="3"/>
+<g transform="translate(128 89)"><path d="M-16 82L-20 123M15 82L25 123" stroke="#3b9b9d" stroke-width="10" stroke-linecap="round"/><path d="M-17 59L-45 75M17 59L51 71" stroke="#f9bc92" stroke-width="10" stroke-linecap="round"/><path d="M-18 52h36l3 46h-42z" fill="#f4b84d" stroke="#d5944c" stroke-width="3"/><circle cy="22" r="27" fill="#f3b98d" stroke="#c98a64" stroke-width="2.5"/><path d="M-26 18q2-39 34-31q25 5 22 27" fill="#714936"/><path d="M-25 20Q0 34 27 19" stroke="#3c91a1" stroke-width="12" stroke-linecap="round"/></g>
+<g transform="translate(241 92)"><path d="M-16 82L-20 124M16 82L24 124" stroke="#8d65bd" stroke-width="10" stroke-linecap="round"/><path d="M-17 57L-51 69M17 57L39 82" stroke="#e9ae84" stroke-width="10" stroke-linecap="round"/><path d="M-18 52h36l3 46h-42z" fill="#ef9eb3" stroke="#d4779b" stroke-width="3"/><circle cy="22" r="27" fill="#dba076" stroke="#a67359" stroke-width="2.5"/><path d="M-26 15q4-31 34-29q25 5 21 24" fill="#5c3a31"/><circle cx="-8" cy="22" r="2.8" fill="#3c302d"/><circle cx="9" cy="22" r="2.8" fill="#3c302d"/><path d="M-6 31q6 7 12 0" fill="none" stroke="#9a5b47" stroke-width="2"/></g></svg>

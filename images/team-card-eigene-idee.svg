@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="560" height="560">
+<defs>
+ <linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff9cf"/><stop offset="1" stop-color="#ffdf71"/></linearGradient>
+ <linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a5d9fa"/><stop offset="1" stop-color="#3eaac7"/></linearGradient>
+</defs>
+<!-- light decorative stars and base -->
+<path d="M88 141l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#f0c14c"/>
+<path d="M468 136l7 13 14 6-14 6-7 14-6-14-15-6 15-6z" fill="#fa8bad"/>
+<path d="M425 84l6 12 12 6-12 6-6 12-6-12-12-6 12-6z" fill="#78c9be"/>
+<ellipse cx="280" cy="472" rx="194" ry="30" fill="#b7dfc3" opacity=".63"/>
+<!-- kids at sides -->
+<g stroke="#844f3b" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+ <path d="M113 421c-6-72 9-106 48-109 40-3 55 36 56 109" fill="#ec87a5"/>
+ <path d="M129 364l-27 40 35 13M204 364l25 37-36 18" stroke="#ed9b75" stroke-width="15" fill="none"/>
+ <path d="M123 423v33m72-32v32" stroke="#328f8a" stroke-width="21"/>
+ <circle cx="167" cy="271" r="54" fill="#f8b683"/>
+ <path d="M112 254c-12-73 92-98 112-29 7 25 2 41 2 41-13-30-33-38-60-41-13 21-28 26-54 29z" fill="#8f523f"/>
+ <circle cx="147" cy="276" r="4" fill="#4b3a36" stroke="none"/><circle cx="187" cy="276" r="4" fill="#4b3a36" stroke="none"/>
+ <path d="M151 292q16 17 32 0" stroke="#a85d4f" stroke-width="5" fill="none"/>
+ <path d="M349 421c1-72 15-106 55-109 40-3 57 39 58 109" fill="#69b9ac"/>
+ <path d="M368 365l-26 40 32 13M452 359l25 42-36 16" stroke="#dca27e" stroke-width="15" fill="none"/>
+ <path d="M367 423v33m74-33v33" stroke="#8061a6" stroke-width="21"/>
+ <circle cx="407" cy="271" r="54" fill="#dba27d"/>
+ <path d="M353 255c-8-58 31-82 68-77 41 8 55 39 38 87-13-29-39-37-63-37-17 17-24 21-43 27z" fill="#6e4838"/>
+ <circle cx="387" cy="277" r="4" fill="#4b3937" stroke="none"/><circle cx="426" cy="277" r="4" fill="#4b3937" stroke="none"/>
+ <path d="M392 293q17 18 31 0" stroke="#9d624e" stroke-width="5" fill="none"/>
+</g>
+<!-- ideas represented by a cheerful bulb and colorful connecting swooshes -->
+<path d="M201 357q79-33 157 0" fill="none" stroke="#81c6b5" stroke-width="13" stroke-linecap="round"/>
+<circle cx="280" cy="202" r="91" fill="#fff1c1" opacity=".75"/>
+<path d="M220 196a61 61 0 1 1 122 0c0 28-20 44-28 56-5 7-8 19-8 25h-50c0-22-5-25-16-39-12-14-20-27-20-42z" fill="url(#p)" stroke="#e0a641" stroke-width="9"/>
+<rect x="255" y="275" width="52" height="18" rx="8" fill="#4da9b5" stroke="#317a89" stroke-width="5"/>
+<rect x="261" y="293" width="40" height="14" rx="7" fill="#4e9ca1"/>
+<path d="M259 222q21-24 42 0" fill="none" stroke="#efa93e" stroke-width="8" stroke-linecap="round"/>
+<path d="M280 65v23M215 89l-13-19M344 89l15-18M185 147l-25-7M375 147l25-7" stroke="#f7b83f" stroke-width="11" stroke-linecap="round"/>
+<circle cx="280" cy="340" r="8" fill="#e88bac"/><circle cx="310" cy="340" r="6" fill="#7bcbbc"/>
+<!-- arms inviting the idea -->
+<path d="M202 343q19-23 41-12M357 343q-19-23-41-12" stroke="#df9872" stroke-width="14" stroke-linecap="round" fill="none"/>
+<path d="M111 442l11 8M450 440l-8 10" stroke="#69af80" stroke-width="7" stroke-linecap="round"/>
+</svg>

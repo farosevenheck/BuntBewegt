@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" fill="none"><title>Balltransport</title><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9ef"/><stop offset="1" stop-color="#fff2f6"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffbd9"/><stop offset="1" stop-color="#f4b85d"/></linearGradient>
+</defs>
+<ellipse cx="180" cy="263" rx="141" ry="20" fill="#b6dfc7" opacity=".55"/>
+<path d="M44 274Q180 298 316 274" stroke="#9ecdbb" stroke-width="6" stroke-linecap="round"/>
+<path d="M26 54l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#f6c969"/>
+<path d="M331 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f1a1b7"/>
+<path d="M65 231L278 231" stroke="#93cbb6" stroke-width="8" stroke-linecap="round"/>
+<circle cx="178" cy="158" r="56" fill="#ffe195" stroke="#e7a94e" stroke-width="7"/>
+<path d="M154 108Q188 129 216 155M140 195Q182 171 211 186" stroke="#fff8d3" stroke-width="8" stroke-linecap="round"/>
+<path d="M109 159H65M247 159h38" stroke="#64a0ad" stroke-width="12" stroke-linecap="round"/>
+<path d="M54 145h14v28H54zM288 145h14v28h-14z" fill="#5fc0af"/>
+<g transform="translate(60 97)"><circle cy="25" r="25" fill="#f2b48d"/><path d="M-25 20Q-21-12 6-7Q25 0 25 14" fill="#794c3d"/><path d="M-15 53H15L23 113H-23Z" fill="#ea8da6"/><path d="M-17 61L-6 77" stroke="#f5bb94" stroke-width="8"/></g>
+<g transform="translate(291 97)"><circle cy="25" r="25" fill="#e6a882"/><path d="M-25 20Q-21-12 6-7Q25 0 25 14" fill="#593d36"/><path d="M-15 53H15L23 113H-23Z" fill="#8ec6d3"/><path d="M15 61L4 78" stroke="#e9b18b" stroke-width="8"/></g></svg>

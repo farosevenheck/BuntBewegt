@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" fill="none"><title>Turmbau</title><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9ef"/><stop offset="1" stop-color="#fff2f6"/></linearGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffbd9"/><stop offset="1" stop-color="#f4b85d"/></linearGradient>
+</defs>
+<ellipse cx="180" cy="263" rx="141" ry="20" fill="#b6dfc7" opacity=".55"/>
+<path d="M44 274Q180 298 316 274" stroke="#9ecdbb" stroke-width="6" stroke-linecap="round"/>
+<path d="M26 54l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#f6c969"/>
+<path d="M331 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f1a1b7"/>
+<path d="M89 239H277" stroke="#a5cdb6" stroke-width="10" stroke-linecap="round"/>
+<rect x="105" y="176" width="73" height="68" rx="11" fill="#f0b852" stroke="#dc8f35" stroke-width="4"/>
+<rect x="180" y="176" width="73" height="68" rx="11" fill="#95cdbb" stroke="#50a68e" stroke-width="4"/>
+<rect x="146" y="106" width="73" height="67" rx="11" fill="#f4a7bf" stroke="#d16f9b" stroke-width="4"/>
+<path d="M146 141h73M181 107v66" stroke="#fff" stroke-width="4" opacity=".68"/>
+<path d="M107 212h70M218 210h34" stroke="#fff" stroke-width="5" opacity=".5"/>
+<path d="M179 85l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" fill="#f9c551"/>
+<circle cx="65" cy="171" r="17" fill="#f5ba95"/><path d="M50 192L39 228M77 192L87 228M77 197L104 172" stroke="#6aa9ce" stroke-width="10" stroke-linecap="round"/>
+<circle cx="291" cy="172" r="17" fill="#f5ba95"/><path d="M279 192L272 228M303 192L316 228M283 196L254 176" stroke="#83bb82" stroke-width="10" stroke-linecap="round"/></svg>
