@@ -1,3 +1,5 @@
+# BuntBewegt — search engine crawler guidance
 User-agent: *
 Allow: /
-# To add the Sitemap URL, run: python3 seo-configure.py --domain https://YOUR-REAL-DOMAIN
+
+Sitemap: https://buntbewegt.com/sitemap.xml
