@@ -1,0 +1,8 @@
+تم فصل صفحة العروض إلى صفحات مستقلة:
+angebote.html = فقط البطاقات الأربع الرئيسية
+events.html = الفعاليات
+kindergeburtstage.html = أعياد الميلاد
+teambuilding.html = بناء الفريق
+workshops-projektwochen.html = الورشات وأسابيع المشاريع
+
+الصفحة الرئيسية والفوتر يفتحان الصفحات مباشرة. لا يوجد تمرير تلقائي داخل Angebote.

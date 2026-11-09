@@ -1,0 +1,78 @@
+/* Teambuilding cards inspired by the visual language of Events – page scoped only. */
+.team-ref-page .team-ref-dashboard__top{display:block}
+.team-ref-page .team-ref-highlight{display:grid;grid-template-columns:minmax(0,0.88fr) minmax(0,1.12fr);gap:28px;min-height:0;align-items:center;padding:20px;border-radius:29px}
+.team-ref-page .team-ref-highlight img{height:285px;max-height:none;object-fit:cover;border-radius:22px}
+.team-ref-page .team-ref-highlight__copy{padding:12px 20px 12px 0}
+.team-ref-page .team-ref-highlight__copy>p:last-child{font-size:16px;max-width:700px;line-height:1.7}
+.team-ref-page .team-ref-catalog{position:relative;display:block;background:linear-gradient(135deg,#fffefc,#fff9f8 58%,#f6fbf6);border:1px solid #f4e7e2;border-radius:28px;padding:36px 30px;margin:27px 0 0;overflow:hidden;isolation:isolate}
+.team-ref-page .team-ref-catalog>*{position:relative;z-index:1}
+.team-ref-page .team-ref-catalog:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;top:-134px;right:-80px;border:23px solid #edacbf24;z-index:0}
+.team-ref-page .team-event-deco{position:absolute;top:18px;right:40px;color:#e8ac55;font-size:23px;opacity:.55;pointer-events:none}
+.team-ref-page .team-event-kicker{font-size:12px;font-weight:900;letter-spacing:.13em;color:#c2657e;margin:0 0 10px}
+.team-ref-page .team-ref-catalog__heading h2{font-size:clamp(29px,3vw,42px);letter-spacing:-.04em}
+.team-ref-page .team-ref-catalog__heading>span{background:#e45d87;color:#fff;font-size:12px}
+.team-ref-page .team-ref-catalog__intro{margin:14px 0 25px;font-size:15px;color:#5a7677;line-height:1.65;max-width:780px}
+.team-ref-page .team-ref-exercise-grid,
+.team-ref-page .team-ref-expanded__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.team-ref-page .team-event-card{--card-accent:var(--station-accent);min-width:0;min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:0;text-align:left;overflow:hidden;border:1.5px solid #e6eae5;border-radius:21px;background:#fff;box-shadow:0 10px 23px #20472e0a;transition:border-color .2s,box-shadow .2s,transform .2s;cursor:pointer}
+.team-ref-page .team-event-card:hover{transform:translateY(-3px);border-color:var(--station-accent);box-shadow:0 12px 28px #254c3321}
+.team-ref-page .team-event-card:has(input:checked){background:#fff;border-color:var(--station-accent);box-shadow:0 0 0 1px var(--station-accent),0 12px 24px #20482b1b}
+.team-ref-page .team-event-card input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:5}
+.team-ref-page .team-event-card:focus-within{outline:3px solid #246d54;outline-offset:3px}
+.team-ref-page .team-event-card .team-ref-exercise__visual{display:grid;place-items:center;height:160px;width:100%;flex:none;position:relative;overflow:hidden;background:var(--station-wash);color:var(--station-accent)}
+.team-ref-page .team-event-card .team-ref-exercise__visual:before{content:"";position:absolute;width:160px;height:160px;border:20px solid currentColor;opacity:.04;border-radius:50%;right:-51px;top:-98px}
+.team-ref-page .team-event-card .team-ref-exercise__visual img{position:relative;z-index:1;width:156px;height:156px;object-fit:contain;max-width:90%;filter:drop-shadow(0 5px 6px #15352a16);transition:transform .25s}
+.team-ref-page .team-event-card:hover .team-ref-exercise__visual img{transform:scale(1.045)}
+.team-ref-page .team-event-card .team-ref-exercise__visual svg{position:relative;z-index:1;width:90px;height:90px;stroke-width:1.7;filter:drop-shadow(0 4px 3px #0000000b)}
+.team-ref-page .team-event-card__info{display:flex;flex-direction:column;gap:8px;padding:18px 16px 12px;flex:1}
+.team-ref-page .team-event-card__info strong{color:#143f43;font-size:clamp(15px,1.35vw,19px);line-height:1.3;font-weight:850;letter-spacing:-.025em;overflow-wrap:anywhere}
+.team-ref-page .team-event-card__info>span{font-size:12px;color:#5c777a;line-height:1.55}
+.team-ref-page .team-event-card__action{display:flex;align-items:center;gap:9px;margin:6px 16px 17px;color:#31684d;font-size:12px;font-weight:800}
+.team-ref-page .team-event-card__checkmark{display:grid;place-items:center;flex:none;width:25px;height:25px;border:1.5px solid #9aafa7;border-radius:50%;color:transparent;background:#fff;transition:background .2s,color .2s,border-color .2s}
+.team-ref-page .team-event-card:has(input:checked) .team-event-card__checkmark{background:var(--station-accent);border-color:var(--station-accent);color:#fff}
+.team-ref-page .team-event-card:has(input:checked) .team-event-card__label{color:var(--station-accent);font-size:0}
+.team-ref-page .team-event-card:has(input:checked) .team-event-card__label:before{content:"Ausgewählt";font-size:12px}
+.team-ref-page .team-event-card .team-ref-exercise__check{display:none}
+.team-ref-page .team-event-more-wrap{display:flex;justify-content:center;margin:24px 0 0}
+.team-ref-page .team-event-more{display:inline-flex;align-items:center;justify-content:center;gap:11px;border:1px solid #b7dec8;border-radius:999px;background:#eaf7ed;color:#225a47;cursor:pointer;padding:12px 23px;min-height:54px;font-weight:800;font-size:14px;transition:background .2s,box-shadow .2s}
+.team-ref-page .team-event-more:hover{background:#def2e5;box-shadow:0 7px 18px #1d604018}
+.team-ref-page .team-event-more strong{font-size:20px;line-height:1;font-weight:900;color:#267448}
+.team-ref-page .team-event-more__arrow{font-size:20px;line-height:1;display:block;transition:transform .2s}
+.team-ref-page .team-event-more[aria-expanded="true"] .team-event-more__arrow{transform:rotate(180deg)}
+.team-ref-page .team-ref-expanded{border:0;margin:25px 0 0;padding:24px 0 0;border-top:1px solid #f1e6e7}
+.team-ref-page .team-ref-expanded__heading h2{font-size:clamp(23px,2.3vw,30px)}
+.team-ref-page .team-ref-expanded__heading>span{background:#eaf7ec;color:#276b49}
+.team-ref-page .team-ref-expanded__grid .team-event-card{min-height:0;padding:0}
+.team-ref-page .team-ref-expanded__grid .team-event-card__info strong{font-size:clamp(15px,1.35vw,19px)}
+.team-ref-page .team-ref-expanded__note{font-size:12px;line-height:1.65;color:#687e76;margin-top:23px}
+.team-ref-page .team-ref-catalog__hint{font-size:12px;line-height:1.55;margin-top:20px}
+.team-ref-page .team-ref-dashboard__bottom{margin-top:28px}
+@media(max-width:1300px){.team-ref-page .team-ref-exercise-grid,.team-ref-page .team-ref-expanded__grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1040px){.team-ref-page .team-ref-exercise-grid,.team-ref-page .team-ref-expanded__grid{grid-template-columns:repeat(3,minmax(0,1fr))}.team-ref-page .team-ref-highlight{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+ .team-ref-page .team-ref-highlight{grid-template-columns:1fr;gap:12px;padding:13px}
+ .team-ref-page .team-ref-highlight img{height:240px}
+ .team-ref-page .team-ref-highlight__copy{padding:8px 12px 15px}
+ .team-ref-page .team-ref-catalog{margin:18px 0 0;padding:27px 15px;border-radius:22px}
+ .team-ref-page .team-ref-catalog__heading{display:flex;align-items:flex-start}
+ .team-ref-page .team-ref-exercise-grid,.team-ref-page .team-ref-expanded__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .team-ref-page .team-event-card .team-ref-exercise__visual{height:125px}
+ .team-ref-page .team-event-card .team-ref-exercise__visual img{width:123px;height:123px}
+ .team-ref-page .team-event-card .team-ref-exercise__visual svg{width:76px;height:76px}
+ .team-ref-page .team-event-card__info{padding:14px 12px 10px;gap:6px}
+ .team-ref-page .team-event-card__info strong,.team-ref-page .team-ref-expanded__grid .team-event-card__info strong{font-size:clamp(14px,3.8vw,17px)}
+ .team-ref-page .team-event-card__info>span{font-size:11.2px}
+ .team-ref-page .team-event-card__action{margin:7px 12px 13px;font-size:11px;gap:7px}
+ .team-ref-page .team-event-card__checkmark{width:23px;height:23px}
+ .team-ref-page .team-ref-expanded__heading{align-items:flex-start}
+}
+@media(max-width:420px){.team-ref-page .team-ref-highlight img{height:200px}.team-ref-page .team-ref-catalog__heading>span{font-size:11px}.team-ref-page .team-event-card__info strong{letter-spacing:-.03em}}
+@media(max-width:345px){.team-ref-page .team-ref-exercise-grid,.team-ref-page .team-ref-expanded__grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.team-ref-page .team-event-card,.team-ref-page .team-event-card .team-ref-exercise__visual img,.team-ref-page .team-event-more__arrow{transition:none}}
+
+/* Balanced heading and natural German word breaks on compact screens. */
+.team-ref-page .team-event-card__info strong{overflow-wrap:normal;word-break:normal;hyphens:manual}
+@media(max-width:760px){
+ .team-ref-page .team-ref-catalog__heading{flex-direction:column;align-items:flex-start;gap:9px}
+ .team-ref-page .team-ref-catalog__heading>span{white-space:normal;align-self:flex-start}
+}

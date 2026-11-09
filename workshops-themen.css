@@ -1,0 +1,62 @@
+/* BuntBewegt | Workshops und Projektwochen – Themenübersicht | only this page */
+.bb-detail--workshops-projektwochen .bbd-themes{
+  background:linear-gradient(180deg,#fffaf6 0%,#f8fcfa 100%);
+  padding:76px 0 86px;
+}
+.bb-detail--workshops-projektwochen .bbd-themes .bbd-sectionhead{max-width:790px;margin-bottom:32px}
+.bb-detail--workshops-projektwochen .bbd-themes__grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;
+}
+.bb-detail--workshops-projektwochen .bbd-theme-card{
+  border:1px solid #e7ece7;border-radius:23px;overflow:hidden;background:#fff;
+  box-shadow:0 9px 25px rgba(28,69,61,.07);display:flex;flex-direction:column;min-width:0;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.bb-detail--workshops-projektwochen .bbd-theme-card:hover{
+  transform:translateY(-3px);box-shadow:0 14px 32px rgba(28,69,61,.11);
+}
+.bb-detail--workshops-projektwochen .bbd-theme-card__visual{
+  display:flex;align-items:center;justify-content:center;height:184px;overflow:hidden;background:#fff5f4;
+}
+.bb-detail--workshops-projektwochen .bbd-theme-card__visual img{display:block;width:100%;height:100%;object-fit:cover}
+.bb-detail--workshops-projektwochen .bbd-theme-card__visual--illustration img{object-fit:contain;padding:23px}
+.bb-detail--workshops-projektwochen .bbd-theme-card--rose .bbd-theme-card__visual{background:#fff0f4}
+.bb-detail--workshops-projektwochen .bbd-theme-card--orange .bbd-theme-card__visual{background:#fff4e8}
+.bb-detail--workshops-projektwochen .bbd-theme-card--mint .bbd-theme-card__visual{background:#eaf8f2}
+.bb-detail--workshops-projektwochen .bbd-theme-card--blue .bbd-theme-card__visual{background:#e9f5fd}
+.bb-detail--workshops-projektwochen .bbd-theme-card--sage .bbd-theme-card__visual{background:#f0f7ea}
+.bb-detail--workshops-projektwochen .bbd-theme-card--lavender .bbd-theme-card__visual{background:#f5effb}
+.bb-detail--workshops-projektwochen .bbd-theme-card--yellow .bbd-theme-card__visual{background:#fff6da}
+.bb-detail--workshops-projektwochen .bbd-theme-card--teal .bbd-theme-card__visual{background:#e9f7f6}
+.bb-detail--workshops-projektwochen .bbd-theme-card__content{padding:20px 20px 24px;flex:1}
+.bb-detail--workshops-projektwochen .bbd-theme-card h3{font-size:19px;line-height:1.25;margin:0 0 9px;letter-spacing:-.025em}
+.bb-detail--workshops-projektwochen .bbd-theme-card p{font-size:13.5px;line-height:1.65;color:#587276;margin:0}
+.bb-detail--workshops-projektwochen .bbd-tailored{
+  margin-top:31px;padding:30px 34px;display:grid;grid-template-columns:58px minmax(0,1fr) auto;
+  gap:22px;align-items:center;background:#fff;border:1px solid #e1eadd;border-radius:26px;
+  box-shadow:0 8px 25px rgba(30,70,54,.04);
+}
+.bb-detail--workshops-projektwochen .bbd-tailored__symbol{display:grid;place-items:center;align-self:start;
+  width:53px;height:53px;border-radius:16px;color:#b37c33;background:#fff3d6;font-size:29px}
+.bb-detail--workshops-projektwochen .bbd-tailored .bbd-kicker{margin:0 0 7px;color:#b2803b;font-size:10px}
+.bb-detail--workshops-projektwochen .bbd-tailored h3{font-size:clamp(20px,2vw,25px);margin:0 0 8px}
+.bb-detail--workshops-projektwochen .bbd-tailored p:not(.bbd-kicker){font-size:14px;line-height:1.7;color:#617779;margin:0;max-width:750px}
+.bb-detail--workshops-projektwochen .bbd-tailored .bbd-button{font-size:13px;white-space:nowrap}
+@media(max-width:1100px){
+  .bb-detail--workshops-projektwochen .bbd-themes__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bb-detail--workshops-projektwochen .bbd-theme-card__visual{height:210px}
+  .bb-detail--workshops-projektwochen .bbd-tailored{grid-template-columns:50px minmax(0,1fr)}
+  .bb-detail--workshops-projektwochen .bbd-tailored .bbd-button{grid-column:2;justify-self:start}
+}
+@media(max-width:560px){
+  .bb-detail--workshops-projektwochen .bbd-themes{padding:54px 0 62px}
+  .bb-detail--workshops-projektwochen .bbd-themes__grid{grid-template-columns:1fr;gap:16px}
+  .bb-detail--workshops-projektwochen .bbd-theme-card__visual{height:203px}
+  .bb-detail--workshops-projektwochen .bbd-theme-card__content{padding:18px 20px 20px}
+  .bb-detail--workshops-projektwochen .bbd-tailored{padding:24px 21px;display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+  .bb-detail--workshops-projektwochen .bbd-tailored__symbol{width:43px;height:43px;font-size:24px}
+  .bb-detail--workshops-projektwochen .bbd-tailored h3{font-size:21px}
+  .bb-detail--workshops-projektwochen .bbd-tailored p:not(.bbd-kicker){font-size:13px}
+  .bb-detail--workshops-projektwochen .bbd-tailored .bbd-button{white-space:normal}
+}
+@media(prefers-reduced-motion:reduce){.bb-detail--workshops-projektwochen .bbd-theme-card{transition:none}}

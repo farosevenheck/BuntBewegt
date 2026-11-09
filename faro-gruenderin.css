@@ -1,0 +1,38 @@
+/* Faro Sevenheck: personal founder introduction, consistent with BuntBewegt's Über uns page. */
+.about-page .ab-founder{padding-top:70px;padding-bottom:84px}
+.ab-founder-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:29px}
+.ab-founder-head h2{max-width:920px;margin:0;color:#183f3e}
+.ab-founder-head h2 em{color:#d65078}
+.ab-founder-role{display:inline-flex;align-items:center;margin:16px 0 0;padding:8px 16px;background:#fff1f4;border:1px solid #f5d8e2;border-radius:999px;color:#96576c;font-size:13px;font-weight:800;line-height:1.5}
+.ab-founder-head-detail{font-size:64px;line-height:1;color:#e5ac55;transform:rotate(-13deg);padding-right:27px;opacity:.7}
+.ab-founder-frame{display:grid;grid-template-columns:minmax(0,1.63fr) minmax(280px,.87fr);gap:36px;align-items:start;background:linear-gradient(112deg,#fff 0%,#fff 62%,#fcf6f1 100%);border:1px solid #e5eae3;border-radius:29px;padding:clamp(22px,3.3vw,46px);box-shadow:0 15px 45px rgba(30,64,48,.065)}
+.ab-founder-story{min-width:0;max-width:740px}
+.about-page .ab-founder-story p{font-size:15px;line-height:1.8;color:#4f6862;margin:0 0 14px}
+.about-page .ab-founder-story .ab-founder-welcome{font-family:'Trebuchet MS',Arial,sans-serif;font-size:21px;line-height:1.45;color:#21483d;font-weight:800;margin-bottom:22px}
+.about-page .ab-founder-story .ab-founder-signature{font-family:'Trebuchet MS',Arial,sans-serif;color:#235d49;font-weight:800;font-size:20px;margin:28px 0 0}
+.ab-founder-signature span{font-size:18px}
+.ab-founder-aside{position:relative;min-width:0;overflow:hidden;display:flex;flex-direction:column;align-items:start;background:linear-gradient(145deg,#f2f9f4,#fbf5e8 90%);border-radius:24px;border:1px solid #e5eee5;padding:27px 27px 31px;min-height:360px}
+.ab-founder-aside:after{content:'';pointer-events:none;position:absolute;width:185px;height:185px;right:-65px;top:-86px;border:22px solid rgba(112,175,141,.08);border-radius:50%}
+.ab-founder-aside-brand{width:190px;max-width:85%;margin:0 auto 10px}
+.ab-founder-aside-brand img{display:block;width:100%;height:auto;object-fit:contain}
+.ab-founder-quote-mark{font:bold 82px/0.8 Georgia,serif;color:#e5af64;margin-top:22px;height:44px}
+.ab-founder-aside blockquote{margin:0 0 25px;padding:0;font-family:'Trebuchet MS',Arial,sans-serif;font-size:19px;font-weight:700;color:#235a47;line-height:1.55}
+.ab-founder-aside-bottom{border-top:1px solid #d8e5d9;padding-top:20px;margin-top:auto;width:100%}
+.about-page .ab-founder-aside-bottom p{font-size:12px;line-height:1.5;font-weight:700;letter-spacing:.01em;color:#638276;margin:0 0 7px}
+.ab-founder-aside-bottom strong{font-size:14px;line-height:1.55;display:block;color:#b5812b}
+@media(max-width:1000px){.ab-founder-frame{grid-template-columns:minmax(0,1.4fr) minmax(240px,.9fr);gap:24px}.ab-founder-aside{padding:24px}.ab-founder-aside blockquote{font-size:17px}}
+@media(max-width:740px){
+ .about-page .ab-founder{padding-top:54px;padding-bottom:57px}
+ .ab-founder-head{margin-bottom:23px}
+ .ab-founder-head h2{font-size:clamp(30px,8.4vw,43px)}
+ .ab-founder-head-detail{font-size:39px;padding-right:2px}
+ .ab-founder-role{font-size:12px;margin-top:13px}
+ .ab-founder-frame{grid-template-columns:1fr;gap:25px;padding:21px;border-radius:23px}
+ .about-page .ab-founder-story p{font-size:14px;line-height:1.75;margin-bottom:13px}
+ .about-page .ab-founder-story .ab-founder-welcome{font-size:19px;margin-bottom:16px}
+ .ab-founder-aside{min-height:0;border-radius:19px;padding:22px 24px}
+ .ab-founder-aside-brand{width:145px;margin-bottom:0}
+ .ab-founder-quote-mark{font-size:64px;height:36px;margin-top:13px}
+ .ab-founder-aside blockquote{font-size:17px;margin-bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){.ab-founder-head-detail{transform:none}}

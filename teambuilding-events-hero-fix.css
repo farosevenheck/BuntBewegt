@@ -1,0 +1,39 @@
+/* Hero der Teambuilding-Seite – exakt die klare Spaltenstruktur aus events.html. */
+.team-ref-page > .team-events-hero-shell{background:transparent;overflow:hidden}
+.team-ref-page .team-events-hero{margin:0;padding:42px 0 70px;background:#f0f8f3}
+.team-ref-page .team-events-hero .bbd-hero__layout{max-width:1200px}
+.team-ref-page .team-events-hero .bbd-hero__content{min-width:0;padding:20px 0}
+.team-ref-page .team-events-hero .bbd-breadcrumb{margin-bottom:38px}
+.team-ref-page .team-events-hero h1{hyphens:none;overflow-wrap:normal;word-break:normal;font-size:clamp(44px,4.5vw,65px)}
+.team-ref-page .team-events-hero h1 span{font-size:clamp(25px,2.6vw,37px);line-height:1.22}
+.team-ref-page .team-events-hero .bbd-hero__lead{max-width:530px;line-height:1.7}
+.team-ref-page .team-events-hero .bbd-hero__photo{min-height:440px;padding:13px 0 20px}
+.team-ref-page .team-events-hero .bbd-hero__photo img{height:475px;max-height:475px;min-height:0;object-position:55% center}
+.team-ref-page .team-events-hero .bbd-hero__photo::before{border-color:rgba(77,157,117,.33)}
+.team-ref-page .team-events-hero .bbd-hero__photo figcaption{bottom:3px;left:0}
+.team-ref-page .team-ref-dashboard{margin-top:38px}
+.team-ref-page #team-catalog-title{scroll-margin-top:110px}
+@media(max-width:1000px){
+  .team-ref-page .team-events-hero .bbd-hero__layout{gap:32px}
+  .team-ref-page .team-events-hero h1{font-size:clamp(40px,5.2vw,57px)}
+  .team-ref-page .team-events-hero h1 span{font-size:clamp(27px,3vw,34px)}
+  .team-ref-page .team-events-hero .bbd-hero__photo img{height:425px;max-height:425px}
+}
+@media(max-width:800px){
+  .team-ref-page .team-events-hero{padding:25px 0 48px}
+  .team-ref-page .team-events-hero .bbd-hero__content{padding:0}
+  .team-ref-page .team-events-hero .bbd-breadcrumb{margin-bottom:26px}
+  .team-ref-page .team-events-hero .bbd-hero__photo{min-height:0;padding:0 0 15px}
+  .team-ref-page .team-events-hero .bbd-hero__photo img{height:380px;max-height:380px}
+  .team-ref-page .team-ref-dashboard{margin-top:26px}
+}
+@media(max-width:560px){
+  .team-ref-page .team-events-hero{padding:18px 0 37px}
+  .team-ref-page .team-events-hero h1{font-size:clamp(39px,10vw,50px)}
+  .team-ref-page .team-events-hero h1 span{font-size:clamp(25px,6.7vw,34px)}
+  .team-ref-page .team-events-hero .bbd-hero__lead{font-size:14px;line-height:1.7}
+  .team-ref-page .team-events-hero .bbd-hero__photo img{height:255px;max-height:255px}
+  .team-ref-page .team-events-hero .bbd-hero__photo figcaption{font-size:11px;left:7px}
+  .team-ref-page .team-events-hero .bbd-button{white-space:normal;text-align:center}
+  .team-ref-page .team-ref-dashboard{margin-top:19px}
+}

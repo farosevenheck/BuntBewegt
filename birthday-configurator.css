@@ -1,0 +1,479 @@
+
+/* Kindergeburtstage: tailored enquiry configurator. All classes scoped to the birthday page. */
+.bb-detail--kindergeburtstage .birthday-planner{padding:81px 0 92px;background:linear-gradient(180deg,#fffdfb 0%,#fff7f4 40%,#f7faf6 100%);scroll-margin-top:88px}
+.bb-detail--kindergeburtstage .birthday-planner__heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin:0 0 34px}
+.bb-detail--kindergeburtstage .birthday-planner__heading>div{flex:1;min-width:0}
+.bb-detail--kindergeburtstage .birthday-planner__heading h2{font-size:clamp(34px,3.8vw,52px);line-height:1.09;margin:10px 0 0;letter-spacing:-.035em;color:#183f43}
+.bb-detail--kindergeburtstage .birthday-planner__heading h2 em{font-style:normal;color:#cb6b85}
+.bb-detail--kindergeburtstage .birthday-planner__heading>p{font-size:15px;line-height:1.75;color:#587574;max-width:445px;margin:0 0 4px}
+.bb-detail--kindergeburtstage .birthday-plan-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.bb-detail--kindergeburtstage .birthday-plan-steps>div{display:flex;align-items:center;gap:13px;border:1px solid #e9e9e0;background:#ffffffbb;padding:15px 20px;border-radius:18px;min-width:0;flex-wrap:wrap}
+.bb-detail--kindergeburtstage .birthday-plan-steps__icon{width:41px;height:41px;display:grid;place-items:center;border-radius:12px;background:#fff0f3;color:#c65e80;font-weight:800;font-size:25px;flex:none}
+.bb-detail--kindergeburtstage .birthday-plan-steps>div:nth-child(2) .birthday-plan-steps__icon{background:#eef7ff;color:#4585b3}
+.bb-detail--kindergeburtstage .birthday-plan-steps>div:nth-child(3) .birthday-plan-steps__icon{background:#fff7e8;color:#df9b3d}
+.bb-detail--kindergeburtstage .birthday-plan-steps strong,.bb-detail--kindergeburtstage .birthday-plan-steps small{display:block;width:calc(100% - 60px)}
+.bb-detail--kindergeburtstage .birthday-plan-steps strong{color:#21474a;font-size:15px;font-weight:800;line-height:1.2}
+.bb-detail--kindergeburtstage .birthday-plan-steps small{color:#6b8181;font-size:12px;margin:-6px 0 0 54px}
+.bb-detail--kindergeburtstage .birthday-configurator{display:grid;gap:19px}
+.bb-detail--kindergeburtstage .birthday-configurator__section{background:#fff;border:1px solid #e9ece7;border-radius:27px;padding:35px 36px 39px;box-shadow:0 12px 37px #3754490c}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details{border-top:5px solid #e3a4b6}
+.bb-detail--kindergeburtstage .birthday-configurator__section--stations{border-top:5px solid #77b5a1}
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras{border-top:5px solid #ecc58e}
+.bb-detail--kindergeburtstage .birthday-configurator__section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.bb-detail--kindergeburtstage .birthday-configurator__eyebrow{font-size:11px;font-weight:850;letter-spacing:.16em;color:#be7380;margin:0 0 8px}
+.bb-detail--kindergeburtstage .birthday-configurator__section--stations .birthday-configurator__eyebrow{color:#35806a}
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras .birthday-configurator__eyebrow{color:#a87535}
+.bb-detail--kindergeburtstage .birthday-configurator__section-head h3{font-size:clamp(25px,2.8vw,35px);line-height:1.22;letter-spacing:-.025em;margin:0;color:#194448}
+.bb-detail--kindergeburtstage .birthday-configurator__section-head>p{max-width:370px;color:#687f80;font-size:13px;line-height:1.7;margin:0}
+.bb-detail--kindergeburtstage .birthday-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bb-detail--kindergeburtstage .birthday-field{display:flex;flex-direction:column;min-width:0;gap:9px;color:#224b4b}
+.bb-detail--kindergeburtstage .birthday-field>span{font-size:14px;font-weight:800}
+.bb-detail--kindergeburtstage .birthday-field sup{font-size:15px;color:#d2677e}
+.bb-detail--kindergeburtstage .birthday-field>span small{font-size:12px;font-weight:500;color:#708180}
+.bb-detail--kindergeburtstage .birthday-field input,.bb-detail--kindergeburtstage .birthday-field textarea{display:block;width:100%;min-height:55px;padding:14px 15px;background:#fbfdfb;border:1.5px solid #c9d9d3;border-radius:13px;color:#173f43;font:inherit;font-size:15px;line-height:1.45;outline:none;box-sizing:border-box;transition:border-color .2s,box-shadow .2s;box-shadow:none}
+.bb-detail--kindergeburtstage .birthday-field textarea{min-height:93px;resize:vertical}
+.bb-detail--kindergeburtstage .birthday-field input:focus,.bb-detail--kindergeburtstage .birthday-field textarea:focus{border-color:#28835a;box-shadow:0 0 0 3px #3ba27322}
+.bb-detail--kindergeburtstage .birthday-field :is(input,textarea):user-invalid{border-color:#c95875}
+.bb-detail--kindergeburtstage .birthday-field input::placeholder,.bb-detail--kindergeburtstage .birthday-field textarea::placeholder{color:#95a9a3}
+.bb-detail--kindergeburtstage .birthday-field>small{color:#7e9490;font-size:11.5px;line-height:1.45}
+.bb-detail--kindergeburtstage .birthday-field--wide{grid-column:1/-1}
+.bb-detail--kindergeburtstage .birthday-stations-grid{gap:15px}
+.bb-detail--kindergeburtstage .bbd-station__art{height:140px}
+.bb-detail--kindergeburtstage .birthday-extras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.bb-detail--kindergeburtstage .birthday-extra{cursor:pointer;display:flex;position:relative;gap:13px;align-items:center;min-width:0;padding:17px 16px;border:1.5px solid #e2e9e5;background:#fff;border-radius:19px;transition:border-color .2s,box-shadow .2s,transform .2s;user-select:none}
+.bb-detail--kindergeburtstage .birthday-extra:hover{border-color:var(--extra-color);transform:translateY(-2px);box-shadow:0 6px 20px #3b5b5015}
+.bb-detail--kindergeburtstage .birthday-extra:focus-within{outline:3px solid #24624e;outline-offset:2px}
+.bb-detail--kindergeburtstage .birthday-extra:has(input:checked){border-color:var(--extra-color);background:var(--extra-wash);box-shadow:0 8px 22px #213b3b0c}
+.bb-detail--kindergeburtstage .birthday-extra>input{position:absolute;opacity:0;width:1px;height:1px;top:0;left:0}
+.bb-detail--kindergeburtstage .birthday-extra__icon{display:grid;place-items:center;flex:none;width:69px;height:70px;border-radius:14px;background:var(--extra-wash);color:var(--extra-color)}
+.bb-detail--kindergeburtstage .birthday-extra__icon svg{height:46px;width:46px;stroke-width:2.6}
+.bb-detail--kindergeburtstage .birthday-extra__body{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.bb-detail--kindergeburtstage .birthday-extra__body strong{font-size:15px;color:#193f42;line-height:1.25;font-weight:850;overflow-wrap:anywhere}
+.bb-detail--kindergeburtstage .birthday-extra__body small{font-size:12px;line-height:1.5;color:#688185}
+.bb-detail--kindergeburtstage .birthday-extra__indicator{display:grid;place-items:center;flex:none;width:21px;height:21px;border:1.5px solid #9bb0a6;border-radius:50%;color:transparent;font-size:13px;align-self:flex-start}
+.bb-detail--kindergeburtstage .birthday-extra:has(input:checked) .birthday-extra__indicator{border-color:var(--extra-color);background:var(--extra-color);color:#fff}
+.bb-detail--kindergeburtstage .birthday-configurator__finish{display:flex;gap:30px;align-items:center;justify-content:space-between;padding:31px 32px 33px;background:linear-gradient(125deg,#244f46,#153f40);border-radius:26px;color:#fff;box-shadow:0 13px 30px #0c3d3425}
+.bb-detail--kindergeburtstage .birthday-configurator__finish-text{max-width:750px;min-width:0}
+.bb-detail--kindergeburtstage .birthday-configurator__finish-kicker{font-size:11px;letter-spacing:.15em;font-weight:800;color:#bfe5d1}
+.bb-detail--kindergeburtstage .birthday-configurator__finish h3{font-size:clamp(23px,2.3vw,30px);line-height:1.25;margin:9px 0 8px;color:#fff}
+.bb-detail--kindergeburtstage .birthday-configurator__finish p{font-size:13px;line-height:1.6;color:#e3f3e9;margin:0}
+.bb-detail--kindergeburtstage .birthday-configurator__package{margin-top:12px!important;opacity:.82}
+.bb-detail--kindergeburtstage .birthday-configurator__chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}
+.bb-detail--kindergeburtstage .birthday-configurator__chip{background:#ffffff20;color:#fff;border:1px solid #ffffff2b;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:700}
+.bb-detail--kindergeburtstage .birthday-configurator__finish-actions{display:flex;flex-direction:column;gap:10px;min-width:260px}
+.bb-detail--kindergeburtstage .birthday-configurator__send{display:inline-flex;align-items:center;justify-content:center;gap:11px;font-family:inherit;border:0;background:#fff!important;color:#235844!important;cursor:pointer;white-space:nowrap;text-align:center}
+.bb-detail--kindergeburtstage .birthday-configurator__send:hover{background:#ecfff4!important}
+.bb-detail--kindergeburtstage .birthday-configurator__finish-actions>span{font-size:11px;color:#cce9db;line-height:1.45;text-align:center}
+@media(max-width:1100px){.bb-detail--kindergeburtstage .birthday-extras{grid-template-columns:repeat(2,minmax(0,1fr))}.bb-detail--kindergeburtstage .birthday-plan-steps>div{padding:12px}.bb-detail--kindergeburtstage .birthday-plan-steps>div{column-gap:8px}.bb-detail--kindergeburtstage .birthday-plan-steps small{margin-left:49px}}
+@media(max-width:800px){.bb-detail--kindergeburtstage .birthday-planner{padding:65px 0;scroll-margin-top:65px}.bb-detail--kindergeburtstage .birthday-planner__heading{display:block}.bb-detail--kindergeburtstage .birthday-planner__heading>p{margin-top:20px}.bb-detail--kindergeburtstage .birthday-configurator__section{padding:29px 24px}.bb-detail--kindergeburtstage .birthday-configurator__section-head{display:block}.bb-detail--kindergeburtstage .birthday-configurator__section-head>p{max-width:600px;margin-top:12px}.bb-detail--kindergeburtstage .birthday-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.bb-detail--kindergeburtstage .birthday-field:nth-child(3){grid-column:1/-1}.bb-detail--kindergeburtstage .birthday-configurator__finish{flex-direction:column;align-items:stretch}.bb-detail--kindergeburtstage .birthday-configurator__finish-actions{min-width:0}}
+@media(max-width:560px){.bb-detail--kindergeburtstage .birthday-planner{padding:48px 0 64px}.bb-detail--kindergeburtstage .birthday-planner__heading{margin-bottom:24px}.bb-detail--kindergeburtstage .birthday-planner__heading>p{font-size:14px}.bb-detail--kindergeburtstage .birthday-plan-steps{grid-template-columns:1fr;gap:8px}.bb-detail--kindergeburtstage .birthday-plan-steps>div{display:grid;grid-template-columns:36px 1fr;column-gap:13px;row-gap:1px;padding:10px 14px}.bb-detail--kindergeburtstage .birthday-plan-steps__icon{grid-row:1/3;width:36px;height:36px;font-size:21px}.bb-detail--kindergeburtstage .birthday-plan-steps strong,.bb-detail--kindergeburtstage .birthday-plan-steps small{width:100%;margin:0}.bb-detail--kindergeburtstage .birthday-plan-steps strong{font-size:13px}.bb-detail--kindergeburtstage .birthday-plan-steps small{font-size:11px}.bb-detail--kindergeburtstage .birthday-configurator{gap:12px}.bb-detail--kindergeburtstage .birthday-configurator__section{padding:23px 15px 25px;border-radius:19px}.bb-detail--kindergeburtstage .birthday-configurator__section-head{margin-bottom:19px}.bb-detail--kindergeburtstage .birthday-configurator__section-head h3{font-size:25px}.bb-detail--kindergeburtstage .birthday-fields{grid-template-columns:1fr;gap:17px}.bb-detail--kindergeburtstage .birthday-field:nth-child(3){grid-column:auto}.bb-detail--kindergeburtstage .birthday-field--wide{grid-column:1/-1}.bb-detail--kindergeburtstage .bbd-station__art{height:113px}.bb-detail--kindergeburtstage .birthday-stations-grid{gap:9px}.bb-detail--kindergeburtstage .birthday-extras{grid-template-columns:1fr;gap:9px}.bb-detail--kindergeburtstage .birthday-extra{padding:10px 12px;border-radius:15px;gap:12px}.bb-detail--kindergeburtstage .birthday-extra__icon{width:59px;height:59px}.bb-detail--kindergeburtstage .birthday-extra__icon svg{width:39px;height:39px}.bb-detail--kindergeburtstage .birthday-configurator__finish{padding:25px 18px;border-radius:19px}.bb-detail--kindergeburtstage .birthday-configurator__send{width:100%;white-space:normal}}
+@media(prefers-reduced-motion:reduce){.bb-detail--kindergeburtstage .birthday-extra{transition:none}}
+
+/* Birthday planning wizard: one panel per step, progressively enhanced. */
+.bb-detail--kindergeburtstage .birthday-wizard__progress{margin:0 0 20px;background:#fff;border:1px solid #e9eee8;border-radius:23px;padding:19px 23px 17px;box-shadow:0 8px 28px #244d3a0a}
+.bb-detail--kindergeburtstage .birthday-wizard__progress[hidden]{display:none!important}
+.bb-detail--kindergeburtstage .birthday-wizard__progress-top{display:flex;justify-content:space-between;gap:15px;color:#668080;font-size:12px;font-weight:700;margin:0 0 14px}
+.bb-detail--kindergeburtstage .birthday-wizard__progress-top span:first-child{color:#b35775}
+.bb-detail--kindergeburtstage .birthday-wizard__progress-list{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.bb-detail--kindergeburtstage .birthday-wizard__progress-list li{display:flex;align-items:center;gap:10px;color:#80918f;min-width:0;font-size:14px;font-weight:750;transition:color .2s}
+.bb-detail--kindergeburtstage .birthday-wizard__number{border-radius:50%;display:inline-grid;place-items:center;width:35px;height:35px;flex:none;background:#f0f5f0;color:#678176;font-size:12px;font-weight:850;transition:background .2s,color .2s}
+.bb-detail--kindergeburtstage [data-wizard-indicator].is-active{color:#164947}
+.bb-detail--kindergeburtstage [data-wizard-indicator].is-active .birthday-wizard__number{background:#d85b80;color:white}
+.bb-detail--kindergeburtstage [data-wizard-indicator].is-done .birthday-wizard__number{background:#daf2e5;color:#24664b}
+.bb-detail--kindergeburtstage .birthday-wizard__track{height:5px;background:#edf2ed;border-radius:999px;overflow:hidden;margin-top:16px}
+.bb-detail--kindergeburtstage .birthday-wizard__track span{display:block;width:33.333%;height:100%;background:linear-gradient(90deg,#ed97ac,#55b29b);border-radius:inherit;transition:width .25s}
+.bb-detail--kindergeburtstage .birthday-configurator.birthday-wizard--ready [data-wizard-step][hidden],
+.bb-detail--kindergeburtstage .birthday-configurator.birthday-wizard--ready [data-wizard-finish][hidden]{display:none!important}
+.bb-detail--kindergeburtstage .birthday-wizard__actions{display:none;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:24px;margin-top:27px;border-top:1px solid #e8eeea}
+.bb-detail--kindergeburtstage .birthday-wizard--ready .birthday-wizard__actions{display:flex}
+.bb-detail--kindergeburtstage .birthday-wizard__hint{font-size:12px;color:#708985}
+.bb-detail--kindergeburtstage .birthday-wizard__next{display:inline-flex;align-items:center;justify-content:center;gap:12px;font:inherit;cursor:pointer;border:0;text-align:center;white-space:normal}
+.bb-detail--kindergeburtstage .birthday-wizard__back{appearance:none;border:1px solid #cbdfd6;background:#fff;color:#245447;border-radius:999px;padding:13px 21px;min-height:49px;font:inherit;font-weight:750;cursor:pointer;transition:background .2s,border-color .2s}
+.bb-detail--kindergeburtstage .birthday-wizard__back:hover{background:#eff8f2;border-color:#8cbd9e}
+.bb-detail--kindergeburtstage .birthday-wizard__back:focus-visible,
+.bb-detail--kindergeburtstage .birthday-wizard__next:focus-visible{outline:3px solid #4b9b7c;outline-offset:3px}
+.bb-detail--kindergeburtstage .birthday-wizard--ready .birthday-configurator__finish{margin-top:17px}
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras{padding-bottom:27px}
+@media(max-width:560px){
+ .bb-detail--kindergeburtstage .birthday-wizard__progress{border-radius:17px;padding:15px 13px}
+ .bb-detail--kindergeburtstage .birthday-wizard__progress-top{font-size:11px}
+ .bb-detail--kindergeburtstage .birthday-wizard__progress-list{gap:5px}
+ .bb-detail--kindergeburtstage .birthday-wizard__progress-list li{display:flex;flex-direction:column;text-align:center;justify-content:center;gap:5px;font-size:11px}
+ .bb-detail--kindergeburtstage .birthday-wizard__number{width:33px;height:33px}
+ .bb-detail--kindergeburtstage .birthday-wizard__actions{flex-direction:column-reverse;align-items:stretch;gap:10px;padding-top:19px;margin-top:22px}
+ .bb-detail--kindergeburtstage .birthday-wizard__next,.bb-detail--kindergeburtstage .birthday-wizard__back{width:100%;justify-content:center}
+ .bb-detail--kindergeburtstage .birthday-wizard__hint{text-align:center}
+ .bb-detail--kindergeburtstage .birthday-wizard__actions--last{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.bb-detail--kindergeburtstage .birthday-wizard__track span,.bb-detail--kindergeburtstage .birthday-wizard__number{transition:none}}
+
+
+/* Soft BuntBewegt decorations, limited to Kindergeburtstage. */
+.bb-detail--kindergeburtstage .birthday-planner{
+  position:relative;
+  background: radial-gradient(circle at 96% 5%,rgba(253,218,228,.27),transparent 23%),
+              radial-gradient(circle at 5% 80%,rgba(181,232,207,.20),transparent 31%),
+              linear-gradient(180deg,#fffdfb 0%,#fff7f4 42%,#f6faf6 100%);
+}
+.bb-detail--kindergeburtstage .birthday-planner__heading{position:relative}
+.bb-detail--kindergeburtstage .birthday-planner__heading h2 em{position:relative}
+.bb-detail--kindergeburtstage .birthday-planner__heading>div::after{
+  content:"";display:block;width:106px;height:5px;margin-top:17px;border-radius:99px;
+  background:linear-gradient(90deg,#d65a81 0 33%,#f1bd67 33% 66%,#71bfa9 66% 100%);
+}
+.bb-detail--kindergeburtstage .birthday-wizard__progress{
+  background:linear-gradient(110deg,#ffffff,#fffaf8 52%,#f6fffb);
+  border-color:#eadfe0;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details,
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras{
+  position:relative;isolation:isolate;overflow:hidden;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details{
+  background-image:
+    url('images/geburtstag-konfetti.svg'),
+    radial-gradient(ellipse 220px 190px at 102% -9%, rgba(250,218,231,.40),transparent 82%),
+    radial-gradient(ellipse 200px 155px at -4% 103%,rgba(203,240,222,.32),transparent 85%);
+  background-position:right 2px top -53px,center,center;
+  background-size:152px auto,auto,auto;
+  background-repeat:no-repeat;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details::before,
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  right:-84px;top:-157px;width:245px;height:245px;border:25px solid rgba(236,173,191,.12);
+  border-radius:50%;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details::after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  bottom:-83px;left:-90px;width:190px;height:190px;border:20px solid rgba(117,192,167,.11);
+  border-radius:50%;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras{
+  background:radial-gradient(circle at 96% 4%,rgba(252,229,185,.23),transparent 24%),#fff;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--extras::before{
+  border-color:rgba(243,194,117,.13);
+}
+.bb-detail--kindergeburtstage .birthday-extra{
+  background:linear-gradient(110deg,#fff,#fffefa);
+  min-height:121px;
+}
+.bb-detail--kindergeburtstage .birthday-extra__icon{
+  width:92px;height:92px;border-radius:19px;
+  background:radial-gradient(circle at 40% 34%,#fff,var(--extra-wash) 83%);
+  overflow:hidden;
+}
+.bb-detail--kindergeburtstage .birthday-extra__icon img{
+  width:91px;height:91px;display:block;object-fit:contain;
+  filter:drop-shadow(0 3px 3px rgba(35,52,47,.075));
+  transition:transform .25s ease;
+}
+.bb-detail--kindergeburtstage .birthday-extra:hover .birthday-extra__icon img{transform:scale(1.08) rotate(-3deg)}
+.bb-detail--kindergeburtstage .birthday-extra:has(input:checked) .birthday-extra__icon{background:rgba(255,255,255,.76)}
+.bb-detail--kindergeburtstage .birthday-wizard--ready [data-wizard-step]:not([hidden]){animation:bbBirthdayStepIn .38s ease-out both}
+@keyframes bbBirthdayStepIn{from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){
+ .bb-detail--kindergeburtstage .birthday-configurator__section--details{background-size:124px auto,auto,auto}
+ .bb-detail--kindergeburtstage .birthday-extra__icon{width:82px;height:82px}
+ .bb-detail--kindergeburtstage .birthday-extra__icon img{width:81px;height:81px}
+}
+@media(max-width:560px){
+ .bb-detail--kindergeburtstage .birthday-configurator__section--details{background-size:100px auto,auto,auto;background-position:right 1px top -39px,center,center}
+ .bb-detail--kindergeburtstage .birthday-configurator__section--details::before{width:145px;height:145px;border-width:17px;top:-75px;right:-72px}
+ .bb-detail--kindergeburtstage .birthday-extra{min-height:99px}
+ .bb-detail--kindergeburtstage .birthday-extra__icon{width:75px;height:75px;border-radius:15px}
+ .bb-detail--kindergeburtstage .birthday-extra__icon img{width:74px;height:74px}
+}
+@media(prefers-reduced-motion:reduce){
+ .bb-detail--kindergeburtstage .birthday-extra__icon img{transition:none}
+ .bb-detail--kindergeburtstage .birthday-wizard--ready [data-wizard-step]:not([hidden]){animation:none}
+}
+
+
+
+/* Birthday celebration, balanced in its own space above form copy (no overlaps). */
+.bb-detail--kindergeburtstage .birthday-configurator__section--details{
+  background:linear-gradient(180deg,#fffaf8 0%,#ffffff 34%,#ffffff 100%);
+  isolation:isolate;
+  overflow:hidden;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details::before,
+.bb-detail--kindergeburtstage .birthday-configurator__section--details::after{content:none}
+.bb-detail--kindergeburtstage .birthday-party-decoration{
+  width:100%;height:136px;position:relative;pointer-events:none;
+  margin:-22px auto 12px;
+  background:url('images/birthday-celebration-banner.svg') center center / contain no-repeat;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__section-head{
+  position:relative;
+  margin-top:0;
+  margin-bottom:25px;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__section-head::before,
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__section-head::after{content:none}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__section-head > div,
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__section-head > p{
+  position:relative;z-index:1;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__eyebrow{
+  display:inline-block;background:#fff0f4;border:1px solid #f7d7df;
+  padding:7px 12px;border-radius:100px;color:#b85270;
+}
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-field input,
+.bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-field textarea{background:#fbfdfc}
+@media (max-width: 800px){
+ .bb-detail--kindergeburtstage .birthday-party-decoration{height:128px;margin:-16px auto 6px}
+}
+@media (max-width: 560px){
+ .bb-detail--kindergeburtstage .birthday-party-decoration{
+   height:112px;margin:-12px auto 8px;
+   background-image:url('images/birthday-celebration-banner-mobile.svg');
+   background-size:100% 100%;
+ }
+ .bb-detail--kindergeburtstage .birthday-configurator__section--details .birthday-configurator__eyebrow{
+   padding:6px 10px;
+ }
+}
+
+
+/* Unified birthday celebration panel: decorations, progress and form share one continuous surface. */
+.bb-detail--kindergeburtstage .birthday-wizard__shell{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border:1px solid #ebdddd;
+  border-top:5px solid #e6a3b8;
+  border-radius:30px;
+  background:
+    radial-gradient(ellipse 240px 200px at 101% -1%,rgba(251,219,231,.38),transparent 81%),
+    radial-gradient(ellipse 280px 240px at -3% 101%,rgba(197,234,216,.26),transparent 80%),
+    linear-gradient(160deg,#fffaf8 0%,#ffffff 48%,#fbfdfb 100%);
+  box-shadow:0 18px 43px rgba(38,68,54,.09);
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration{
+  display:block;
+  height:116px;
+  margin:0 auto;
+  background:url('images/birthday-celebration-banner.svg') center center / min(100%, 1160px) auto no-repeat;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress{
+  margin:0 !important;
+  padding:10px 39px 23px;
+  border:0 !important;
+  border-radius:0 !important;
+  border-bottom:1px solid rgba(218,230,222,.75) !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress-list{
+  gap:18px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator{
+  display:block;
+  gap:0;
+  background:transparent;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section{
+  margin:0;
+  padding:29px 39px 39px;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section::before,
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section::after{
+  content:none;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__finish{
+  margin:0 39px 39px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section-head{
+  margin-bottom:25px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions{
+  margin-top:27px;
+}
+@media(max-width:800px){
+  .bb-detail--kindergeburtstage .birthday-wizard__shell{border-radius:24px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration{height:103px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress{padding:8px 25px 20px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section{padding:27px 25px 31px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__finish{margin:0 25px 30px}
+}
+@media(max-width:560px){
+  .bb-detail--kindergeburtstage .birthday-wizard__shell{border-radius:21px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration{
+    height:103px;
+    margin:0;
+    background-image:url('images/birthday-celebration-banner-mobile.svg');
+    background-position:center;
+    background-size:100% 100%;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress{padding:4px 15px 20px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress-list{gap:5px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section{padding:24px 16px 28px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__finish{margin:0 16px 23px}
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section-head{margin-bottom:20px}
+}
+
+
+/* Stable birthday selection: keep the viewport and action button in place.
+   Limit changes to this wizard; Events and all other pages are unchanged. */
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station,
+.bb-detail--kindergeburtstage .birthday-extras .birthday-extra{
+  transform:none!important;
+  touch-action:manipulation;
+}
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station:hover,
+.bb-detail--kindergeburtstage .birthday-extras .birthday-extra:hover{
+  transform:none!important;
+}
+/* The checkbox occupies the whole visible card instead of a 1px box in its
+   upper-left corner, which otherwise causes browsers to scroll on focus. */
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__input,
+.bb-detail--kindergeburtstage .birthday-extras .birthday-extra > input{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+  cursor:pointer;
+  z-index:3;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+/* Fixed typography metrics for both checkbox states, avoiding an action-row
+   height change when Auswählen changes to Ausgewählt. */
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__action{
+  min-height:27px;
+}
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__action-label{
+  position:relative;
+  display:inline-block;
+  min-width:83px;
+  min-height:18px;
+  font-size:13px;
+  line-height:18px;
+  white-space:nowrap;
+}
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__input:checked ~ .bbd-station__action .bbd-station__action-label{
+  font-size:13px;
+  color:transparent;
+}
+.bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__input:checked ~ .bbd-station__action .bbd-station__action-label::before{
+  position:absolute;
+  inset:0 auto auto 0;
+  color:var(--station-accent);
+  font-size:13px;
+  line-height:18px;
+  white-space:nowrap;
+}
+/* Same right alignment and footprint for Weiter on the first two steps. */
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions{
+  min-height:81px;
+  justify-content:space-between;
+  align-items:center;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions .birthday-wizard__next{
+  margin-left:auto;
+  flex-shrink:0;
+}
+@media (max-width:560px){
+  .bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__action-label,
+  .bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__input:checked ~ .bbd-station__action .bbd-station__action-label,
+  .bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__input:checked ~ .bbd-station__action .bbd-station__action-label::before{
+    font-size:11px;
+    line-height:17px;
+  }
+  .bb-detail--kindergeburtstage .birthday-stations-grid .bbd-station__action-label{
+    min-width:70px;
+    min-height:17px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions{
+    min-height:0;
+    align-items:stretch;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions .birthday-wizard__next{
+    width:100%;
+    margin-left:0;
+  }
+}
+
+
+/* 2026-11-09: reduce ONLY vertical space in the Kindergeburtstage wizard.
+   Do not change width, font sizes, column count or horizontal padding. */
+.bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration {
+  height:76px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress {
+  padding-top:4px;
+  padding-bottom:13px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__progress-top {
+  margin-bottom:7px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__track {
+  margin-top:9px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section {
+  padding-top:19px;
+  padding-bottom:23px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section-head {
+  margin-bottom:15px;
+}
+.bb-detail--kindergeburtstage .birthday-fields {
+  row-gap:12px;
+}
+.bb-detail--kindergeburtstage .birthday-field {
+  gap:5px;
+}
+.bb-detail--kindergeburtstage .birthday-field input,
+.bb-detail--kindergeburtstage .birthday-field textarea {
+  min-height:46px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.bb-detail--kindergeburtstage .birthday-field textarea {
+  min-height:70px;
+}
+.bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions {
+  margin-top:16px;
+  padding-top:14px;
+  min-height:64px;
+}
+@media(max-width:800px){
+  .bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration {
+    height:72px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress {
+    padding-top:3px;
+    padding-bottom:12px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section {
+    padding-top:18px;
+    padding-bottom:22px;
+  }
+}
+@media(max-width:560px){
+  .bb-detail--kindergeburtstage .birthday-wizard__shell > .birthday-party-decoration {
+    height:66px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__progress {
+    padding-top:2px;
+    padding-bottom:11px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-configurator__section {
+    padding-top:17px;
+    padding-bottom:20px;
+  }
+  .bb-detail--kindergeburtstage .birthday-wizard__shell .birthday-wizard__actions {
+    min-height:0;
+    margin-top:15px;
+    padding-top:13px;
+  }
+}

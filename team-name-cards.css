@@ -1,0 +1,83 @@
+/* BuntBewegt | personal name cards below the team introduction */
+.about-page .ab-name-gallery {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(22px, 3.6vw, 48px);
+  margin-top: clamp(22px, 3vw, 38px);
+  margin-bottom: clamp(32px, 4vw, 64px);
+  border: 1px solid #e8ece7;
+  border-radius: clamp(21px, 3vw, 34px);
+  background: radial-gradient(circle at 98% 0, rgba(251,209,223,.4), transparent 28%),
+              radial-gradient(circle at 0 100%,rgba(186,232,211,.34),transparent 35%),
+              linear-gradient(145deg,#fffdfd,#f9fdfb);
+  box-shadow: 0 15px 45px rgba(23,58,55,.06);
+}
+.about-page .ab-name-gallery-head {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px 28px;
+  margin-bottom:clamp(18px,2.5vw,28px);
+}
+.about-page .ab-name-gallery-head .ab-label {margin-bottom:7px}
+.about-page .ab-name-gallery-head h2 {
+  color:#0a3c44;
+  font-size:clamp(26px,3vw,38px);
+  line-height:1.18;
+  letter-spacing:-.025em;
+  margin:0;
+}
+.about-page .ab-name-gallery-head h2 em {color:#d9567b;font-style:normal}
+.about-page .ab-name-gallery-head>p {
+  margin:0 0 3px;
+  max-width:305px;
+  font-size:clamp(13px,1.2vw,15px);
+  color:#62777a;
+  line-height:1.55;
+}
+.about-page .ab-name-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(10px,1.25vw,18px);
+}
+.about-page .ab-name-card {
+  margin:0;
+  min-width:0;
+  padding:clamp(5px,.6vw,9px);
+  border-radius:clamp(13px,1.5vw,19px);
+  background:#ffffff;
+  border:1px solid #edf0ec;
+  box-shadow:0 5px 17px rgba(30,60,58,.075);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.about-page .ab-name-card img {
+  width:100%;
+  height:auto;
+  display:block;
+  aspect-ratio:3 / 2;
+  object-fit:contain;
+  border-radius:clamp(9px,1vw,13px);
+}
+@media (hover:hover) {
+  .about-page .ab-name-card:hover {
+    transform:translateY(-4px);
+    box-shadow:0 11px 25px rgba(30,60,58,.13);
+  }
+}
+@media(max-width:1020px) {
+  .about-page .ab-name-grid {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:680px) {
+  .about-page .ab-name-gallery-head {display:block}
+  .about-page .ab-name-gallery-head>p {margin-top:10px;max-width:none}
+  .about-page .ab-name-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:440px) {
+  .about-page .ab-name-gallery {padding:15px 12px 20px;border-radius:19px}
+  .about-page .ab-name-grid {gap:9px}
+  .about-page .ab-name-card {padding:4px;border-radius:12px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .about-page .ab-name-card {transition:none}
+}

@@ -279,7 +279,8 @@
       form.elements.message.setCustomValidity(message.length < 10 ? 'Bitte schreibt mindestens 10 Zeichen.' : '');
       if (!form.reportValidity()) return;
       const interest = form.elements.interest.selectedOptions[0].textContent;
-      text.value = `Hallo BuntBewegt!\n\n${message}\n\nInteresse: ${interest}\nName: ${name}\nE-Mail: ${form.elements.email.value.trim()}`;
+      const phone = form.elements.phone ? form.elements.phone.value.trim() : '';
+      text.value = `Hallo BuntBewegt!\n\n${message}\n\nInteresse: ${interest}\nName: ${name}\nE-Mail: ${form.elements.email.value.trim()}${phone ? `\nTelefon: ${phone}` : ''}`;
       status.textContent = '';
       copyButton.textContent = 'Nachricht kopieren';
       form.hidden = true;
@@ -413,6 +414,68 @@
       interest.value = 'buntbewegt-team';
     } else if (Object.prototype.hasOwnProperty.call(offerIds, requested)) {
       interest.value = offerIds[requested];
+    }
+    // Event station names are allow-listed so only real options appear in the draft.
+    const allowedStations = new Set(['Kinderschminken', 'Glitzertattoos', 'Spielestationen', 'Kreativwerkstatt', 'Seifenblasen', 'Mitmachzirkus', 'Yoga', 'Volleyball']);
+    const stationParam = params.get('stationen') || '';
+    const selectedStations = [...new Set(stationParam.split('|'))].filter(name => allowedStations.has(name));
+    const messageField = document.querySelector('[data-contact-composer] textarea[name="message"]');
+    // Birthday enquiry: accept only known station/extra values and bounded personal wishes.
+    if (requested === 'kindergeburtstage' && messageField && !messageField.value.trim()) {
+      const extrasAllowed = new Set(['Popcornmaschine','Zuckerwatte','Riesenseifenblasen','Naschtüten','Kostümiert kommen','Musik']);
+      const extras = [...new Set((params.get('extras') || '').split('|'))].filter(item => extrasAllowed.has(item));
+      const age = params.get('alter') || '';
+      const guests = params.get('kinder') || '';
+      const safeAge = /^\d{1,2}$/.test(age) && Number(age) >= 1 && Number(age) <= 18 ? age : '';
+      const safeGuests = /^\d{1,3}$/.test(guests) && Number(guests) >= 1 && Number(guests) <= 120 ? guests : '';
+      // Remove control characters to avoid injecting unintended lines into the template.
+      const clean = (input, limit) => (input || '').slice(0,limit).replace(/[\x00-\x1f\x7f]/g,' ').trim();
+      const theme = clean(params.get('motto'), 70);
+      const wishes = clean(params.get('wuensche'), 320);
+      const lines = ['Hallo BuntBewegt!', '', 'Wir möchten einen Kindergeburtstag individuell planen.', '', 'Unsere Eckdaten:'];
+      if (safeAge) lines.push('• Alter des Geburtstagskindes: ' + safeAge + ' Jahre');
+      if (safeGuests) lines.push('• Anzahl der Kinder: ' + safeGuests);
+      if (theme) lines.push('• Wunschmotto: ' + theme);
+      if (selectedStations.length) lines.push('', 'Gewünschte Stationen:', ...selectedStations.map(item => '• ' + item));
+      if (extras.length) lines.push('', 'Optionale Extras:', ...extras.map(item => '• ' + item));
+      if (wishes) lines.push('', 'Weitere Wünsche: ' + wishes);
+      lines.push('', 'Wir würden gern das passende Paket und den Ablauf mit euch besprechen.', 'Wunschtermin / weitere Fragen: ');
+      messageField.value = lines.join('\n');
+    }
+    if (requested === 'teambuilding' && messageField && !messageField.value.trim()) {
+      const allowedExercises = new Set([
+        'Flussüberquerung','Spinnennetz','Turmbau-Challenge','Blindparcours','Balltransport',
+        'Team-Slalom','Inselhüpfen','Seilquadrat','Gordischer Knoten','Vertrauensweg',
+        'Brückenbau','Schatztransport','Team-Memory','Gleichgewichtskette','Zielwurf im Team'
+      ]);
+      const exercises = [...new Set((params.get('uebungen') || '').split('|'))].filter(v => allowedExercises.has(v));
+      const duration = ['60–90 Minuten (kleines Angebot)','3–5 Stunden (Tagesangebot)'].includes(params.get('dauer')) ? params.get('dauer') : '';
+      const certificate = params.get('urkunden') === 'ja';
+      const group = ['Schulklasse','Schule / Jahrgang','Verein / Gruppe','Team / Unternehmen','Sonstige Gruppe'].includes(params.get('gruppe')) ? params.get('gruppe') : '';
+      const participantsRaw = params.get('teilnehmer') || '';
+      const participants = /^\d{1,4}$/.test(participantsRaw) && Number(participantsRaw)>=1 && Number(participantsRaw)<=2000 ? participantsRaw : '';
+      const notes = (params.get('wuensche') || '').slice(0,400).replace(/[\x00-\x1f\x7f]/g,' ').trim();
+      const lines = ['Hallo BuntBewegt!', '', 'Wir interessieren uns für ein bewegungsorientiertes Teambuilding-Angebot.'];
+      if (group) lines.push('', 'Gruppe: ' + group);
+      if (participants) lines.push('Ungefähre Teilnehmerzahl: ' + participants);
+      if (duration) lines.push('Gewünschte Dauer: ' + duration);
+      lines.push('Urkundenpaket: ' + (certificate ? 'Ja, bitte hinzufügen (Klasse, Teilnehmende, Schule/Träger).' : 'Nicht ausgewählt.'));
+      if (exercises.length) lines.push('', 'Vorgemerkte Übungen (Auswahl wird abgestimmt):', ...exercises.map(item => '• ' + item));
+      if (notes) lines.push('', 'Wünsche und Hinweise: ' + notes);
+      lines.push('', 'Wir freuen uns auf ein unverbindliches Angebot.', 'Wunschtermin / Kontakt: ');
+      messageField.value = lines.join('\n');
+    }
+    if (requested === 'workshops' && messageField && !messageField.value.trim()) {
+      const allowedThemes = new Set(['Musical & Theater', 'Zirkus', 'Upcycling', 'Volleyball', 'Yoga & Entspannung', 'Kreativwerkstatt', 'Wissenschaft & Experimente', 'Bewegung & Spiel']);
+      const themes = [...new Set((params.get('themen') || '').split('|'))].filter(theme => allowedThemes.has(theme));
+      if (themes.length) {
+        messageField.value = ['Hallo BuntBewegt!', '', 'Wir interessieren uns für einen individuell zugeschnittenen Workshop oder eine Projektwoche.', '', 'Unsere Wunschthemen:', ...themes.map(theme => '• ' + theme), '', 'Für welche Gruppe und welches Alter: ', 'Gewünschter Zeitraum / weitere Wünsche: '].join('\n');
+      }
+    }
+    if (requested === 'events-feste' && selectedStations.length && messageField && !messageField.value.trim()) {
+      messageField.value = 'Hallo BuntBewegt!\n\nWir interessieren uns für folgende Stationen für unser Event:\n• '
+        + selectedStations.join('\n• ')
+        + '\n\nUnser Event / Termin / weitere Wünsche: ';
     }
   }
 

@@ -1,4 +1,4 @@
-/* Small hero carousel: uses the 13 images that already exist in this page. */
+/* Small hero carousel: uses the 11 images that already exist in this page. */
 (() => {
   'use strict';
   const cover = document.querySelector('.festival-gallery-page .j-gallery-cover');

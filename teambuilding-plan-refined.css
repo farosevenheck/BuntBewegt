@@ -1,0 +1,198 @@
+/* Integrated planning panel for Teambuilding. Scope everything to this page. */
+.team-ref-page .team-ref-dashboard__bottom {
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  gap:0;
+  align-items:stretch;
+  margin-top:26px;
+  padding:32px 30px 24px;
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(125deg,#ffffff 0%,#fffdf9 57%,#f8fcf9 100%);
+  border:1px solid #e4eee8;
+  border-radius:27px;
+  overflow:hidden;
+  box-shadow:0 11px 26px rgba(32,70,59,.045);
+}
+.team-ref-page .team-ref-dashboard__bottom::before {
+  content:"";position:absolute;top:-112px;right:-86px;
+  width:240px;height:240px;border:24px solid rgba(222,151,175,.085);
+  border-radius:50%;z-index:-1;pointer-events:none;
+}
+.team-ref-page .team-ref-planner__intro{grid-column:1/-1;max-width:780px;margin-bottom:20px;}
+.team-ref-page .team-ref-planner__eyebrow{font-weight:850;font-size:11px;letter-spacing:.15em;color:#c86c87;margin:0 0 7px}
+.team-ref-page .team-ref-planner__intro h2{font-size:clamp(25px,2.8vw,34px);font-weight:900;letter-spacing:-.035em;line-height:1.22;color:#174449;margin:0 0 8px}
+.team-ref-page .team-ref-planner__intro>p:last-child{margin:0;color:#657e7b;font-size:14px;line-height:1.6}
+.team-ref-page .team-ref-cert,
+.team-ref-page .team-ref-duration {
+  box-sizing:border-box;
+  margin:0;
+  min-width:0;
+  min-height:262px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.team-ref-page .team-ref-cert{
+  display:grid;grid-template-columns:minmax(125px,38%) minmax(0,1fr);
+  gap:10px;align-items:center;
+  border-right:1px solid #e6ede8;
+  padding:5px 28px 5px 0;
+  overflow:visible;
+}
+.team-ref-page .team-ref-cert__illustration{height:220px;min-width:0;}
+.team-ref-page .team-ref-cert__image{width:100%;max-width:214px;}
+.team-ref-page .team-ref-cert__body h2{font-size:clamp(21px,2.15vw,27px);font-weight:850;letter-spacing:-.026em;white-space:normal;margin-bottom:11px;}
+.team-ref-page .team-ref-cert__body h2 small{font-size:13px;font-weight:550;}
+.team-ref-page .team-ref-cert__body>p{font-size:13px;color:#5b7975;line-height:1.5;margin-bottom:12px;}
+.team-ref-page .team-ref-cert__body ul{gap:9px;margin-bottom:18px;}
+.team-ref-page .team-ref-cert__body li{font-size:13px;}
+.team-ref-page .team-ref-cert__toggle{font-size:13px;line-height:1.35;white-space:normal;}
+.team-ref-page .team-ref-cert__toggle:focus-within{outline:2px solid #237e5b;outline-offset:3px;border-radius:3px;}
+/* Wählbare Dauer — compact, native-feeling radio choices with the site's type. */
+.team-ref-page .team-ref-duration{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height:0;
+  padding:4px 0 5px 27px;
+  margin:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+}
+.team-ref-page .team-ref-duration legend{
+  display:flex;
+  align-items:center;
+  float:left;
+  width:100%;
+  gap:10px;
+  margin:0 0 13px;
+  padding:0;
+  color:#183f43;
+  font:700 22px/1.28 "Trebuchet MS",Arial,Helvetica,sans-serif;
+  letter-spacing:-.02em;
+}
+.team-ref-page .team-ref-duration__clock{
+  display:grid;
+  place-items:center;
+  flex:none;
+  width:29px;
+  height:29px;
+  color:#ce6682;
+  background:#fdf0f3;
+  border-radius:9px;
+}
+.team-ref-page .team-ref-duration__clock svg{display:block;width:18px;height:18px;}
+.team-ref-page .team-ref-duration__choice{
+  position:relative;
+  display:grid;
+  grid-template-columns:16px minmax(0,1fr);
+  align-items:center;
+  gap:12px;
+  flex:0 0 auto;
+  min-height:69px;
+  margin:0;
+  padding:13px 15px;
+  border:1px solid #dce6e0;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:none;
+  cursor:pointer;
+  transition:border-color .15s,background-color .15s;
+}
+.team-ref-page .team-ref-duration__choice:hover{border-color:#dcadb9;}
+.team-ref-page .team-ref-duration__choice:has(input:checked){
+  background:#fffafb;
+  border-color:#e4a4b6;
+  box-shadow:none;
+}
+.team-ref-page .team-ref-duration__choice input{
+  appearance:none;
+  -webkit-appearance:none;
+  position:relative;
+  display:block;
+  flex:none;
+  width:16px;
+  height:16px;
+  margin:0;
+  padding:0;
+  background:#fff;
+  border:1.5px solid #9aafa7;
+  border-radius:50%;
+  box-shadow:none;
+  cursor:pointer;
+}
+/* Selected duration: one small, completely filled circle, no inner dot. */
+.team-ref-page .team-ref-duration__choice input:checked{
+  border-color:#d65e82;
+  background:#d65e82;
+  box-shadow:none;
+}
+.team-ref-page .team-ref-duration__choice input:checked::after{content:none;}
+.team-ref-page .team-ref-duration__choice:focus-within{outline:2px solid #d8849f;outline-offset:2px;}
+.team-ref-page .team-ref-duration__choice > span{display:block;min-width:0;}
+.team-ref-page .team-ref-duration__choice strong{
+  display:block;
+  margin:0 0 3px;
+  font:700 18px/1.3 "Trebuchet MS",Arial,Helvetica,sans-serif;
+  letter-spacing:0;
+  color:#183f43;
+}
+.team-ref-page .team-ref-duration__choice small{
+  display:block;
+  margin:0;
+  font:400 13.5px/1.5 Arial,Helvetica,sans-serif;
+  letter-spacing:0;
+  color:#617b7a;
+}
+.team-ref-page .team-ref-cta{
+  grid-column:1/-1;
+  display:flex;flex-direction:row;align-items:center;justify-content:space-between;
+  gap:18px;margin-top:22px;padding:20px 0 0;
+  border-top:1px solid #e6eee8;border-radius:0;
+  background:transparent;box-shadow:none;
+}
+.team-ref-page .team-ref-cta__count{order:-1;color:#5b7b72;font-size:13px;text-align:left;min-height:0;font-weight:700;}
+.team-ref-page .team-ref-cta__button{min-height:54px;min-width:245px;width:auto;font-size:15px;padding:13px 24px;}
+/* With highlight removed, the catalogue is the first dashboard content. */
+.team-ref-page .team-ref-catalog {margin-top:0;}
+@media(max-width:990px){
+ .team-ref-page .team-ref-dashboard__bottom{padding:26px 22px 20px;}
+ .team-ref-page .team-ref-cert{grid-template-columns:minmax(110px,36%) minmax(0,1fr);gap:5px;padding-right:16px;}
+ .team-ref-page .team-ref-cert__illustration{height:190px;}
+ .team-ref-page .team-ref-cert__image{max-width:180px;}
+ .team-ref-page .team-ref-duration{padding-left:18px;}
+}
+@media(max-width:780px){
+ .team-ref-page .team-ref-dashboard__bottom{grid-template-columns:1fr;padding:25px 20px 19px;gap:0;}
+ .team-ref-page .team-ref-planner__intro{margin-bottom:16px;}
+ .team-ref-page .team-ref-cert{min-height:0;grid-template-columns:145px minmax(0,1fr);padding:9px 0 22px;border-right:0;border-bottom:1px solid #e6ede8;gap:18px;}
+ .team-ref-page .team-ref-cert__illustration{height:180px;}
+ .team-ref-page .team-ref-cert__image{max-width:173px;}
+ .team-ref-page .team-ref-duration{min-height:0;padding:20px 0 0;}
+ .team-ref-page .team-ref-duration legend{font-size:21px;}
+ .team-ref-page .team-ref-cta{grid-column:1/-1;margin-top:20px;padding-top:19px;}
+}
+@media(max-width:500px){
+ .team-ref-page .team-ref-dashboard__bottom{padding:22px 14px 18px;border-radius:19px;}
+ .team-ref-page .team-ref-planner__intro h2{font-size:25px;}
+ .team-ref-page .team-ref-planner__intro>p:last-child{font-size:13px;}
+ .team-ref-page .team-ref-cert{grid-template-columns:100px minmax(0,1fr);gap:10px;padding-bottom:19px;}
+ .team-ref-page .team-ref-cert__illustration{height:148px;}
+ .team-ref-page .team-ref-cert__image{max-width:115px;}
+ .team-ref-page .team-ref-cert__body h2{font-size:20px;}
+ .team-ref-page .team-ref-cert__body h2 small{font-size:11px;}
+ .team-ref-page .team-ref-cert__body li{font-size:11px;gap:5px;}
+ .team-ref-page .team-ref-cert__body li::before{width:17px;height:17px;font-size:10px;border-width:1px}
+ .team-ref-page .team-ref-cert__body>p{font-size:12px;}
+ .team-ref-page .team-ref-cert__toggle{font-size:11.5px;}
+ .team-ref-page .team-ref-duration legend{font-size:20px;}
+ .team-ref-page .team-ref-duration__choice{min-height:66px;padding:12px;gap:11px;}
+ .team-ref-page .team-ref-duration__choice strong{font-size:17px;}
+ .team-ref-page .team-ref-duration__choice small{font-size:13px;}
+ .team-ref-page .team-ref-cta{flex-direction:column;align-items:stretch;gap:13px;}
+ .team-ref-page .team-ref-cta__count{text-align:center;order:1;}
+ .team-ref-page .team-ref-cta__button{width:100%;min-width:0;}
+}

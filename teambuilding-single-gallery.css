@@ -1,0 +1,79 @@
+/* Teambuilding refinement: one coherent illustrated exercise gallery, normal site width. */
+.team-ref-page{--team-regular-width:1200px;overflow-x:clip}
+.team-ref-page .team-ref-hero,
+.team-ref-page .team-ref-dashboard,
+.team-ref-page .team-ref-next{
+  width:min(var(--team-regular-width),calc(100% - 96px));max-width:var(--team-regular-width);margin-left:auto;margin-right:auto;
+}
+.team-ref-page .team-ref-hero{min-height:515px;margin-top:32px;margin-bottom:28px;border-radius:27px}
+.team-ref-page .team-ref-hero__content{min-height:515px;padding:62px 44px 168px}
+.team-ref-page .team-ref-hero h1{font-size:clamp(48px,5.2vw,72px)}
+.team-ref-page .team-ref-benefits{left:40px;bottom:25px;width:min(780px,calc(100% - 80px));min-height:100px}
+.team-ref-page .team-ref-hero__image-wrap img{object-position:center 48%}
+.team-ref-page .team-ref-dashboard{padding:27px 27px 32px;border-radius:29px}
+.team-ref-page .team-ref-highlight{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;margin-bottom:20px;padding:15px}
+.team-ref-page .team-ref-highlight img{height:280px}
+.team-ref-page .team-ref-highlight__copy{padding:10px 17px}
+.team-ref-page .team-ref-catalog{margin-top:23px;padding:31px 25px 32px;border-radius:23px}
+.team-ref-page .team-ref-catalog__heading h2{font-size:clamp(29px,3vw,38px)}
+.team-ref-page .team-ref-exercise-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.team-ref-page .team-event-card{min-height:322px;border-radius:19px}
+.team-ref-page .team-event-card .team-ref-exercise__visual{height:175px}
+.team-ref-page .team-event-card .team-ref-exercise__visual img{width:169px;height:169px;max-width:96%;object-fit:contain}
+.team-ref-page .team-event-card--photo .team-ref-exercise__visual img{width:100%;height:100%;max-width:100%;object-fit:cover}
+.team-ref-page .team-event-card__info{padding:15px 15px 8px}
+.team-ref-page .team-event-card__info strong{font-size:17px;overflow-wrap:normal;word-break:normal;hyphens:auto}
+.team-ref-page .team-event-card__info>span{font-size:12px}
+.team-ref-page .team-event-card__action{margin:7px 15px 16px}
+.team-ref-page .team-ref-dashboard__bottom{margin-top:25px;gap:20px}
+.team-ref-page .team-ref-next{padding:28px 0 55px}
+/* no duplicate secondary catalogue, no expand buttons */
+.team-ref-page .team-ref-expanded,.team-ref-page .team-event-more-wrap{display:none!important}
+@media(max-width:1150px){
+ .team-ref-page .team-ref-hero,.team-ref-page .team-ref-dashboard,.team-ref-page .team-ref-next{width:calc(100% - 72px)}
+ .team-ref-page .team-ref-exercise-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .team-ref-page .team-ref-highlight{grid-template-columns:1fr 1fr}
+ .team-ref-page .team-ref-highlight img{height:240px}
+}
+@media(max-width:850px){
+ .team-ref-page .team-ref-hero__content{padding:36px 28px 28px;min-height:0}
+ .team-ref-page .team-ref-hero{min-height:0;display:flex;flex-direction:column}
+ .team-ref-page .team-ref-hero__image-wrap{position:relative;order:0;inset:auto;width:100%;height:295px;flex:none;border:0;border-radius:0;z-index:0}
+ .team-ref-page .team-ref-hero__image-wrap:after{display:none}
+ .team-ref-page .team-ref-hero__content{order:1;width:100%;background:#fffefa}
+ .team-ref-page .team-ref-benefits{position:static;width:100%;margin-top:20px;grid-template-columns:repeat(3,minmax(0,1fr));box-shadow:none}
+ .team-ref-page .team-ref-highlight{grid-template-columns:1fr}
+ .team-ref-page .team-ref-highlight img{height:300px}
+ .team-ref-page .team-ref-dashboard{padding:17px}
+ .team-ref-page .team-ref-catalog{padding:23px 18px}
+ .team-ref-page .team-ref-dashboard__bottom{grid-template-columns:1fr}
+ .team-ref-page .team-ref-cta{grid-column:1/-1}
+}
+@media(max-width:740px){
+ .team-ref-page .team-ref-hero,.team-ref-page .team-ref-dashboard,.team-ref-page .team-ref-next{width:calc(100% - 44px)}
+ .team-ref-page .team-ref-hero{margin-top:16px;margin-bottom:18px;border-radius:22px}
+ .team-ref-page .team-ref-hero__image-wrap{height:225px}
+ .team-ref-page .team-ref-hero__content{padding:26px 19px 22px}
+ .team-ref-page .team-ref-hero h1{font-size:clamp(39px,10vw,50px)}
+ .team-ref-page .team-ref-benefits{grid-template-columns:1fr;border:0;padding:0;gap:0}
+ .team-ref-page .team-ref-benefit:not(:last-child){border:0;border-bottom:1px solid #f4e7e8}
+ .team-ref-page .team-ref-dashboard{padding:12px;border-radius:23px}
+ .team-ref-page .team-ref-highlight img{height:215px}
+ .team-ref-page .team-ref-highlight__copy{padding:8px 12px 14px}
+ .team-ref-page .team-ref-catalog{margin-top:14px;border-radius:20px;padding:24px 12px 26px}
+ .team-ref-page .team-ref-exercise-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .team-ref-page .team-event-card{min-height:283px;border-radius:16px}
+ .team-ref-page .team-event-card .team-ref-exercise__visual{height:120px}
+ .team-ref-page .team-event-card .team-ref-exercise__visual img{height:116px;width:116px}
+ .team-ref-page .team-event-card--photo .team-ref-exercise__visual img{height:100%;width:100%}
+ .team-ref-page .team-event-card__info{padding:12px 10px 7px}
+ .team-ref-page .team-event-card__info strong{font-size:14px}
+ .team-ref-page .team-event-card__info>span{font-size:11px}
+ .team-ref-page .team-event-card__action{margin:6px 10px 12px;font-size:11px}
+ .team-ref-page .team-ref-next{padding:23px 0 44px}
+}
+@media(max-width:380px){
+ .team-ref-page .team-ref-hero,.team-ref-page .team-ref-dashboard,.team-ref-page .team-ref-next{width:calc(100% - 36px)}
+ .team-ref-page .team-event-card__info strong{font-size:13.5px}
+}
+@media(max-width:330px){.team-ref-page .team-ref-exercise-grid{grid-template-columns:1fr}}

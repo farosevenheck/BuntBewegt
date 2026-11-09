@@ -1,0 +1,7 @@
+تعديل Kindergeburtstage و Events — 2026-11-08
+
+* استبدال رسومات المحطات الثماني داخل Events برسوم WebP محلية جديدة ومضغوطة.
+* صفحة Kindergeburtstage: تحديد عمر الطفل وعدد الأطفال والموتو والرغبات، اختيار محطات، إضافة 6 خدمات اختيارية.
+* الضغط على "Anfrage vorbereiten" ينقل المعلومات لنموذج kontakt.html في رسالة قابلة للتعديل ولا يرسلها آلياً.
+* تحديد الباقة المناسبة يتم بعد التنسيق الشخصي، من دون أسعار أو باقات مخترعة.
+* ملفات جديدة: birthday-configurator.css, birthday-configurator.js, images/station-*-illustration.webp
