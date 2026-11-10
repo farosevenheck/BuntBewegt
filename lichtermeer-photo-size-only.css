@@ -1,0 +1,13 @@
+/* Lichtermeer: only keep the equal 4:3 photo display size; the earlier gallery design is unchanged. */
+.story-photo-gallery--lichtermeer-equal-images .story-photo-gallery__item img,
+.story-photo-gallery--lichtermeer-equal-images .story-photo-gallery__item--portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center center;
+}
+.story-photo-gallery--lichtermeer-equal-images .story-photo-gallery__item--portrait img {
+  object-position: 50% 57%;
+}

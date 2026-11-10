@@ -1,0 +1,291 @@
+/* Spielestationen – faithful HTML/CSS interpretation of the supplied design.
+   Shared by Events and Kindergeburtstage. No JavaScript or selection changes. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook {
+  --pb-ink: #073b38;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 32.5fr) minmax(0, 67.5fr);
+  align-items: start;
+  column-gap: clamp(22px, 2.3vw, 33px);
+  min-width: 0;
+  margin-top: 31px;
+  padding: 27px clamp(20px, 2.4vw, 30px) 28px clamp(21px, 2.2vw, 28px);
+  overflow: hidden;
+  border: 1px solid #efe7e2;
+  border-left: 5px solid #ffad38;
+  border-radius: 27px;
+  background: linear-gradient(116deg, #fff 0%, #fffcfa 55%, #fff 100%);
+  box-shadow: 0 18px 38px rgba(76, 60, 44, .075), 0 3px 8px rgba(80, 58, 39, .045);
+  color: var(--pb-ink);
+}
+/* Decorative rounded clouds from the mockup, always behind the content. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook::before,
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -3px;
+  width: 180px;
+  height: 63px;
+  pointer-events: none;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook::before {
+  left: 0;
+  background:
+    radial-gradient(ellipse 60px 52px at 12px 67px, #fff1dd 98%, transparent 100%),
+    radial-gradient(ellipse 55px 39px at 74px 67px, #fff3e4 98%, transparent 100%),
+    radial-gradient(ellipse 52px 28px at 138px 71px, #fff5e8 98%, transparent 100%);
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook::after {
+  right: 0;
+  background:
+    radial-gradient(ellipse 66px 44px at 180px 63px, #e0efde 98%, transparent 100%),
+    radial-gradient(ellipse 55px 39px at 112px 66px, #e1efdf 98%, transparent 100%),
+    radial-gradient(ellipse 43px 27px at 47px 67px, #e3f0df 98%, transparent 100%);
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__lead {
+  display: grid;
+  grid-template-columns: 59px minmax(0, 1fr);
+  gap: 13px;
+  min-width: 0;
+  align-items: start;
+  padding: 0;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 58px;
+  height: 60px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff6e7, #ffebca);
+  box-shadow: 0 4px 10px #b96a141c;
+  color: #dc770a;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol svg {width: 52px; height: 52px;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro {min-width:0;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__eyebrow {
+  display: block;
+  color: #c25f0a;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: .12em;
+  white-space: normal;
+  margin: 1px 0 11px;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3 {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 0 18px;
+  color: var(--pb-ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 48%;
+  width: 30%;
+  height: 9px;
+  transform: translate(8px, 8px) rotate(-4deg);
+  z-index: -1;
+  border-radius: 100%;
+  background: #e4f5e9;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro p {
+  margin: 0;
+  max-width: 300px;
+  color: #577178;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.52;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__options {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .95fr);
+  column-gap: clamp(14px, 1.55vw, 23px);
+  align-items: stretch;
+  min-width: 0;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option {min-width:0;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option + .bbd-playbook__option {
+  border-left: 1px solid #e9e6df;
+  padding: 0 0 0 clamp(14px,1.7vw,23px);
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionhead {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin: 0 0 17px;
+  color: var(--pb-ink);
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon--sun {background: #fff4e4;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon--home {background: #e8f8ee;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionname {min-width:0;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionname h4 {
+  display: block;
+  margin: 0 0 2px;
+  color: #103e39;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.18;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionname p {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #62777a;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__list {
+  display: flex;
+  align-content: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 9px 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__list li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  max-width: 100%;
+  padding: 6px 12px;
+  border: 1px solid #ffdfb8;
+  border-radius: 999px;
+  color: #0d413b;
+  background: linear-gradient(180deg, #fffaf2, #fff4e6);
+  box-shadow: 0 2px 4px rgba(171, 99, 23, .07);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -.022em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option:nth-child(2) .bbd-playbook__list li {
+  background: linear-gradient(180deg, #f3fcf6, #e9f8ef);
+  border-color: #d5ebdd;
+  box-shadow: 0 2px 4px rgba(38, 117, 77, .055);
+}
+/* Tablet: intro spans first row, two game categories remain side by side. */
+@media (max-width: 980px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook {grid-template-columns: 1fr; row-gap: 25px; padding: 26px 28px 30px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__lead {grid-template-columns: 58px minmax(0,1fr);}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3 {font-size: 27px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3 br {display: none;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__options {grid-template-columns: 1fr 1fr; gap: 18px;}
+}
+/* Phone: clear reading order without squeezed game tags. */
+@media (max-width: 580px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook {
+    margin-top: 21px;
+    border-radius: 22px;
+    border-left-width: 4px;
+    padding: 23px 18px 29px;
+    row-gap: 25px;
+  }
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__lead {grid-template-columns: 48px minmax(0,1fr); gap: 12px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol {width: 48px; height: 50px; border-radius: 14px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol svg {width: 44px; height: 44px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__eyebrow {font-size: 9px; letter-spacing:.1em; margin-bottom: 8px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3 {font-size: clamp(21px, 6vw, 25px); margin-bottom: 12px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro h3 br {display: inline;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro p {font-size: 12px; line-height:1.5;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__options {grid-template-columns: 1fr; gap: 23px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option + .bbd-playbook__option {border-left: none; border-top: 1px solid #e7ece6; padding: 23px 0 0;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionhead {margin-bottom: 13px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon {width:40px; height:40px; flex-basis:40px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionname h4 {font-size: 18px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__list {gap: 8px 7px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__list li {font-size: 11px; padding: 7px 10px; min-height:31px;}
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook,
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook * {animation:none; transition:none;}
+}
+
+/* User-provided PNG artwork: precisely aligned transparent icons. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol img {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon img {
+  display: block;
+  width: 39px;
+  height: 39px;
+  max-width: 100%;
+  object-fit: contain;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon--home img {
+  width: 34px;
+  height: 34px;
+}
+@media (max-width:580px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol img { width: 44px; height: 44px; }
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon img { width: 36px; height: 36px; }
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__optionicon--home img { width: 31px; height: 31px; }
+}
+
+/* Zwei kleine orange Strahlen über dem Würfel – wie in der Designvorlage.
+   Rein dekorativ, skalieren mit dem Icon und bleiben auf Mobilgeräten sichtbar. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::before,
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  display: block;
+  border-radius: 999px;
+  background: #ffae3c;
+  pointer-events: none;
+}
+/* Aufrechter Akzentstrahl. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::before {
+  width: 5px;
+  height: 12px;
+  top: -10px;
+  right: 9px;
+  transform: rotate(14deg);
+}
+/* Zweiter, leicht schräger Akzentstrahl. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::after {
+  width: 5px;
+  height: 11px;
+  top: -4px;
+  right: -1px;
+  transform: rotate(49deg);
+}
+@media(max-width:580px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::before {
+    width: 4px; height: 10px; top: -9px; right: 8px;
+  }
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__symbol::after {
+    width: 4px; height: 9px; top: -4px; right: -1px;
+  }
+}

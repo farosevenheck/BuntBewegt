@@ -1,0 +1,3 @@
+Spielestationen: Die drei PNG-Icons des Nutzers sind eingebaut.
+Die zwei orangefarbenen Akzentstriche über dem Würfel sind in spielestationen-design.css über ::before/::after auf .bbd-playbook__symbol angelegt.
+Betroffene Seiten: Events und Kindergeburtstage.

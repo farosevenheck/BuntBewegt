@@ -1,0 +1,82 @@
+/* Bildergalerie "Gemeinsam Klasse werden", Max-Planck-Schule Kiel */
+.j-prose .tb-article-gallery { 
+    margin: 38px 0 44px;
+    padding: 22px;
+    border-radius: 22px;
+    background: linear-gradient(155deg, #f3f8f1 0%, #fffdf8 62%, #f7f9f2 100%);
+    border: 1px solid #e5ebdf;
+}
+.tb-gallery-intro { margin-bottom: 19px; }
+.tb-gallery-kicker {
+    display: block;
+    color: #b46a24;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.j-prose .tb-gallery-intro h3 {
+    font-size: clamp(19px, 2.5vw, 25px);
+    line-height: 1.2;
+    letter-spacing: -.02em;
+    color: #174f36;
+    margin: 0 0 8px;
+}
+.j-prose .tb-gallery-intro p { 
+    color: #647769;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0;
+}
+.tb-photo-grid { 
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 13px;
+}
+.tb-article-gallery .tb-photo {
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 13px;
+    background: #fff;
+    border: 1px solid #e4e9df;
+    box-shadow: 0 4px 14px rgb(32 66 46 / 5%);
+}
+.tb-article-gallery .tb-photo-featured { grid-column: 1 / -1; }
+.tb-article-gallery .tb-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+}
+.tb-article-gallery .tb-photo-featured img { aspect-ratio: 16/9; object-position: center 54%; }
+.tb-article-gallery .tb-photo figcaption {
+    display: flex;
+    align-items: center;
+    min-height: 39px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #315745;
+}
+.tb-article-gallery .tb-photo figcaption strong { font-weight: 750; }
+@media (max-width: 650px) {
+    .j-prose .tb-article-gallery { margin: 28px 0 34px; padding: 14px; border-radius: 18px; }
+    .tb-photo-grid { gap: 10px; }
+    .tb-gallery-intro { margin-bottom: 15px; }
+    .tb-article-gallery .tb-photo img { aspect-ratio: 3/4; }
+    .tb-article-gallery .tb-photo-featured img { aspect-ratio: 4/3; }
+    .tb-article-gallery .tb-photo figcaption { min-height: 48px; padding: 9px; font-size: 11px; }
+}
+@media (max-width: 400px) {
+    .tb-photo-grid { grid-template-columns: 1fr; }
+    .tb-article-gallery .tb-photo-featured { grid-column: auto; }
+    .tb-article-gallery .tb-photo img, .tb-article-gallery .tb-photo-featured img { aspect-ratio: 4/3; }
+    .tb-article-gallery .tb-photo figcaption { min-height: 0; }
+}
+@media print {
+  .tb-article-gallery .tb-photo { break-inside: avoid; box-shadow: none; }
+}

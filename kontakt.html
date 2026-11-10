@@ -30,7 +30,15 @@
 <script>if (location.hash === "#kontakt" && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("kontakt-smooth-arrival");</script>
 <link rel="stylesheet" href="style.css?v=kontakt-20261029"/>
 <link rel="stylesheet" href="kontakt.css?v=kontakt-20261029"/>
+<link rel="stylesheet" href="shop.css?v=20261110-mobile-clean"/>
+<script>
+  if (["tshirt", "jacke"].includes(new URLSearchParams(location.search).get("shop"))) {
+    document.documentElement.classList.add("shop-inquiry-mode");
+  }
+</script>
+
 <script src="script.js?v=kontakt-20261029" defer></script>
+<script defer src="shop-order.js?v=20261110-contact-1"></script>
 <link href="refinements.css?v=content-20261026-1" rel="stylesheet"/>
 <link href="hero-text-soft.css?v=1" rel="stylesheet"/>
 <link rel="stylesheet" href="bunt-motion-only.css?v=2"/>
@@ -49,11 +57,112 @@
 <body><div class="site" id="page-top">
 <a class="skip-link" href="#main">Zum Inhalt</a>
 <header class="site-header"><div class="container header-inner">
-<a aria-label="BuntBewegt — Start" class="brand" href="index.html"><img src="images/logo-buntbewegt-neu.png" alt="BuntBewegt – Bewegung. Kreativität. Gemeinschaft." width="1711" height="884" decoding="async" /></a><nav aria-label="Hauptnavigation" class="main-nav" id="main-navigation"><a href="index.html">Startseite</a><a class="" href="angebote.html">Angebote</a><a href="news-events.html#main">News &amp; Events</a><a href="netzwerk.html">Netzwerk</a><a class="" href="ueber-buntbewegt.html">Über uns</a><a aria-current="page" class="active" href="#kontakt">Kontakt</a></nav><div class="header-actions">
+<a aria-label="BuntBewegt — Start" class="brand" href="index.html"><img src="images/logo-buntbewegt-neu.png" alt="BuntBewegt – Bewegung. Kreativität. Gemeinschaft." width="1711" height="884" decoding="async" /></a><nav aria-label="Hauptnavigation" class="main-nav" id="main-navigation"><a href="index.html">Startseite</a><a class="" href="angebote.html">Angebote</a><a href="news-events.html#main">News &amp; Events</a><a href="netzwerk.html">Netzwerk</a><a class="" href="ueber-buntbewegt.html">Über uns</a><a href="shop.html">Shop</a></nav><div class="header-actions">
 <a class="button button-green header-join" href="kontakt.html">Mitmachen<svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><button aria-controls="main-navigation" aria-expanded="false" aria-label="Menü öffnen" class="menu-toggle" type="button"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
 </div>
 </div></header>
 <main id="main" class="kontakt-page">
+<section class="shop-request" id="shop-anfrage" hidden aria-labelledby="shop-request-title">
+    <div class="container shop-request__layout">
+      <div class="shop-request__intro">
+        <p class="shop-kicker">UNVERBINDLICH ANFRAGEN</p>
+        <h1 id="shop-request-title">Dein BuntBewegt-Look.<br><em>Ganz einfach anfragen.</em></h1>
+        <p class="shop-request__description">Such dir dein Wunschprodukt aus, wähle Größe und Stückzahl und entscheide dich für Versand oder Abholung. Wir melden uns mit Preis, Versandkosten und Verfügbarkeit bei dir.</p>
+        <div class="shop-request__steps" aria-label="So funktioniert die Anfrage">
+          <div><span aria-hidden="true">01</span><p>Wunschprodukt auswählen</p></div>
+          <div><span aria-hidden="true">02</span><p>Versand oder Abholung wählen</p></div>
+          <div><span aria-hidden="true">03</span><p>Anfrage senden und Antwort erhalten</p></div>
+        </div>
+        <p><a class="shop-request__back" href="shop.html">← Zurück zum Shop</a></p>
+        <p class="shop-request__note">Hinweis: Dies ist <strong>keine verbindliche Bestellung</strong>. Es erfolgt keine Zahlung auf dieser Website.</p>
+      </div>
+      <div class="shop-request__card">
+        <form id="shop-order-form" class="shop-request__form" action="https://formsubmit.co/faro.sevenheck@gmx.de" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="BuntBewegt Shop – Neue Bestellanfrage">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="Anfrageart" value="Unverbindliche Produktanfrage (keine Bestellung)">
+          <div class="shop-request__honeypot" aria-hidden="true"><label>Bitte leer lassen<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+
+          <fieldset class="shop-request__fieldset">
+            <legend><span class="shop-request__number">1</span> Dein Wunschprodukt</legend>
+            <div class="shop-request__fields shop-request__fields--two">
+              <label for="shop-product">Produkt <span aria-hidden="true">*</span>
+                <select id="shop-product" name="Produkt" required>
+                  <option value="BuntBewegt T-Shirt (weiß)" selected>BuntBewegt T-Shirt (weiß)</option>
+                  <option value="Jacke (Anfrage)">Jacke (auf Anfrage)</option>
+                </select>
+              </label>
+              <label for="shop-size">Wunschgröße <span aria-hidden="true">*</span>
+                <select id="shop-size" name="Wunschgröße" required>
+                  <option value="" selected disabled>Bitte wählen</option>
+                  <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>3XL</option><option>Noch unsicher / andere Größe</option>
+                </select>
+              </label>
+            </div>
+            <div class="shop-request__fields shop-request__fields--two">
+              <label for="shop-amount">Anzahl <span aria-hidden="true">*</span>
+                <input id="shop-amount" type="number" name="Anzahl" min="1" max="20" step="1" value="1" required inputmode="numeric">
+              </label>
+              <div class="shop-request__field-note">Größen und Produkte sind Wünsche, keine bestätigten Lagerbestände.</div>
+            </div>
+          </fieldset>
+
+          <fieldset class="shop-request__fieldset">
+            <legend><span class="shop-request__number">2</span> Versand oder Abholung</legend>
+            <div class="shop-request__shipping" role="group" aria-label="Versandart">
+              <label class="shop-request__method"><input type="radio" name="Versandart" value="Versand" checked><span><strong>Versand</strong><small>Lieferung an deine Adresse</small></span></label>
+              <label class="shop-request__method"><input type="radio" name="Versandart" value="Abholung"><span><strong>Abholung</strong><small>Persönlich abholen, ohne Versand</small></span></label>
+            </div>
+            <div id="shop-shipping-address" class="shop-request__address">
+              <p>Lieferadresse <span aria-hidden="true">*</span></p>
+              <label for="shop-street">Straße und Hausnummer <span aria-hidden="true">*</span>
+                <input id="shop-street" name="Straße und Hausnummer" autocomplete="shipping street-address" maxlength="150" placeholder="z. B. Musterstraße 12" required>
+              </label>
+              <div class="shop-request__fields shop-request__fields--two">
+                <label for="shop-postal">Postleitzahl <span aria-hidden="true">*</span>
+                  <input id="shop-postal" name="Postleitzahl" autocomplete="shipping postal-code" maxlength="15" placeholder="z. B. 24103" required>
+                </label>
+                <label for="shop-city">Ort <span aria-hidden="true">*</span>
+                  <input id="shop-city" name="Ort" autocomplete="shipping address-level2" maxlength="100" placeholder="z. B. Kiel" required>
+                </label>
+              </div>
+              <label for="shop-country">Land <span aria-hidden="true">*</span>
+                <input id="shop-country" name="Land" autocomplete="shipping country-name" maxlength="80" value="Deutschland" required>
+              </label>
+            </div>
+            <p id="shop-pickup-note" class="shop-request__pickup-note" hidden>Du holst deinen Artikel selbst ab. Dafür benötigen wir keine Lieferadresse. Den Abholort vereinbaren wir später persönlich.</p>
+          </fieldset>
+
+          <fieldset class="shop-request__fieldset">
+            <legend><span class="shop-request__number">3</span> Deine Kontaktdaten</legend>
+            <label for="shop-name">Vor- und Nachname <span aria-hidden="true">*</span>
+              <input id="shop-name" name="name" autocomplete="name" maxlength="120" minlength="2" required placeholder="Dein vollständiger Name">
+            </label>
+            <div class="shop-request__fields shop-request__fields--two">
+              <label for="shop-email">E-Mail-Adresse <span aria-hidden="true">*</span>
+                <input id="shop-email" type="email" name="email" autocomplete="email" maxlength="254" required placeholder="dein.name@beispiel.de">
+              </label>
+              <label for="shop-phone">Telefonnummer <small>(optional)</small>
+                <input id="shop-phone" type="tel" name="Telefon" autocomplete="tel" maxlength="50" placeholder="z. B. 0170 1234567">
+              </label>
+            </div>
+            <label for="shop-message">Deine Nachricht <small>(optional)</small>
+              <textarea id="shop-message" name="Nachricht" rows="3" maxlength="1500" placeholder="Besondere Wünsche oder Fragen?"></textarea>
+            </label>
+          </fieldset>
+          <label class="shop-request__consent" for="shop-consent">
+            <input id="shop-consent" name="Datenschutzhinweise gelesen" type="checkbox" value="Ja" required>
+            <span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen und möchte, dass meine Angaben zur Bearbeitung meiner Anfrage an BuntBewegt übermittelt werden. <span aria-hidden="true">*</span></span>
+          </label>
+          <p class="shop-request__provider">Die Angaben werden verschlüsselt über den externen Formular-Dienst FormSubmit an BuntBewegt übermittelt. Bitte keine Zahlungsdaten eingeben.</p>
+          <button type="submit" class="button button-green shop-request__submit">Unverbindliche Anfrage senden <span aria-hidden="true">→</span></button>
+          <p class="shop-request__footnote">Du erhältst keine automatische Kaufbestätigung. Wir antworten persönlich mit den nächsten Schritten. Felder mit * sind Pflichtfelder.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
 <section class="kontakt-art-intro container" aria-label="Kontakt bei BuntBewegt">
   <div class="kontakt-art-copy">
     <p class="kontakt-art-kicker">GEMEINSAM ETWAS BEWEGEN</p>
@@ -140,7 +249,8 @@
         <a href="ueber-buntbewegt.html">Über uns</a>
         <a href="netzwerk.html">Netzwerk</a>
         <a href="angebote.html">Angebote</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="shop.html">Shop</a>
+<a href="kontakt.html">Kontakt</a>
       </nav>
       <div class="footer-column footer-contact">
         <h2>Kontakt</h2>

@@ -22,6 +22,22 @@
     action.disabled = selected.length === 0;
   }
 
+  // Keep the viewport stationary when a user clicks a selection card.
+  // Normally the <label> focuses its visually hidden checkbox at the top
+  // corner, which may make browsers scroll the page unexpectedly.
+  // Mouse/touch clicks are handled without moving focus; direct checkbox
+  // interaction through Tab/Space continues to work as usual.
+  choices.forEach(input => {
+    const card = input.closest('.bbd-station');
+    if (!card) return;
+    card.addEventListener('click', event => {
+      if (event.target === input || event.defaultPrevented) return;
+      event.preventDefault(); // Stop automatic focus/scroll caused by <label>.
+      input.checked = !input.checked;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+
   choices.forEach(item => item.addEventListener('change', render));
   action.addEventListener('click', () => {
     const selected = choices.filter(item => item.checked).map(item => item.value);

@@ -99,3 +99,6 @@ a.network-card:focus-visible { outline:3px solid var(--network-purple); outline-
   max-height:100%;
   object-fit:contain;
 }
+
+/* Penshock: vom Partner bereitgestelltes Logo mit abgerundeten Ecken. */
+.network-logo-penshock img.network-artwork{border-radius:9px;}

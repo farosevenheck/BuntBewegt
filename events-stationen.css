@@ -54,3 +54,5 @@
 :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-station:hover .bbd-station__illustration{transform:scale(1.055)}
 @media(max-width:560px){:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-station__art .bbd-station__illustration{width:98px;height:98px}}
 @media(prefers-reduced-motion:reduce){:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-station__art .bbd-station__illustration{transition:none}}
+
+

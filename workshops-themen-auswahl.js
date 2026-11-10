@@ -26,6 +26,19 @@
     chips.hidden = values.length === 0;
     request.disabled = values.length === 0;
   }
+  // Prevent the browser from jumping to the visually hidden checkbox
+  // when its card/label is tapped. Preserve native keyboard selection.
+  inputs.forEach(input => {
+    const card = input.closest('.bbd-station');
+    if (!card) return;
+    card.addEventListener('click', event => {
+      if (event.target === input || event.defaultPrevented) return;
+      event.preventDefault();
+      input.checked = !input.checked;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  });
+
   inputs.forEach(input => input.addEventListener('change', render));
   request.addEventListener('click', () => {
     const values = selected();
