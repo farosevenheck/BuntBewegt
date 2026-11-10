@@ -1,0 +1,37 @@
+/* Startseite: four real event photographs in "Unsere Angebote".
+   Unlike the older flat artwork, photos have strong backgrounds. Only fade
+   the image edge; don't layer a cloudy glow over the photograph. */
+.bb-home-tile__visual {
+  background: var(--bb-tint);
+}
+.bb-home-tile__visual::before {content: none; display: none;}
+.bb-home-tile__visual img {
+  -webkit-mask-image: linear-gradient(to right,
+    transparent 0%, rgba(0,0,0,.18) 7%, rgba(0,0,0,.66) 18%, #000 32%);
+  mask-image: linear-gradient(to right,
+    transparent 0%, rgba(0,0,0,.18) 7%, rgba(0,0,0,.66) 18%, #000 32%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  width:100%;height:100%;object-fit:cover;
+}
+.bb-home-tile--events .bb-home-tile__visual img{object-position:54% 50%;}
+.bb-home-tile--birthday .bb-home-tile__visual img{object-position:50% 43%;}
+.bb-home-tile--team .bb-home-tile__visual img{object-position:50% 50%;}
+.bb-home-tile--workshop .bb-home-tile__visual img{object-position:50% 50%;}
+.bb-home-tile__content { box-sizing:border-box; padding-right:11px; }
+.bb-home-tile__content strong { display:block;max-width:100%;overflow-wrap:break-word;hyphens:manual; }
+@media (max-width:600px){
+  .bb-home-tile__visual img{
+    -webkit-mask-image:linear-gradient(to right,
+      transparent 0%, rgba(0,0,0,.18) 8%, rgba(0,0,0,.76) 22%, #000 36%);
+    mask-image:linear-gradient(to right,
+      transparent 0%, rgba(0,0,0,.18) 8%, rgba(0,0,0,.76) 22%, #000 36%);
+  }
+  .bb-home-tile__content {padding-right:9px;}
+  .bb-home-tile--birthday .bb-home-tile__content strong{font-size:clamp(18px,5.5vw,22px);letter-spacing:-.4px;}
+}
+/* Narrow phones: do not strand the final letter of Projektwochen. */
+@media (max-width:370px){
+  .bb-home-tile--workshop{grid-template-columns:62% 38%;}
+  .bb-home-tile--workshop .bb-home-tile__content strong{font-size:18px;letter-spacing:-.7px;}
+}

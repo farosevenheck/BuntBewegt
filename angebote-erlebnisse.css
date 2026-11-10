@@ -29,7 +29,7 @@ html{scroll-behavior:smooth}
 .bb-arrow{height:31px;width:31px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#fff;border:1px solid rgba(50,86,68,.14);flex:none;transition:transform .2s}
 .bb-category:hover .bb-arrow,.bb-feature__primary:hover .bb-arrow{transform:translateX(3px)}
 .bb-category__visual{display:block;position:relative;min-width:0;height:100%;overflow:hidden}
-.bb-category__visual::before{content:"";position:absolute;inset:0 auto 0 0;width:20%;z-index:1;background:linear-gradient(90deg,var(--bb-tint) 0%,rgba(255,255,255,0) 100%);pointer-events:none}
+.bb-category__visual::before{content:"";position:absolute;inset:0 auto 0 0;width:33%;z-index:1;background:linear-gradient(90deg,var(--bb-tint),transparent);pointer-events:none}
 .bb-category__visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:62% center;transition:transform .5s ease}
 .bb-category:hover .bb-category__visual img{transform:scale(1.055)}
 .bb-collections{background:#fff}
@@ -161,17 +161,10 @@ html{scroll-behavior:smooth}
 
 /* Kindergeburtstage: saubere Foto-/Text-Trennung auf allen Bildschirmgrößen. */
 .bb-category--birthday .bb-category__visual { isolation:isolate; overflow:hidden; }
-.bb-category--birthday .bb-category__visual::before {
-  width:11%;
-  background:linear-gradient(90deg,var(--bb-tint) 0%,rgba(253,241,231,0) 100%);
-}
 .bb-category--birthday .bb-category__visual img {
   width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 48%;
 }
 .bb-category--birthday .bb-category__copy { position:relative;z-index:2;min-width:0; }
-@media (max-width:600px) {
-  .bb-category--birthday .bb-category__visual::before { width:8%; }
-}
 
 /* Mobil: der lange Titel darf nicht in den Fotobereich hineinragen. */
 .bb-category--birthday .bb-category__copy strong {
@@ -184,4 +177,297 @@ html{scroll-behavior:smooth}
 @media(max-width:420px) {
   .bb-category--birthday .bb-category__copy { padding-right:10px; }
   .bb-category--birthday .bb-category__copy strong { font-size:20px;letter-spacing:-.55px; }
+}
+
+/* Angebote – EXACT shared visual geometry from homepage .bb-home-tile.
+   The last version matched only the 33% fade, while card/image column ratios
+   stayed different (55/45 vs 57/43; 59/41 vs 60/40 on phones).
+   Keep the current photos and page copy; unify the complete visual track. */
+.angebote-page .bb-category {
+  grid-template-columns: 57% 43%;
+}
+.angebote-page .bb-category__visual {
+  display: block;
+  position: relative;
+  min-width: 0;
+  height: auto;
+  overflow: hidden;
+}
+/* The same 33% image fade used by .bb-home-tile__visual::before
+   on Startseite: no extended wash over real event photos. */
+.angebote-page .bb-category__visual::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: 33%;
+  background: linear-gradient(90deg, var(--bb-tint), transparent);
+  pointer-events: none;
+}
+
+.angebote-page .bb-category__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+.angebote-page .bb-category:hover .bb-category__visual img { transform: scale(1.05); }
+@media (max-width: 600px) {
+  .angebote-page .bb-category { grid-template-columns: 57% 43%; }
+}
+@media (max-width: 420px) {
+  .angebote-page .bb-category { grid-template-columns: 60% 40%; }
+}
+
+/* Original-Fotostrecke im gleichen ruhigen Look wie Unsere Angebote auf Startseite.
+   Statt eines hellen Nebel-Overlays wird nur die linke Bildkante selbst weich
+   ausgeblendet. Das hält das Originalfoto scharf und die Schrift kontrastreich. */
+.angebote-page .bb-category__visual {
+  background: var(--bb-tint);
+  isolation: isolate;
+}
+.angebote-page .bb-category__visual::before,
+.angebote-page .bb-category--birthday .bb-category__visual::before {
+  content: none !important;
+  display: none !important;
+}
+.angebote-page .bb-category__visual img,
+.angebote-page .bb-category--birthday .bb-category__visual img {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 7%, rgba(0,0,0,.55) 17%, rgba(0,0,0,.9) 27%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.16) 7%, rgba(0,0,0,.55) 17%, rgba(0,0,0,.9) 27%, #000 38%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.angebote-page .bb-category--events .bb-category__visual img {object-position: 56% center;}
+.angebote-page .bb-category--birthday .bb-category__visual img {object-position: 50% 53%;}
+.angebote-page .bb-category--team .bb-category__visual img {object-position: 50% 50%;}
+.angebote-page .bb-category--workshop .bb-category__visual img {object-position: 50% 55%;}
+/* Auf schmalen Bildschirmen etwas kürzer ausblenden, damit Gesichter sichtbar bleiben. */
+@media(max-width:600px){
+  .angebote-page .bb-category__visual img,
+  .angebote-page .bb-category--birthday .bb-category__visual img {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 7%, rgba(0,0,0,.7) 16%, #000 34%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.2) 7%, rgba(0,0,0,.7) 16%, #000 34%);
+  }
+}
+
+/* 2026-11-10 fix: reduce the heavy white glow on Angebote cards.
+   Use a slim soft divider like the homepage cards, and remove the wide
+   image masking that created a foggy band across the photos. */
+.angebote-page .bb-category__visual {
+  background: transparent;
+  isolation: auto;
+}
+.angebote-page .bb-category__visual::before,
+.angebote-page .bb-category--birthday .bb-category__visual::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  z-index: 1;
+  inset: 0 auto 0 0;
+  width: 17%;
+  background: linear-gradient(90deg, var(--bb-tint) 0%, transparent 100%);
+  pointer-events: none;
+}
+.angebote-page .bb-category__visual img,
+.angebote-page .bb-category--birthday .bb-category__visual img {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-mask-size: auto !important;
+  mask-size: auto !important;
+  -webkit-mask-repeat: initial !important;
+  mask-repeat: initial !important;
+}
+@media (max-width: 600px) {
+  .angebote-page .bb-category__visual::before,
+  .angebote-page .bb-category--birthday .bb-category__visual::before {
+    width: 14%;
+  }
+}
+
+
+/* Final: truly seamless integration of photos on the four Angebote cards.
+   The photo covers the card's right section and is alpha-faded *over* the
+   card background. No hard boundary at an internal grid column and no
+   bright pseudo-element laid on top of the actual photograph. */
+.angebote-page .bb-category {
+  display: block;
+  isolation: isolate;
+}
+.angebote-page .bb-category__copy,
+.angebote-page .bb-category--birthday .bb-category__copy {
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+.angebote-page .bb-category__visual,
+.angebote-page .bb-category--birthday .bb-category__visual {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 54%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: transparent;
+  isolation: auto;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.06) 7%, rgba(0,0,0,.22) 14%, rgba(0,0,0,.62) 26%, #000 39%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.06) 7%, rgba(0,0,0,.22) 14%, rgba(0,0,0,.62) 26%, #000 39%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.angebote-page .bb-category__visual::before,
+.angebote-page .bb-category--birthday .bb-category__visual::before {
+  content: none !important;
+  display: none !important;
+}
+.angebote-page .bb-category__visual img,
+.angebote-page .bb-category--birthday .bb-category__visual img {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 600px) {
+  .angebote-page .bb-category__copy,
+  .angebote-page .bb-category--birthday .bb-category__copy {
+    width: 65%;
+  }
+  .angebote-page .bb-category__visual,
+  .angebote-page .bb-category--birthday .bb-category__visual {
+    width: 55%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.08) 8%, rgba(0,0,0,.3) 15%, rgba(0,0,0,.75) 28%, #000 40%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.08) 8%, rgba(0,0,0,.3) 15%, rgba(0,0,0,.75) 28%, #000 40%);
+  }
+}
+
+/* Keep mobile copy legible where image fades beneath the content. */
+@media (max-width: 600px) {
+  .angebote-page .bb-category__copy,
+  .angebote-page .bb-category--birthday .bb-category__copy { width: 68%; }
+  .angebote-page .bb-category__visual,
+  .angebote-page .bb-category--birthday .bb-category__visual {
+    width: 50%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.04) 13%, rgba(0,0,0,.22) 28%, rgba(0,0,0,.72) 44%, #000 60%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.04) 13%, rgba(0,0,0,.22) 28%, rgba(0,0,0,.72) 44%, #000 60%);
+  }
+}
+
+
+/* Kindergeburtstage: avoid text bleeding onto the photography in Angebote.
+   Give the long German headline its own predictable, bounded text area. */
+.angebote-page .bb-category--birthday .bb-category__copy {
+  box-sizing: border-box;
+  width: 58%;
+  padding-right: 20px;
+}
+.angebote-page .bb-category--birthday .bb-category__copy strong {
+  display: block;
+  max-width: 100%;
+  font-size: clamp(21px, 1.7vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -.55px;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+@media (max-width: 600px) {
+  .angebote-page .bb-category--birthday .bb-category__copy {
+    width: 65%;
+    padding-right: 10px;
+  }
+  .angebote-page .bb-category--birthday .bb-category__copy strong {
+    font-size: 20px;
+    letter-spacing: -.55px;
+  }
+}
+@media (max-width: 370px) {
+  .angebote-page .bb-category--birthday .bb-category__copy {
+    width: 67%;
+    padding-right: 9px;
+  }
+  .angebote-page .bb-category--birthday .bb-category__copy strong {
+    font-size: 19px;
+  }
+}
+
+
+/* 2026-11-10: Straffere, dezente Bildüberblendung in den vier Angebote-Karten.
+   Der weiche Übergang wird nur am linken Fotorand angewendet;
+   die vorherige Korrektur für den Geburtstagstitel bleibt bestehen. */
+.angebote-page .bb-category__visual,
+.angebote-page .bb-category--birthday .bb-category__visual {
+  -webkit-mask-image: linear-gradient(to right,
+    transparent 0%, rgba(0,0,0,.36) 10%, rgba(0,0,0,.82) 22%, #000 32%);
+  mask-image: linear-gradient(to right,
+    transparent 0%, rgba(0,0,0,.36) 10%, rgba(0,0,0,.82) 22%, #000 32%);
+}
+@media (max-width:600px) {
+  .angebote-page .bb-category__visual,
+  .angebote-page .bb-category--birthday .bb-category__visual {
+    -webkit-mask-image: linear-gradient(to right,
+      transparent 0%, rgba(0,0,0,.36) 12%, rgba(0,0,0,.85) 29%, #000 42%);
+    mask-image: linear-gradient(to right,
+      transparent 0%, rgba(0,0,0,.36) 12%, rgba(0,0,0,.85) 29%, #000 42%);
+  }
+}
+
+/* 2026-11-10 – Protect text against overlapping the photos in the 4 Angebot cards.
+   Keep the existing short image fade intact, and use a small tint only behind
+   the copy so no text can appear over a busy photograph at narrow widths. */
+.angebote-page .bb-category__copy,
+.angebote-page .bb-category--birthday .bb-category__copy {
+  box-sizing: border-box;
+  width: 60%;
+  min-width: 0;
+  padding-right: 16px;
+  background: linear-gradient(90deg,
+    var(--bb-tint) 0%, var(--bb-tint) 86%, transparent 100%);
+}
+.angebote-page .bb-category__copy strong,
+.angebote-page .bb-category__description,
+.angebote-page .bb-category__eyebrow {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+@media (max-width: 600px) {
+  .angebote-page .bb-category__copy,
+  .angebote-page .bb-category--birthday .bb-category__copy {
+    width: 65%;
+    padding-right: 14px;
+    background: linear-gradient(90deg,
+      var(--bb-tint) 0%, var(--bb-tint) 89%, transparent 100%);
+  }
+  .angebote-page .bb-category__visual,
+  .angebote-page .bb-category--birthday .bb-category__visual {
+    width: 48%;
+  }
+}
+@media (max-width: 420px) {
+  .angebote-page .bb-category__copy,
+  .angebote-page .bb-category--birthday .bb-category__copy {
+    width: 66%;
+    padding-left: 17px;
+    padding-right: 12px;
+  }
+  .angebote-page .bb-category__copy strong {font-size: 21px;}
+  .angebote-page .bb-category--birthday .bb-category__copy strong {font-size: 19px;}
+}
+@media (max-width: 420px) {
+  .angebote-page .bb-category__copy,
+  .angebote-page .bb-category--birthday .bb-category__copy { width: 64%; }
+}
+/* Limit paragraph line length like the original cards. This also keeps the
+   right edge of each sentence away from the visible part of its photo. */
+.angebote-page .bb-category__description {
+  max-width: min(260px, 100%);
 }
