@@ -1,0 +1,47 @@
+/* BuntBewegt — Album mit echten Eindrücken aus vier Angebotsbereichen. */
+.bb-photo-archive, .bb-photo-archive * { box-sizing:border-box; }
+.bb-photo-archive {
+  --bb-photos-accent:#df8532; --bb-photos-subtle:#fff6ed;
+  width:min(1190px,calc(100% - 44px)); margin:44px auto 54px;
+  padding:clamp(20px,3vw,38px); background:linear-gradient(145deg,#fffdfa,#f7fbf7);
+  border:1px solid #e0e9df; border-radius:30px; box-shadow:0 12px 38px rgba(23,72,56,.055);
+  scroll-margin-top:120px;
+}
+.bb-photo-archive--rose { --bb-photos-accent:#d56b8e; --bb-photos-subtle:#fff1f6; }
+.bb-photo-archive--blue { --bb-photos-accent:#4579bf; --bb-photos-subtle:#eff5ff; }
+.bb-photo-archive--green { --bb-photos-accent:#3f9168; --bb-photos-subtle:#edf9f2; }
+.bb-photo-archive__head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:24px; }
+.bb-photo-archive__lead { max-width:710px; }
+.bb-photo-archive__eyebrow { display:block; margin:0 0 11px; font-size:11px; font-weight:800; letter-spacing:.135em; color:var(--bb-photos-accent); text-transform:uppercase; }
+.bb-photo-archive h2 { margin:0 0 11px; color:#123f3c; font-size:clamp(25px,3vw,38px); line-height:1.17; letter-spacing:-.025em; }
+.bb-photo-archive__lead p { margin:0; line-height:1.62; color:#54706c; font-size:clamp(14px,1.4vw,16px); }
+.bb-photo-archive__count { flex:none; color:#1b624a; background:var(--bb-photos-subtle); border:1px solid #e0ebe3; border-radius:999px; padding:11px 16px; font-size:13px; font-weight:800; white-space:nowrap; }
+.bb-photo-archive__grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.bb-photo-archive__item { margin:0; min-width:0; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 5px 16px rgba(25,61,45,.075); border:1px solid #e7ebe4; }
+.bb-photo-archive__link { display:block; position:relative; aspect-ratio: 4/3; overflow:hidden; background:var(--bb-photos-subtle); }
+.bb-photo-archive__link img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; transition: transform .28s ease; }
+.bb-photo-archive__link:hover img { transform:scale(1.055); }
+.bb-photo-archive__link:focus-visible { outline:3px solid #137a5d; outline-offset:-3px; }
+.bb-photo-archive__item figcaption { padding:10px 11px 12px; font-size:12px; font-weight:650; color:#35594d; line-height:1.4; min-height:50px; }
+.bb-photo-archive__more { margin-top:18px; }
+.bb-photo-archive__more > summary { margin:0 auto; width:fit-content; display:flex; align-items:center; justify-content:center; gap:12px; cursor:pointer; border:1px solid #bcd7c9; background:#fff; border-radius:999px; padding:13px 22px; font-weight:750; color:#236346; transition:background .18s ease; list-style:none; text-align:center; }
+.bb-photo-archive__more > summary::-webkit-details-marker { display:none; }
+.bb-photo-archive__more > summary:hover, .bb-photo-archive__more > summary:focus-visible { background:#ebf7ee; }
+.bb-photo-archive__more > summary:focus-visible { outline:3px solid #64b998; outline-offset:3px; }
+.bb-photo-archive__more > summary::after { content:'+'; font-size:21px; font-weight:600; line-height:1; }
+.bb-photo-archive__more[open] > summary::after { content:'−'; }
+.bb-photo-archive__when-open { display:none; }
+.bb-photo-archive__more[open] .bb-photo-archive__when-open { display:inline; }
+.bb-photo-archive__more[open] .bb-photo-archive__when-closed { display:none; }
+.bb-photo-archive__more .bb-photo-archive__grid { margin-top:22px; }
+.bb-photo-archive__note { color:#647971; font-size:12px; margin:18px 0 0; }
+@media (max-width:1050px) { .bb-photo-archive__grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:700px) {
+  .bb-photo-archive { width:calc(100% - 28px); padding:18px; border-radius:23px; margin:28px auto 36px; }
+  .bb-photo-archive__head { flex-direction:column; align-items:flex-start; gap:12px; }
+  .bb-photo-archive__grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .bb-photo-archive__item { border-radius:13px; }
+  .bb-photo-archive__item figcaption { font-size:11px; padding:9px 10px; min-height:46px; }
+}
+@media (max-width:370px) { .bb-photo-archive { padding:13px; } .bb-photo-archive__item figcaption{font-size:10.5px;} }
+@media (prefers-reduced-motion:reduce) { .bb-photo-archive__link img {transition:none;} }

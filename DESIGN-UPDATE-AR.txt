@@ -1,0 +1,5 @@
+تعديل تصميم قسم Spielestationen – Beispiele ليتوافق مع الصورة المرجعية.
+الصفحات المعدلة: kindergeburtstage.html و events.html
+ملف التنسيق الجديد: spielestationen-design.css
+التصميم متجاوب مع شاشات الموبايل والكمبيوتر، وقوائم الخيارات وأزرار التنقل محفوظة.
+لفتح الموقع محلياً ابدأ بملف index.html.
