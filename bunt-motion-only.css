@@ -29,6 +29,19 @@
   to { opacity: 1; transform: translate3d(0,0,0); }
 }
 
+/* Switching names restarts the same stagger without a forced layout read. */
+.hero-slider.bb-hero-enter.bb-hero-replay .hero-eyebrow,
+.hero-slider.bb-hero-enter.bb-hero-replay #hero-title > span,
+.hero-slider.bb-hero-enter.bb-hero-replay .hero-description,
+.hero-slider.bb-hero-enter.bb-hero-replay .hero-inner > a.button,
+.hero-slider.bb-hero-enter.bb-hero-replay .hero-note {
+  animation-name: bb-soft-fall-replay;
+}
+@keyframes bb-soft-fall-replay {
+  from { opacity: 0; transform: translate3d(0,-27px,0); }
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+
 /* Same downward entry in secondary heroes (page sizing is unchanged). */
 .bb-page-loaded .page-hero-intro > .eyebrow,
 .bb-page-loaded .kontakt-art-kicker,
