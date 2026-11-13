@@ -1,7 +1,6 @@
 /* BuntBewegt — plain JavaScript; no external libraries or build step. */
 (() => {
   'use strict';
-  const profile = 'https://www.instagram.com/buntbewegt.de/';
   try { localStorage.removeItem('buntbewegt-language'); } catch (_) {}
 
   // Informational cookie notice: this site does not load optional trackers.
@@ -360,60 +359,8 @@
     updatePause();
   }
 
-  // Prepare a real message locally; visitors choose when and where to send it.
-  document.querySelectorAll('[data-contact-composer]').forEach(form => {
-    const preview = document.createElement('div');
-    preview.className = 'message-preview';
-    preview.hidden = true;
-    preview.innerHTML = '<h3 tabindex="-1">Eure Nachricht ist vorbereitet.</h3><p>Kopiert den Text und sendet ihn als Nachricht an BuntBewegt auf Instagram. Bisher wurde nichts gesendet.</p><label for="prepared-message" class="sr-only">Vorbereitete Nachricht</label><textarea id="prepared-message" readonly></textarea><div class="message-actions"><button class="button button-green copy-message" type="button">Nachricht kopieren</button><a class="button button-yellow instagram-message" target="_blank" rel="noopener noreferrer">Auf Instagram schreiben</a></div><p class="message-copy-status" role="status" aria-live="polite"></p><button class="message-edit" type="button">Nachricht bearbeiten</button>';
-    preview.querySelector('.instagram-message').href = profile;
-    form.insertAdjacentElement('afterend', preview);
-    const text = preview.querySelector('textarea');
-    const status = preview.querySelector('.message-copy-status');
-    const copyButton = preview.querySelector('.copy-message');
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      const name = form.elements.name.value.trim();
-      const message = form.elements.message.value.trim();
-      form.elements.name.setCustomValidity(name.length < 2 ? 'Bitte gebt euren Namen an.' : '');
-      form.elements.message.setCustomValidity(message.length < 10 ? 'Bitte schreibt mindestens 10 Zeichen.' : '');
-      if (!form.reportValidity()) return;
-      const interest = form.elements.interest.selectedOptions[0].textContent;
-      const phone = form.elements.phone ? form.elements.phone.value.trim() : '';
-      text.value = `Hallo BuntBewegt!\n\n${message}\n\nInteresse: ${interest}\nName: ${name}\nE-Mail: ${form.elements.email.value.trim()}${phone ? `\nTelefon: ${phone}` : ''}`;
-      status.textContent = '';
-      copyButton.textContent = 'Nachricht kopieren';
-      form.hidden = true;
-      preview.hidden = false;
-      preview.querySelector('h3').focus();
-    });
-    form.addEventListener('input', event => {
-      if (typeof event.target.setCustomValidity === 'function') event.target.setCustomValidity('');
-    });
-    copyButton.addEventListener('click', async () => {
-      let copied = false;
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(text.value);
-          copied = true;
-        }
-      } catch (_) { /* File previews may not expose the Clipboard API. */ }
-      if (!copied) {
-        text.focus();
-        text.select();
-        try { copied = document.execCommand('copy'); } catch (_) {}
-      }
-      copyButton.textContent = copied ? 'Text kopiert ✓' : 'Nachricht kopieren';
-      status.textContent = copied ? 'Kopiert. Jetzt könnt ihr die Nachricht auf Instagram einfügen und selbst senden.' : 'Bitte markiert den Text und kopiert ihn mit Strg+C oder über das Kopieren-Menü eures Geräts.';
-    });
-    preview.querySelector('.message-edit').addEventListener('click', () => {
-      preview.hidden = true;
-      form.hidden = false;
-      form.elements.message.focus();
-    });
-  });
-
+  // The Kontakt form now sends real enquiries via a native FormSubmit POST.
+  // No JavaScript submit interception: browser validation and reCAPTCHA remain available.
 
   // Photo preview overlay: show the full photo without leaving the page.
   // Works for galleries on the homepage, "News & Events", and Angebot pages.
@@ -503,20 +450,20 @@
     });
   });
 
-  // Offer, team and cooperation enquiries carry through to the existing message composer.
-  const interest = document.querySelector('[data-contact-composer] select[name="interest"]');
+  // Offer, team and cooperation enquiries carry through to the contact form.
+  const interest = document.querySelector('[data-contact-composer] select[name="Interesse"]');
   if (interest) {
-    const offerIds = { workshops:'angebot-01', projektwochen:'angebot-02', kindergeburtstage:'angebot-03', 'musical-theater':'angebot-04', mitmachzirkus:'angebot-05', teambuilding:'angebot-06', 'yoga-entspannung':'angebot-07', 'upcycling-kreatives':'angebot-08', wissenschaft:'angebot-09', kinderschminken:'angebot-10', 'events-feste':'angebot-11' };
+    const offerIds = { workshops:'Workshops', projektwochen:'Projektwochen', kindergeburtstage:'Kindergeburtstage', 'musical-theater':'Musical & Theater', mitmachzirkus:'Mitmachzirkus', teambuilding:'Teambuilding', 'yoga-entspannung':'Yoga & Entspannung', 'upcycling-kreatives':'Upcycling & Kreatives', wissenschaft:'Wissenschaft', kinderschminken:'Kinderschminken', 'events-feste':'Events & Feste' };
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('angebot');
     if (params.get('anliegen') === 'kooperation') {
-      interest.value = 'kooperation';
+      interest.value = 'Zusammenarbeit / Kooperation';
     } else if (params.get('anliegen') === 'buntbewegt-team') {
-      interest.value = 'buntbewegt-team';
+      interest.value = 'BuntBewegt Team';
     } else if (Object.prototype.hasOwnProperty.call(offerIds, requested)) {
       interest.value = offerIds[requested];
     }
-    // Event station names are allow-listed so only real options appear in the draft.
+    // Event station names are allow-listed so only real options appear in enquiries.
     const allowedStations = new Set(['Kinderschminken', 'Glitzertattoos', 'Spielestationen', 'Kreativwerkstatt', 'Seifenblasen', 'Mitmachzirkus', 'Yoga', 'Volleyball']);
     const stationParam = params.get('stationen') || '';
     const selectedStations = [...new Set(stationParam.split('|'))].filter(name => allowedStations.has(name));

@@ -29,7 +29,7 @@
 <title>Kontakt &amp; Anfragen in Kiel | BuntBewegt</title>
 <script>if (location.hash === "#kontakt" && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("kontakt-smooth-arrival");</script>
 <link rel="stylesheet" href="style.css?v=cookie-compact-20261113"/>
-<link rel="stylesheet" href="kontakt.css?v=kontakt-20261029"/>
+<link rel="stylesheet" href="kontakt.css?v=kontakt-send-20261113"/>
 <link rel="stylesheet" href="shop.css?v=20261110-mobile-clean"/>
 <script>
   if (["tshirt", "jacke"].includes(new URLSearchParams(location.search).get("shop"))) {
@@ -37,7 +37,7 @@
   }
 </script>
 
-<script src="script.js?v=cookie-compact-20261113" defer></script>
+<script src="script.js?v=kontakt-send-20261113" defer></script>
 <script defer src="shop-order.js?v=20261110-contact-1"></script>
 <link href="refinements.css?v=content-20261026-1" rel="stylesheet"/>
 <link href="hero-text-soft.css?v=1" rel="stylesheet"/>
@@ -192,19 +192,23 @@
 <span class="contact-friendly"><svg aria-hidden="true" class="lucide lucide-heart" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>Ganz unverbindlich. Mit Platz für eure Wünsche.</span><span aria-hidden="true" class="contact-scribble">✳</span>
 </div>
 <div class="contact-form-wrap">
-<form action="#kontakt" data-contact-composer="" method="post" onsubmit="return false"><fieldset>
+<form action="https://formsubmit.co/buntbewegt@gmx.de" data-contact-composer="" method="POST" accept-charset="UTF-8"><fieldset>
 <legend class="sr-only">Hallo, BuntBewegt!</legend>
+<input type="hidden" name="_subject" value="BuntBewegt Kontakt – Neue Nachricht oder Anfrage">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="https://buntbewegt.com/kontakt-erfolg.html">
+<input type="hidden" name="_url" value="https://buntbewegt.com/kontakt.html">
 <div class="form-row">
 <label for="contact-name">Euer Name<input autocomplete="name" id="contact-name" maxlength="100" minlength="2" name="name" placeholder="Wie dürfen wir euch nennen?" required=""/></label><label for="contact-email">E-Mail-Adresse<input autocomplete="email" id="contact-email" maxlength="254" name="email" placeholder="hallo@beispiel.de" required="" type="email"/></label>
 </div>
-<label for="contact-phone">Telefonnummer (optional)<input autocomplete="tel" id="contact-phone" maxlength="40" name="phone" placeholder="z. B. +49 170 1234567" type="tel"/></label>
-<label for="contact-interest">Dafür interessieren wir uns<span class="select-wrap"><select id="contact-interest" name="interest"><option selected="" value="general">Allgemeine Anfrage</option><option value="kooperation">Zusammenarbeit / Kooperation</option><option value="buntbewegt-team">BuntBewegt Team</option><option value="angebot-01">Workshops</option><option value="angebot-02">Projektwochen</option><option value="angebot-03">Kindergeburtstage</option><option value="angebot-04">Musical &amp; Theater</option><option value="angebot-05">Mitmachzirkus</option><option value="angebot-06">Teambuilding</option><option value="angebot-07">Yoga &amp; Entspannung</option><option value="angebot-08">Upcycling &amp; Kreatives</option><option value="angebot-09">Wissenschaft</option><option value="angebot-10">Kinderschminken</option><option value="angebot-11">Events &amp; Feste</option></select><svg aria-hidden="true" class="lucide lucide-chevron-down" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg></span></label><label for="contact-message">Eure Nachricht<textarea id="contact-message" maxlength="4000" minlength="10" name="message" placeholder="Erzählt uns von eurer Idee oder stellt eure Fragen …" required="" rows="4"></textarea></label><div aria-hidden="true" class="honeypot"><label for="website">Website<input autocomplete="off" id="website" name="website" tabindex="-1"/></label></div>
-<label class="consent" for="contact-consent"><input id="contact-consent" name="consent" required="" type="checkbox"/><span>Ich habe die <a class="inline-link" href="datenschutz.html">Datenschutzhinweise</a> gelesen.</span></label><button class="button button-green submit-button" type="submit">Nachricht vorbereiten<svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><p class="form-note">Nachricht vorbereiten, kopieren und selbst über Instagram senden.</p>
+<label for="contact-phone">Telefonnummer (optional)<input autocomplete="tel" id="contact-phone" maxlength="40" name="Telefon" placeholder="z. B. +49 170 1234567" type="tel"/></label>
+<label for="contact-interest">Dafür interessieren wir uns<span class="select-wrap"><select id="contact-interest" name="Interesse"><option selected="" value="Allgemeine Anfrage">Allgemeine Anfrage</option><option value="Zusammenarbeit / Kooperation">Zusammenarbeit / Kooperation</option><option value="BuntBewegt Team">BuntBewegt Team</option><option value="Workshops">Workshops</option><option value="Projektwochen">Projektwochen</option><option value="Kindergeburtstage">Kindergeburtstage</option><option value="Musical &amp; Theater">Musical &amp; Theater</option><option value="Mitmachzirkus">Mitmachzirkus</option><option value="Teambuilding">Teambuilding</option><option value="Yoga &amp; Entspannung">Yoga &amp; Entspannung</option><option value="Upcycling &amp; Kreatives">Upcycling &amp; Kreatives</option><option value="Wissenschaft">Wissenschaft</option><option value="Kinderschminken">Kinderschminken</option><option value="Events &amp; Feste">Events &amp; Feste</option></select><svg aria-hidden="true" class="lucide lucide-chevron-down" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg></span></label><label for="contact-message">Eure Nachricht<textarea id="contact-message" maxlength="4000" minlength="10" name="message" placeholder="Erzählt uns von eurer Idee oder stellt eure Fragen …" required="" rows="4"></textarea></label><div aria-hidden="true" class="honeypot"><label for="website">Website<input autocomplete="off" id="website" name="_honey" tabindex="-1"/></label></div>
+<label class="consent" for="contact-consent"><input id="contact-consent" name="Datenschutzhinweise gelesen" value="Ja" required="" type="checkbox"/><span>Ich habe die <a class="inline-link" href="datenschutz.html">Datenschutzhinweise</a> gelesen und möchte meine Anfrage über FormSubmit an BuntBewegt senden.</span></label><button class="button button-green submit-button" type="submit">Nachricht senden<svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><p class="form-note">Deine Nachricht wird per FormSubmit an unser E-Mail-Postfach weitergeleitet. Zur Spam-Vermeidung kann eine Sicherheitsabfrage erscheinen.</p>
 </fieldset></form>
-<p class="static-contact-note">Ihr erreicht uns auch direkt auf <a href="https://www.instagram.com/buntbewegt.de/" rel="noopener noreferrer" target="_blank">Instagram · @buntbewegt.de</a>.</p>
+<p class="static-contact-note">Alternativ erreicht ihr uns per <a href="mailto:buntbewegt@gmx.de">E-Mail</a> oder auf <a href="https://www.instagram.com/buntbewegt.de/" rel="noopener noreferrer" target="_blank">Instagram · @buntbewegt.de</a>.</p>
 <noscript>
-<p class="static-contact-note">Bitte aktiviert JavaScript, um eure Nachricht vorzubereiten, oder schreibt uns direkt auf <a href="https://www.instagram.com/buntbewegt.de/" rel="noopener noreferrer" target="_blank">Instagram</a>.</p>
-<style>[data-contact-composer]{display:none}</style>
+<p class="static-contact-note">Dieses Formular funktioniert auch ohne JavaScript. Nach dem Absenden kann eine Sicherheitsabfrage erscheinen.</p>
 </noscript>
 </div>
 </div>

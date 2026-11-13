@@ -40,6 +40,7 @@
 .kontakt-form-section form label{font-size:12px}
 .kontakt-form-section input:not([type=checkbox]),.kontakt-form-section textarea,.kontakt-form-section select{font-size:13px;border-radius:10px;padding:13px 14px}
 .kontakt-form-section .submit-button{min-height:48px;font-size:13px;border-radius:12px}
+.kontakt-form-section .form-note{font-size:11px;line-height:1.65;margin-top:13px;text-align:center}
 .kontakt-form-section .contact-scribble{color:#eca954}
 .kontakt-form-section .wave{display:none}
 .kontakt-outro{display:flex;align-items:center;justify-content:space-between;gap:50px;padding-block:85px 95px}
