@@ -4,6 +4,67 @@
   const profile = 'https://www.instagram.com/buntbewegt.de/';
   try { localStorage.removeItem('buntbewegt-language'); } catch (_) {}
 
+  // Informational cookie notice: this site does not load optional trackers.
+  // Remember only that the visitor has seen the notice for up to 180 days.
+  (() => {
+    const key = 'buntbewegt-cookie-hinweis-v1';
+    const lifetime = 180 * 24 * 60 * 60 * 1000;
+    let acknowledged = false;
+    try {
+      const stored = Number(localStorage.getItem(key));
+      acknowledged = stored > 0 && Date.now() - stored < lifetime;
+    } catch (_) { /* The notice still works without browser storage. */ }
+
+    const notice = document.createElement('aside');
+    notice.id = 'bb-cookie-notice';
+    notice.className = 'bb-cookie-notice';
+    notice.setAttribute('role', 'region');
+    notice.setAttribute('aria-labelledby', 'bb-cookie-title');
+    notice.hidden = true;
+    notice.innerHTML = `
+      <div class="bb-cookie-illustration" aria-hidden="true">
+        <span class="bb-cookie-emoji">🍪</span><i></i><i></i><i></i>
+      </div>
+      <div class="bb-cookie-copy">
+        <p class="bb-cookie-eyebrow">EIN KLEINER HINWEIS VON BUNTBEWEGT</p>
+        <h2 id="bb-cookie-title">Deine Privatsphäre ist uns wichtig.</h2>
+        <p>Wir nutzen keine Analyse- oder Werbe-Cookies. Nur dass du diesen Hinweis geschlossen hast, speichern wir lokal im Browser.</p>
+        <div class="bb-cookie-actions">
+          <button class="bb-cookie-accept" type="button" data-cookie-dismiss>Alles klar <span aria-hidden="true">✓</span></button>
+          <a href="datenschutz.html">Mehr zum Datenschutz <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <button class="bb-cookie-close" type="button" data-cookie-dismiss aria-label="Cookie-Hinweis schließen">×</button>
+    `;
+    document.body.appendChild(notice);
+
+    const reopen = document.createElement('button');
+    reopen.type = 'button';
+    reopen.className = 'bb-cookie-reopen';
+    reopen.textContent = 'Cookie-Hinweis';
+    const legalNav = document.querySelector('.footer-legal nav');
+    const backToTop = legalNav?.querySelector('.footer-up');
+    if (legalNav) legalNav.insertBefore(reopen, backToTop || null);
+
+    const open = () => { notice.hidden = false; };
+    const close = () => {
+      notice.hidden = true;
+      try { localStorage.setItem(key, String(Date.now())); } catch (_) {}
+    };
+    notice.querySelectorAll('[data-cookie-dismiss]').forEach(button => {
+      button.addEventListener('click', () => {
+        const keyboardFocused = button.matches(':focus-visible');
+        close();
+        if (keyboardFocused) reopen.focus({ preventScroll: true });
+      });
+    });
+    reopen.addEventListener('click', open);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !notice.hidden) close();
+    });
+    if (!acknowledged) open();
+  })();
+
   // Smooth Kontakt navigation: the destination #kontakt is placed on the
   // form grid, so visitors arrive with the form just below the sticky header.
   // Native anchors and normal links remain usable without JavaScript.

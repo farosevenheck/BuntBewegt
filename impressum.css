@@ -1,0 +1,6 @@
+/* Impressum matches the simple typographic layout of Datenschutzhinweise. */
+.impressum-page{max-width:870px}
+.impressum-page h2{font-family:'Trebuchet MS',Arial,sans-serif;font-size:clamp(21px,2.4vw,27px);line-height:1.3;color:#254735;margin-top:38px}
+.impressum-page h2+p{margin-top:12px!important}
+.impressum-page>.impressum-intro{font-size:17px!important;color:#355444!important}
+.impressum-page a:not(.button){color:#21623f;text-decoration:underline;text-underline-offset:3px}
