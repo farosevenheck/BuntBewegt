@@ -25,6 +25,10 @@
     <image:image><image:loc>https://buntbewegt.com/images/events/laternenwerkstatt-640.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://buntbewegt.com/buntbewegt-ev.html</loc>
+    <image:image><image:loc>https://buntbewegt.com/images/buntbewegt-ev-logo.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://buntbewegt.com/datenschutz.html</loc>
   </url>
   <url>

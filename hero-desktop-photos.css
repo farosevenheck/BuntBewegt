@@ -1,0 +1,18 @@
+/* Desktop: native wide photographs inside the unchanged homepage hero. */
+@media (min-width: 741px) {
+  #start.hero-slider .hero-slide::before {
+    content: none;
+  }
+
+  #start.hero-slider .hero-slide .hero-photo {
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

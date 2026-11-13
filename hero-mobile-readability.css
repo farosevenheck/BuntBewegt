@@ -1,0 +1,89 @@
+/* Original mobile hero layout: full-bleed photograph behind the copy,
+   with the desktop's transparent dark-green photographic treatment. */
+@media (max-width: 740px) {
+  #start.hero-slider,
+  #start.hero-slider .hero-slides {
+    background: #173b29;
+  }
+
+  /* Move all copy down 20px; the shared offset preserves total hero height. */
+  #start.hero-slider .hero-inner {
+    --hero-copy-offset: 44px;
+  }
+
+  #start.hero-slider .hero-inner,
+  #start.hero-slider #hero-title,
+  #start.hero-slider #hero-title > span {
+    color: #ffffff;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+
+  #start.hero-slider .hero-eyebrow,
+  #start.hero-slider .hero-eyebrow-text {
+    color: #fff9dc;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  #start.hero-slider .hero-description {
+    color: #f5f7f2;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+
+  #start.hero-slider .hero-note {
+    color: #f5f7f2;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+
+  #start.hero-slider .hero-shade {
+    background: linear-gradient(180deg,
+      rgba(11, 31, 19, .78) 0%,
+      rgba(11, 31, 19, .70) 30%,
+      rgba(11, 31, 19, .64) 55%,
+      rgba(11, 31, 19, .24) 74%,
+      rgba(11, 31, 19, 0) 92%);
+  }
+
+  #start.hero-slider .hero-inner .button-yellow,
+  #start.hero-slider .hero-cta-label {
+    color: #173f2e;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  #start.hero-slider .hero-carousel-controls {
+    background: rgba(11, 31, 19, .72);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, .28);
+  }
+
+  #start.hero-slider .hero-slide-counter,
+  #start.hero-slider .hero-slide-arrow,
+  #start.hero-slider .hero-slide-pause {
+    color: #ffffff;
+  }
+
+  #start.hero-slider .hero-slide-counter > span {
+    color: #e6eddf;
+  }
+
+  #start.hero-slider .hero-slide-arrow:hover,
+  #start.hero-slider .hero-slide-pause:hover,
+  #start.hero-slider .hero-slide-pause[aria-pressed="true"] {
+    background: rgba(255, 255, 255, .16);
+  }
+
+  #start.hero-slider .hero-control-divider {
+    background: rgba(255, 255, 255, .3);
+  }
+
+  #start.hero-slider .hero-slide-dot > span {
+    background: rgba(255, 255, 255, .6);
+  }
+
+  #start.hero-slider .hero-slide-dot.is-active > span,
+  #start.hero-slider .hero-slide-dot.is-active:hover > span {
+    background: #ffd43d;
+  }
+}

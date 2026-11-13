@@ -1,0 +1,33 @@
+Mobile hero image restoration — version 8
+Method: built-in image generation/editing, identity-preserving edit requests.
+Original inputs are retained under images/hero-home-{stand,play,team,facepaint}.webp.
+Project outputs are images/hero-home-{stand,play,team,facepaint}-mobile-clear.webp.
+The original crop, people and expressions were specified as invariants.
+
+TEAM
+Use case: identity-preserve.
+Asset type: Existing photograph for a mobile website hero, conservative photo-quality restoration.
+Input image: THE SINGLE ATTACHED IMAGE IS THE EDIT TARGET, not a style reference.
+Primary request: improve the technical clarity of this exact photograph through restrained deblocking, fine-detail clarity and natural tonal refinement. This must still be the same real photograph, not a new scene or a reinterpretation. Preserve every person exactly: same facial shape, eyes, nose, mouth, expression, age, hair, skin texture, hands, posture, clothes and accessories. Do not beautify or reconstruct faces. If a detail is unclear in the source, keep it naturally soft instead of inventing it. Keep the exact original composition, camera perspective, crop, aspect ratio, every object, every person, and all original text and signs. Keep believable original colors and lighting; no HDR, no oversharpened edges, no plastic skin, no added text, no white fade, no vignette. Do not remove anything.
+Output: a single clean high-quality 3:4 portrait photograph, approximately 1536 x 2048 pixels. Improve clarity gently; retaining the actual faces and scene is the highest priority.
+
+FACEPAINT
+Use case: identity-preserve.
+Asset type: Existing photograph for a mobile website hero, conservative photo-quality restoration.
+Input image: THE SINGLE ATTACHED IMAGE IS THE EDIT TARGET, not a style reference.
+Primary request: improve the technical clarity of this exact photograph through restrained deblocking, fine-detail clarity and natural tonal refinement. This must still be the same real photograph, not a new scene or a reinterpretation. Preserve every person exactly: same facial shape, eyes, nose, mouth, expression, age, hair, skin texture, hands, posture, clothes and accessories. Do not beautify or reconstruct faces. If a detail is unclear in the source, keep it naturally soft instead of inventing it. Keep the exact original composition, camera perspective, crop, aspect ratio, every object, every person, and all original text and signs. Keep believable original colors and lighting; no HDR, no oversharpened edges, no plastic skin, no added text, no white fade, no vignette. Do not remove anything.
+Output: a single clean high-quality 3:4 portrait photograph, approximately 1536 x 2048 pixels. Improve clarity gently; retaining the actual faces and scene is the highest priority.
+
+STAND
+Use case: identity-preserve.
+Asset type: Existing photograph for a mobile website hero, conservative photo-quality restoration.
+Input image: THE SINGLE ATTACHED IMAGE IS THE EDIT TARGET, not a style reference.
+Primary request: improve the technical clarity of this exact photograph through restrained deblocking, fine-detail clarity and natural tonal refinement. This must still be the same real photograph, not a new scene or a reinterpretation. Preserve every person exactly: same facial shape, eyes, nose, mouth, expression, age, hair, skin texture, hands, posture, clothes and accessories. Do not beautify or reconstruct faces. If a detail is unclear in the source, keep it naturally soft instead of inventing it. Keep the exact original composition, camera perspective, crop, aspect ratio, every object, every person, and all original text and signs. Keep believable original colors and lighting; no HDR, no oversharpened edges, no plastic skin, no added text, no white fade, no vignette. Do not remove anything.
+Output: a single clean high-quality 4:3 landscape photograph, approximately 2048 x 1536 pixels. Improve clarity gently; retaining the actual faces and scene is the highest priority.
+
+PLAY
+Use case: identity-preserve.
+Asset type: Existing photograph for a mobile website hero, conservative photo-quality restoration.
+Input image: THE SINGLE ATTACHED IMAGE IS THE EDIT TARGET, not a style reference.
+Primary request: improve the technical clarity of this exact photograph through restrained deblocking, fine-detail clarity and natural tonal refinement. This must still be the same real photograph, not a new scene or a reinterpretation. Preserve every person exactly: same facial shape, eyes, nose, mouth, expression, age, hair, skin texture, hands, posture, clothes and accessories. Do not beautify or reconstruct faces. If a detail is unclear in the source, keep it naturally soft instead of inventing it. Keep the exact original composition, camera perspective, crop, aspect ratio, every object, every person, and all original text and signs. Keep believable original colors and lighting; no HDR, no oversharpened edges, no plastic skin, no added text, no white fade, no vignette. Do not remove anything.
+Output: a single clean high-quality 3:4 portrait photograph, approximately 1536 x 2048 pixels. Improve clarity gently; retaining the actual faces and scene is the highest priority.

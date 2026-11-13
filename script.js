@@ -136,11 +136,18 @@
     document.querySelector('.offer-grid')?.classList.toggle('filtered', index !== 0);
   }));
 
-  // Four themed hero slides with matching headings, descriptions and actions.
+  // Four mobile slides; the fifth desktop slide stays inert on small screens.
   const hero = document.querySelector('.hero-slider');
   if (hero) {
-    const slides = [...hero.querySelectorAll('.hero-slide')];
-    const dots = [...hero.querySelectorAll('.hero-slide-dot')];
+    const slideTrack = hero.querySelector('.hero-slides');
+    const dotTrack = hero.querySelector('.hero-slide-dots');
+    const desktopSlides = [...(hero.querySelector('[data-hero-desktop-slides]')?.content.querySelectorAll('.hero-slide') || [])];
+    const desktopDots = [...(hero.querySelector('[data-hero-desktop-dots]')?.content.querySelectorAll('.hero-slide-dot') || [])];
+    const allSlides = [...hero.querySelectorAll('.hero-slide'), ...desktopSlides];
+    const allDots = [...hero.querySelectorAll('.hero-slide-dot'), ...desktopDots];
+    const mobileHero = window.matchMedia('(max-width: 740px)');
+    let slides = allSlides;
+    let dots = allDots;
     const arrows = [...hero.querySelectorAll('.hero-slide-arrow')];
     const pause = hero.querySelector('.hero-slide-pause');
     const counter = hero.querySelector('.hero-slide-counter');
@@ -157,6 +164,7 @@
       pause: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H5v16h4zM19 4h-4v16h4z"/></svg>',
     };
     let active = 0;
+    let heroInitialized = false;
     let paused = motion.matches;
     let onScreen = true;
     let timer;
@@ -183,30 +191,57 @@
       if (heroCta) heroCta.href = slide.dataset.href || '#angebote';
       hero.dataset.heroTheme = slide.dataset.theme || 'dark';
     }
-    function show(index, manual = false) {
+    function show(index, manual = false, force = false) {
       const next = (index + slides.length) % slides.length;
-      if (next === active) { schedule(); return; }
+      if (next === active && !force) { schedule(); return; }
+      const changed = heroInitialized && !slides[next].classList.contains('is-active');
       active = next;
-      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === active));
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('is-active', i === active);
-        dot.setAttribute('aria-pressed', String(i === active));
+      allSlides.forEach(slide => slide.classList.toggle('is-active', slide === slides[active]));
+      allDots.forEach(dot => {
+        dot.classList.toggle('is-active', dot === dots[active]);
+        dot.setAttribute('aria-pressed', String(dot === dots[active]));
       });
       updateHeroContent(slides[active]);
-      // Re-run staggered line-drop animation while keeping layout/hero size fixed.
-      // Do not force a full hero layout on every automatic slide change.
-      // This can visibly stall phones while large photographs are displayed.
-      if (!motion.matches && manual && !mobileMenu.matches) {
-        hero.classList.remove('bb-hero-enter');
-        void hero.offsetWidth;
+      // Alternate identical keyframe names to replay the original entry on every
+      // slide change, including autoplay and touch, without forcing hero layout.
+      if (changed && !motion.matches) {
         hero.classList.add('bb-hero-enter');
+        hero.classList.toggle('bb-hero-replay', !hero.classList.contains('bb-hero-replay'));
       }
       if (counter?.firstChild) counter.firstChild.textContent = String(active + 1).padStart(2, '0');
+      const total = counter?.querySelector('span');
+      if (total) total.textContent = `/ ${String(slides.length).padStart(2, '0')}`;
       schedule();
       if (announcement) {
         if (manual) announcement.setAttribute('aria-live', 'polite');
         announcement.textContent = `${dots[active].getAttribute('aria-label')} — ${active + 1} von ${slides.length}`;
       }
+    }
+    function syncHeroViewport() {
+      const currentSlide = heroInitialized ? slides[active] : null;
+      desktopSlides.forEach(slide => {
+        if (mobileHero.matches) slide.remove();
+        else slideTrack.appendChild(slide);
+      });
+      desktopDots.forEach(dot => {
+        if (mobileHero.matches) dot.remove();
+        else dotTrack.appendChild(dot);
+      });
+      const visible = allSlides.map((slide, index) => ({ slide, dot: allDots[index] }))
+        .filter(({ slide }) => slide.parentElement === slideTrack);
+      if (mobileHero.matches) {
+        visible.sort((a, b) => Number(a.slide.dataset.mobileOrder) - Number(b.slide.dataset.mobileOrder));
+      }
+      slides = visible.map(({ slide }) => slide);
+      dots = visible.map(({ dot }) => dot);
+      visible.forEach(({ slide, dot }, index) => {
+        slideTrack.appendChild(slide);
+        dotTrack.appendChild(dot);
+        dot.setAttribute('aria-label', dot.getAttribute('aria-label').replace(/^Bild \d+:/, `Bild ${index + 1}:`));
+      });
+      // Keep a visible slide selected after rotation or a desktop-to-phone resize.
+      show(Math.max(0, slides.indexOf(currentSlide)), false, true);
+      heroInitialized = true;
     }
     function updatePause() {
       if (!pause) return;
@@ -216,7 +251,10 @@
       pause.innerHTML = icons[paused ? 'play' : 'pause'];
       schedule();
     }
-    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i, true)));
+    allDots.forEach(dot => dot.addEventListener('click', () => {
+      const index = dots.indexOf(dot);
+      if (index >= 0) show(index, true);
+    }));
     arrows[0]?.addEventListener('click', () => show(active - 1, true));
     arrows[1]?.addEventListener('click', () => show(active + 1, true));
     pause?.addEventListener('click', () => { paused = !paused; updatePause(); });
@@ -248,13 +286,15 @@
     };
     if (typeof motion.addEventListener === 'function') motion.addEventListener('change', onMotionChange);
     else if (typeof motion.addListener === 'function') motion.addListener(onMotionChange);
+    if (typeof mobileHero.addEventListener === 'function') mobileHero.addEventListener('change', syncHeroViewport);
+    else if (typeof mobileHero.addListener === 'function') mobileHero.addListener(syncHeroViewport);
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; schedule(); });
       observer.observe(hero);
     }
     window.addEventListener('pagehide', () => window.clearTimeout(timer));
     window.addEventListener('pageshow', schedule);
-    updateHeroContent(slides[0]);
+    syncHeroViewport();
     if (!motion.matches) hero.classList.add('bb-hero-enter');
     updatePause();
   }

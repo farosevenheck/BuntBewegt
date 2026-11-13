@@ -289,3 +289,91 @@
     width: 4px; height: 9px; top: -4px; right: -1px;
   }
 }
+
+
+/* 12.11.2026 – Expanded Spielestationen copy; compact pills and existing selection logic remain unchanged. */
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro .bbd-playbook__intro-highlight {
+  margin: 0 0 8px;
+  color: #1e654b;
+  font-weight: 800;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__intro p + p {
+  margin-top: 8px;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option .bbd-playbook__motto {
+  margin: 0 0 5px;
+  color: #174b43;
+  font-size: 13.5px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option .bbd-playbook__blurb {
+  margin: 0 0 15px;
+  color: #536d6d;
+  font-size: 12px;
+  line-height: 1.45;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more {
+  margin-top: 14px;
+  color: #244d48;
+  font-size: 12px;
+  line-height: 1.5;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid #f3d6b5;
+  border-radius: 11px;
+  background: #fffbf5;
+  color: #835014;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more summary::-webkit-details-marker { display: none; }
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more summary:hover {background:#fff3e4; border-color:#edae62;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more summary:focus-visible {outline:3px solid #246d58;outline-offset:3px;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more summary span {font-size:18px; line-height:1; font-weight:500;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__more[open] summary span {transform:rotate(45deg);}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option:nth-child(2) .bbd-playbook__more summary {
+  background: #f4faf5;
+  color: #286044;
+  border-color: #cde6d6;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option:nth-child(2) .bbd-playbook__more summary:hover {background:#e8f7ed;border-color:#9fd0b0;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__detail-list {
+  list-style: none;
+  padding: 8px 5px 0;
+  margin: 0;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__detail-list li {
+  margin: 0;
+  padding: 8px 2px;
+  border-bottom: 1px solid #e8ece7;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__detail-list li:last-child {border-bottom:0;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__detail-list strong {color:#164d43;}
+:is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__outro {
+  grid-column: 1 / -1;
+  margin: 22px 0 0;
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: #f4faf5;
+  color: #42685b;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+@media (max-width:980px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__outro {margin-top:0;}
+}
+@media (max-width:580px) {
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__option .bbd-playbook__motto {font-size:13px;}
+  :is(.bb-detail--events,.bb-detail--kindergeburtstage) .bbd-playbook__outro {font-size:12px;padding:12px;}
+}

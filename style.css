@@ -2012,3 +2012,17 @@ a[data-photo-lightbox]:focus-visible {outline: 3px solid #3d8e65;outline-offset:
     transition: opacity 160ms ease-out;
   }
 }
+
+/* Startseite: echte Nutzerfotos im Hero-Slider */
+.hero-slide-stand .hero-photo{object-position:50% 42%}
+.hero-slide-play .hero-photo{object-position:50% 58%}
+.hero-slide-teamwork .hero-photo{object-position:50% 40%}
+.hero-slide-facepaint .hero-photo{object-position:50% 42%}
+.hero-slide-offers .hero-photo{object-position:50% 34%}
+@media(max-width:740px){
+  .hero-slide-stand .hero-photo{object-position:50% 44%}
+  .hero-slide-play .hero-photo{object-position:50% 52%}
+  .hero-slide-teamwork .hero-photo{object-position:50% 38%}
+  .hero-slide-facepaint .hero-photo{object-position:50% 34%}
+  .hero-slide-offers .hero-photo{object-position:50% 26%}
+}
