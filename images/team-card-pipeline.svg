@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" role="img" aria-labelledby="title"><title id="title">Illustration: Als Team eine Kugel durch Rinnen rollen lassen</title>
+<defs>
+  <linearGradient id="tube" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c8f3fa"/><stop offset="1" stop-color="#50accc"/></linearGradient>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#184752" flood-opacity=".13"/></filter>
+</defs>
+<path d="M83 420 Q185 393 282 419 T491 416 Q497 443 472 457 Q282 475 95 457Z" fill="#a9d994"/>
+<path d="M115 451 Q282 463 456 448" fill="none" stroke="#63b68a" stroke-width="9" stroke-linecap="round"/>
+<circle cx="95" cy="183" r="12" fill="#f6bf56"/><path d="M94 158v-10M94 215v-10M70 183H59M129 183h-10" stroke="#f6bf56" stroke-width="6" stroke-linecap="round"/>
+<circle cx="472" cy="159" r="8" fill="#e98da0"/><path d="M472 140v-7M472 186v-7M455 159h-7M496 159h-7" stroke="#e98da0" stroke-width="5" stroke-linecap="round"/>
+<!-- three cooperating children, behind the gutters -->
+<g stroke="#6f4250" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M107 314 Q97 347 105 404 L144 404 Q146 373 151 346 L151 314Z" fill="#425f91"/><path d="M115 403v22h-23q-8 0-8-8M142 403v22h25q7 0 7-8" fill="#fff7ed"/>
+<path d="M107 300 Q85 312 78 352 Q91 365 105 347 L109 337 L152 335 Q167 345 181 328 L174 317 Q158 322 154 305Z" fill="#f3a247"/>
+<circle cx="126" cy="258" r="42" fill="#fbd3a7"/>
+<path d="M86 252 Q83 204 125 206 Q167 201 172 250 Q146 241 130 222 Q112 246 86 252Z" fill="#df8443"/>
+<circle cx="116" cy="262" r="3.8" fill="#493336" stroke="none"/><circle cx="142" cy="262" r="3.8" fill="#493336" stroke="none"/><path d="M120 279q10 11 20 0" fill="none" stroke="#bd6b65" stroke-width="4"/>
+</g>
+<g stroke="#6f4250" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M232 325 Q219 359 230 403h30l14-60 8 60h29q2-58-10-80Z" fill="#6b9cd1"/>
+<path d="M250 400v22h-26q-7 0-7-7M293 400v22h27q6 0 6-7" fill="#fff7ed"/>
+<path d="M235 297q-17 8-22 43l23 6 17-23 35-1 15 23 23-9q-6-33-29-39Z" fill="#5fc6af"/>
+<circle cx="273" cy="250" r="41" fill="#eeb48d"/>
+<path d="M231 257Q214 205 267 202q56-1 49 57-9-27-24-31-20 20-61 29" fill="#503647"/>
+<circle cx="258" cy="257" r="3.5" fill="#503647" stroke="none"/><circle cx="285" cy="257" r="3.5" fill="#503647" stroke="none"/><path d="M260 274q12 11 24 0" fill="none" stroke="#ab665f" stroke-width="4"/>
+</g>
+<g stroke="#6f4250" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M404 308q-12 50-5 94h30l6-63 7 63h30q3-59-17-94Z" fill="#785b9c"/>
+<path d="M416 399v26h-25q-8 0-8-8M458 399v26h27q9 0 9-7" fill="#fff7ed"/>
+<path d="M404 294q-14 11-22 38l16 12 17-22 31 0 24 19 17-14q-13-30-35-34Z" fill="#f17b96"/>
+<circle cx="432" cy="248" r="42" fill="#f6c595"/>
+<path d="M391 244q-10-46 38-51 60-3 52 64-24-13-34-37-14 20-56 24Z" fill="#d1843e"/>
+<circle cx="417" cy="252" r="3.8" fill="#55363d" stroke="none"/><circle cx="442" cy="252" r="3.8" fill="#55363d" stroke="none"/><path d="M418 271q12 11 23-2" fill="none" stroke="#b46963" stroke-width="4"/>
+</g>
+<!-- hands, dynamic blue gutters and a marble -->
+<g filter="url(#soft)">
+ <path d="M76 335 Q136 357 199 333 L210 359 Q143 390 73 362Z" fill="url(#tube)" stroke="#2c88a5" stroke-width="7" stroke-linejoin="round"/>
+ <path d="M210 359 Q265 388 332 352 L341 377 Q266 417 204 385Z" fill="url(#tube)" stroke="#2c88a5" stroke-width="7" stroke-linejoin="round"/>
+ <path d="M338 374 Q393 347 490 359 L490 383 Q403 376 346 404Z" fill="url(#tube)" stroke="#2c88a5" stroke-width="7" stroke-linejoin="round"/>
+ <circle cx="262" cy="377" r="17" fill="#f9b743" stroke="#b97920" stroke-width="5"/>
+ <circle cx="255" cy="369" r="5" fill="#fff8d5" stroke="none"/>
+</g>
+<path d="M140 318q17-17 34-3 M300 315q18-14 32-2 M397 334q21-15 32 1" stroke="#fbd0a3" stroke-width="16" stroke-linecap="round" fill="none"/>
+<path d="M190 278q26-14 52 1" fill="none" stroke="#68bed6" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 18"/>
+</svg>
